@@ -359,7 +359,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         decoration: BoxDecoration(
-                                          color: Color(0x731A73E8),
+                                          color: Color(0x5A1A73E8),
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                         ),
@@ -378,7 +378,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                           context)
                                                       .primaryText,
                                                   fontSize: 18.0,
-                                                  fontWeight: FontWeight.normal,
+                                                  fontWeight: FontWeight.w500,
                                                   lineHeight: 2.0,
                                                 ),
                                           ),
@@ -401,7 +401,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         decoration: BoxDecoration(
-                                          color: Color(0x731A73E8),
+                                          color: Color(0x5A1A73E8),
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                         ),
@@ -420,7 +420,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                           context)
                                                       .primaryText,
                                                   fontSize: 18.0,
-                                                  fontWeight: FontWeight.normal,
+                                                  fontWeight: FontWeight.w500,
                                                   lineHeight: 2.0,
                                                 ),
                                           ),
@@ -443,7 +443,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         decoration: BoxDecoration(
-                                          color: Color(0x731A73E8),
+                                          color: Color(0x5A1A73E8),
                                           borderRadius:
                                               BorderRadius.circular(12.0),
                                         ),
@@ -462,7 +462,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                           context)
                                                       .primaryText,
                                                   fontSize: 18.0,
-                                                  fontWeight: FontWeight.normal,
+                                                  fontWeight: FontWeight.w500,
                                                   lineHeight: 2.0,
                                                 ),
                                           ),
@@ -483,7 +483,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       decoration: BoxDecoration(
-                                        color: Color(0x731A73E8),
+                                        color: Color(0x5A1A73E8),
                                         borderRadius:
                                             BorderRadius.circular(12.0),
                                       ),
@@ -501,7 +501,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 fontSize: 18.0,
-                                                fontWeight: FontWeight.normal,
+                                                fontWeight: FontWeight.w500,
                                                 lineHeight: 2.0,
                                               ),
                                         ),
