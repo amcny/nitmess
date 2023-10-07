@@ -37,7 +37,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
     _model.tabBarController = TabController(
       vsync: this,
       length: 4,
-      initialIndex: 2,
+      initialIndex: 0,
     )..addListener(() => setState(() {}));
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -195,7 +195,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0x5A1A73E8),
+                                    color: Color(0x4C1A73E8),
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
                                   child: Padding(
@@ -266,7 +266,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0x5A1A73E8),
+                                    color: Color(0x4C1A73E8),
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
                                   child: Padding(
@@ -337,7 +337,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   decoration: BoxDecoration(
-                                    color: Color(0x5A1A73E8),
+                                    color: Color(0x4C1A73E8),
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
                                   child: Padding(
@@ -407,7 +407,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0x5A1A73E8),
+                                  color: Color(0x4C1A73E8),
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 child: Padding(
