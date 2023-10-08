@@ -353,7 +353,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 20.0, 20.0, 10.0),
+                                          20.0, 20.0, 20.0, 20.0),
                                       child: Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
@@ -395,7 +395,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 20.0, 20.0, 10.0),
+                                          20.0, 20.0, 20.0, 20.0),
                                       child: Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
@@ -437,7 +437,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 20.0, 20.0, 10.0),
+                                          20.0, 20.0, 20.0, 20.0),
                                       child: Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
@@ -479,7 +479,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 20.0, 20.0, 10.0),
+                                          20.0, 20.0, 20.0, 20.0),
                                       child: Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
