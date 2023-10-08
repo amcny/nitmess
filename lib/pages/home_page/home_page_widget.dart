@@ -268,7 +268,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 ),
               ],
             ),
-            Expanded(
+            Flexible(
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 0.0),
                 child: StreamBuilder<List<MessRecord>>(
@@ -472,43 +472,47 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   ],
                                 ),
                               ),
-                              Column(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 20.0, 20.0, 10.0),
-                                    child: Container(
-                                      width: MediaQuery.sizeOf(context).width *
-                                          1.0,
-                                      decoration: BoxDecoration(
-                                        color: Color(0x4C1A73E8),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 15.0, 20.0, 15.0),
-                                        child: Text(
-                                          tabBarMessRecord!.dinner,
-                                          textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                fontSize: 18.0,
-                                                fontWeight: FontWeight.w500,
-                                                lineHeight: 2.5,
-                                              ),
+                              SingleChildScrollView(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 20.0, 20.0, 10.0),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                1.0,
+                                        decoration: BoxDecoration(
+                                          color: Color(0x4C1A73E8),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  20.0, 15.0, 20.0, 15.0),
+                                          child: Text(
+                                            tabBarMessRecord!.dinner,
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  fontSize: 18.0,
+                                                  fontWeight: FontWeight.w500,
+                                                  lineHeight: 2.5,
+                                                ),
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ],
                           ),

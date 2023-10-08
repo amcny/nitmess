@@ -62,9 +62,9 @@ class _CanteenWidgetState extends State<CanteenWidget> {
 
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).whiteBg,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).whiteBg,
         automaticallyImplyLeading: false,
         title: Text(
           'Canteen',

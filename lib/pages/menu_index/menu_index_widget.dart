@@ -278,7 +278,7 @@ class _MenuIndexWidgetState extends State<MenuIndexWidget> {
                   ],
                 ),
               ),
-            ],
+            ].addToEnd(SizedBox(height: 15.0)),
           ),
         ),
       ),
