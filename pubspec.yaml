@@ -47,7 +47,7 @@ dependencies:
   go_router: 7.1.1
   google_fonts: 4.0.3
   google_mobile_ads: 2.3.0
-  intl: 0.18.0
+  intl: 0.18.1
   json_path: 0.6.2
   lottie: 1.2.1
   mime_type: 1.0.0
@@ -117,8 +117,6 @@ flutter:
     - assets/lottie_animations/
     - assets/rive_animations/
     - assets/pdfs/
-
-
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
