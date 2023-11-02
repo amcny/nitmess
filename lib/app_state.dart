@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'flutter_flow/request_manager.dart';
 import '/backend/backend.dart';
 import 'backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -100,6 +101,51 @@ class FFAppState extends ChangeNotifier {
     prefs.setStringList(
         'ff_jsondata', _jsondata.map((x) => jsonEncode(x)).toList());
   }
+
+  final _homepageManager = FutureRequestManager<List<MessRecord>>();
+  Future<List<MessRecord>> homepage({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<List<MessRecord>> Function() requestFn,
+  }) =>
+      _homepageManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearHomepageCache() => _homepageManager.clear();
+  void clearHomepageCacheKey(String? uniqueKey) =>
+      _homepageManager.clearRequest(uniqueKey);
+
+  final _menupageManager = FutureRequestManager<MessRecord>();
+  Future<MessRecord> menupage({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<MessRecord> Function() requestFn,
+  }) =>
+      _menupageManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearMenupageCache() => _menupageManager.clear();
+  void clearMenupageCacheKey(String? uniqueKey) =>
+      _menupageManager.clearRequest(uniqueKey);
+
+  final _indexpageManager = FutureRequestManager<List<MessRecord>>();
+  Future<List<MessRecord>> indexpage({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<List<MessRecord>> Function() requestFn,
+  }) =>
+      _indexpageManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearIndexpageCache() => _indexpageManager.clear();
+  void clearIndexpageCacheKey(String? uniqueKey) =>
+      _indexpageManager.clearRequest(uniqueKey);
 }
 
 LatLng? _latLngFromString(String? val) {

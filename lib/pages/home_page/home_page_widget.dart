@@ -95,6 +95,21 @@ class _HomePageWidgetState extends State<HomePageWidget>
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).whiteBg,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          FFAppState().clearHomepageCache();
+          FFAppState().clearIndexpageCache();
+          FFAppState().clearMenupageCache();
+          FFAppState().update(() {});
+        },
+        backgroundColor: FlutterFlowTheme.of(context).primary,
+        elevation: 8.0,
+        child: Icon(
+          Icons.refresh_rounded,
+          color: Colors.white,
+          size: 26.0,
+        ),
+      ),
       body: SafeArea(
         top: true,
         child: Column(
@@ -281,18 +296,20 @@ class _HomePageWidgetState extends State<HomePageWidget>
             Flexible(
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 0.0),
-                child: StreamBuilder<List<MessRecord>>(
-                  stream: queryMessRecord(
-                    queryBuilder: (messRecord) => messRecord
-                        .where(
-                          'day',
-                          isEqualTo: functions.day(),
-                        )
-                        .where(
-                          'messname',
-                          isEqualTo: FFAppState().messname,
-                        ),
-                    singleRecord: true,
+                child: FutureBuilder<List<MessRecord>>(
+                  future: FFAppState().homepage(
+                    requestFn: () => queryMessRecordOnce(
+                      queryBuilder: (messRecord) => messRecord
+                          .where(
+                            'day',
+                            isEqualTo: functions.day(),
+                          )
+                          .where(
+                            'messname',
+                            isEqualTo: FFAppState().messname,
+                          ),
+                      singleRecord: true,
+                    ),
                   ),
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.

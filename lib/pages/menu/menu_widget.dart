@@ -63,8 +63,10 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
 
     context.watch<FFAppState>();
 
-    return StreamBuilder<MessRecord>(
-      stream: MessRecord.getDocument(widget.pass!),
+    return FutureBuilder<MessRecord>(
+      future: FFAppState().menupage(
+        requestFn: () => MessRecord.getDocumentOnce(widget.pass!),
+      ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {

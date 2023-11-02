@@ -179,14 +179,16 @@ class _MenuIndexWidgetState extends State<MenuIndexWidget> {
                         ],
                       ),
                     ),
-                    StreamBuilder<List<MessRecord>>(
-                      stream: queryMessRecord(
-                        queryBuilder: (messRecord) => messRecord
-                            .where(
-                              'messname',
-                              isEqualTo: FFAppState().messname,
-                            )
-                            .orderBy('order_no'),
+                    FutureBuilder<List<MessRecord>>(
+                      future: FFAppState().indexpage(
+                        requestFn: () => queryMessRecordOnce(
+                          queryBuilder: (messRecord) => messRecord
+                              .where(
+                                'messname',
+                                isEqualTo: FFAppState().messname,
+                              )
+                              .orderBy('order_no'),
+                        ),
                       ),
                       builder: (context, snapshot) {
                         // Customize what your widget looks like when it's loading.
