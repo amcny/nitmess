@@ -259,14 +259,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   ),
                 ),
               ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 0.0),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 0.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
                     child: Container(
                       height: 60.0,
                       decoration: BoxDecoration(
@@ -290,8 +289,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Flexible(
               child: Padding(
@@ -332,7 +331,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     return Column(
                       children: [
                         Align(
-                          alignment: Alignment(-1.0, 0),
+                          alignment: Alignment(0.0, 0),
                           child: TabBar(
                             labelColor:
                                 FlutterFlowTheme.of(context).primaryText,
@@ -374,6 +373,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             controller: _model.tabBarController,
                             children: [
                               SingleChildScrollView(
+                                primary: false,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -416,6 +416,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 ),
                               ),
                               SingleChildScrollView(
+                                primary: false,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -458,6 +459,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 ),
                               ),
                               SingleChildScrollView(
+                                primary: false,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -500,6 +502,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 ),
                               ),
                               SingleChildScrollView(
+                                primary: false,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
