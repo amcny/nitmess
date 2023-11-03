@@ -259,8 +259,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   decoration: BoxDecoration(
                                     gradient: LinearGradient(
                                       colors: [
-                                        Color(0xFFFF9966),
-                                        Color(0xFFFF5E62)
+                                        Color(0xFF8F94FB),
+                                        Color(0xFF4E54C8)
                                       ],
                                       stops: [0.0, 1.0],
                                       begin: AlignmentDirectional(-1.0, -1.0),
