@@ -250,8 +250,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                       .labelMedium
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                        color: Colors.white,
                                       ),
                                 ),
                                 duration: Duration(milliseconds: 2000),
@@ -271,8 +270,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                       .labelMedium
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                        color: Colors.white,
                                       ),
                                 ),
                                 duration: Duration(milliseconds: 2000),

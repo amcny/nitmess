@@ -104,9 +104,8 @@ class _ChooseMessWidgetState extends State<ChooseMessWidget> {
                   onChanged: (val) =>
                       setState(() => _model.dropDownValue = val),
                   height: 60.0,
-                  textStyle: FlutterFlowTheme.of(context).bodyLarge.override(
+                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Poppins',
-                        fontSize: 15.0,
                       ),
                   hintText: 'Please select...',
                   icon: Icon(
