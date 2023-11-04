@@ -314,7 +314,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'In-App Update',
+                                    'In-App Menu Update',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -322,7 +322,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Retrieve latest info',
+                                    'Retrieve latest mess menu info',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -998,7 +998,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               ? 'assets/images/patterndark.png'
                               : 'assets/images/pattern.png',
                           width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: MediaQuery.sizeOf(context).height * 0.35,
+                          height: 290.0,
                           fit: BoxFit.cover,
                         ),
                       ),

@@ -231,6 +231,60 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
         ),
       ],
     ),
+    'textOnPageLoadAnimation8': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        VisibilityEffect(duration: 300.ms),
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 300.ms,
+          duration: 300.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 300.ms,
+          duration: 300.ms,
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
+        ),
+        ScaleEffect(
+          curve: Curves.easeInOut,
+          delay: 300.ms,
+          duration: 300.ms,
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
+        ),
+      ],
+    ),
+    'textOnPageLoadAnimation9': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        VisibilityEffect(duration: 200.ms),
+        FadeEffect(
+          curve: Curves.easeInOut,
+          delay: 200.ms,
+          duration: 300.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 200.ms,
+          duration: 300.ms,
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
+        ),
+        ScaleEffect(
+          curve: Curves.easeInOut,
+          delay: 200.ms,
+          duration: 300.ms,
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
+        ),
+      ],
+    ),
     'buttonOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
@@ -420,6 +474,36 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 20.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'In-App Menu \nUpdate Feature',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context).headlineLarge,
+                            ).animateOnPageLoad(
+                                animationsMap['textOnPageLoadAnimation7']!),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 16.0, 0.0, 0.0),
+                              child: Text(
+                                'Retrive latest mess menu info by just clicking refresh button or from settings',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .labelLarge
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                    ),
+                              ).animateOnPageLoad(
+                                  animationsMap['textOnPageLoadAnimation8']!),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             48.0, 0.0, 48.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -430,7 +514,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context).headlineLarge,
                             ).animateOnPageLoad(
-                                animationsMap['textOnPageLoadAnimation7']!),
+                                animationsMap['textOnPageLoadAnimation9']!),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 16.0, 0.0),
@@ -494,7 +578,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                     child: smooth_page_indicator.SmoothPageIndicator(
                       controller: _model.pageViewController ??=
                           PageController(initialPage: 0),
-                      count: 4,
+                      count: 5,
                       axisDirection: Axis.horizontal,
                       onDotClicked: (i) async {
                         await _model.pageViewController!.animateToPage(
