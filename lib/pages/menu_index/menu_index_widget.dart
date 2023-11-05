@@ -179,9 +179,9 @@ class _MenuIndexWidgetState extends State<MenuIndexWidget> {
                         ],
                       ),
                     ),
-                    FutureBuilder<List<MessRecord>>(
-                      future: FFAppState().indexpage(
-                        requestFn: () => queryMessRecordOnce(
+                    StreamBuilder<List<MessRecord>>(
+                      stream: FFAppState().indexpage(
+                        requestFn: () => queryMessRecord(
                           queryBuilder: (messRecord) => messRecord
                               .where(
                                 'messname',

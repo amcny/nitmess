@@ -133,6 +133,9 @@ class _ChooseMessWidgetState extends State<ChooseMessWidget> {
                       !_model.formKey.currentState!.validate()) {
                     return;
                   }
+                  if (_model.dropDownValue == null) {
+                    return;
+                  }
                   FFAppState().update(() {
                     FFAppState().messname = _model.dropDownValue!;
                   });

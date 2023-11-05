@@ -102,11 +102,11 @@ class FFAppState extends ChangeNotifier {
         'ff_jsondata', _jsondata.map((x) => jsonEncode(x)).toList());
   }
 
-  final _homepageManager = FutureRequestManager<List<MessRecord>>();
-  Future<List<MessRecord>> homepage({
+  final _homepageManager = StreamRequestManager<List<MessRecord>>();
+  Stream<List<MessRecord>> homepage({
     String? uniqueQueryKey,
     bool? overrideCache,
-    required Future<List<MessRecord>> Function() requestFn,
+    required Stream<List<MessRecord>> Function() requestFn,
   }) =>
       _homepageManager.performRequest(
         uniqueQueryKey: uniqueQueryKey,
@@ -117,11 +117,11 @@ class FFAppState extends ChangeNotifier {
   void clearHomepageCacheKey(String? uniqueKey) =>
       _homepageManager.clearRequest(uniqueKey);
 
-  final _menupageManager = FutureRequestManager<MessRecord>();
-  Future<MessRecord> menupage({
+  final _menupageManager = StreamRequestManager<MessRecord>();
+  Stream<MessRecord> menupage({
     String? uniqueQueryKey,
     bool? overrideCache,
-    required Future<MessRecord> Function() requestFn,
+    required Stream<MessRecord> Function() requestFn,
   }) =>
       _menupageManager.performRequest(
         uniqueQueryKey: uniqueQueryKey,
@@ -132,11 +132,11 @@ class FFAppState extends ChangeNotifier {
   void clearMenupageCacheKey(String? uniqueKey) =>
       _menupageManager.clearRequest(uniqueKey);
 
-  final _indexpageManager = FutureRequestManager<List<MessRecord>>();
-  Future<List<MessRecord>> indexpage({
+  final _indexpageManager = StreamRequestManager<List<MessRecord>>();
+  Stream<List<MessRecord>> indexpage({
     String? uniqueQueryKey,
     bool? overrideCache,
-    required Future<List<MessRecord>> Function() requestFn,
+    required Stream<List<MessRecord>> Function() requestFn,
   }) =>
       _indexpageManager.performRequest(
         uniqueQueryKey: uniqueQueryKey,

@@ -604,7 +604,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               await Share.share(
-                                'https://play.google.com/store/apps/details?id=com.nitmess.com',
+                                isAndroid
+                                    ? 'https://play.google.com/store/apps/details?id=com.nitmess.com&pli=1'
+                                    : 'https://apps.apple.com/in/app/nit-ap-mess-app/id6470261118',
                                 sharePositionOrigin:
                                     getWidgetBoundingBox(context),
                               );

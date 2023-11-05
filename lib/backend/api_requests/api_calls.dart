@@ -12,8 +12,7 @@ class CanteenCall {
   static Future<ApiCallResponse> call() async {
     return ApiManager.instance.makeApiCall(
       callName: 'Canteen',
-      apiUrl:
-          'https://raw.githubusercontent.com/amcny/nitcanteendata/main/canteen.json',
+      apiUrl: 'https://api.npoint.io/a27400be6561bb92939d',
       callType: ApiCallType.GET,
       headers: {},
       params: {},
