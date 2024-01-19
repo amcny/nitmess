@@ -139,7 +139,7 @@ class _NavBarPageState extends State<NavBarPage> {
           _currentPage = null;
           _currentPageName = tabs.keys.toList()[i];
         }),
-        backgroundColor: FlutterFlowTheme.of(context).whiteBg,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         selectedItemColor: FlutterFlowTheme.of(context).primary,
         unselectedItemColor: FlutterFlowTheme.of(context).info,
         showSelectedLabels: true,
@@ -159,7 +159,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.menu_book,
               size: 28.0,
             ),
-            label: 'Messmenu',
+            label: 'Menu',
             tooltip: '',
           ),
           BottomNavigationBarItem(
