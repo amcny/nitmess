@@ -51,122 +51,140 @@ class _ChooseMessWidgetState extends State<ChooseMessWidget> {
 
     context.watch<FFAppState>();
 
-    return WillPopScope(
-      onWillPop: () async => false,
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          automaticallyImplyLeading: false,
-          title: Text(
-            'Choose Mess',
-            style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  fontFamily: 'Poppins',
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.bold,
-                ),
-          ),
-          actions: [],
-          centerTitle: false,
-          elevation: 0.0,
-        ),
-        body: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Text(
-                    'Please select your mess',
-                    style: FlutterFlowTheme.of(context).titleMedium.override(
-                          fontFamily: 'Poppins',
-                          color: FlutterFlowTheme.of(context).primaryText,
-                        ),
-                  ),
-                ],
+    return Title(
+        title: 'ChooseMess',
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+        child: WillPopScope(
+          onWillPop: () async => false,
+          child: Scaffold(
+            key: scaffoldKey,
+            backgroundColor: FlutterFlowTheme.of(context).whiteBg,
+            appBar: AppBar(
+              backgroundColor: FlutterFlowTheme.of(context).whiteBg,
+              automaticallyImplyLeading: false,
+              title: Text(
+                'Choose Mess',
+                style: FlutterFlowTheme.of(context).headlineMedium.override(
+                      fontFamily: 'Poppins',
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
+              actions: [],
+              centerTitle: false,
+              elevation: 0.0,
             ),
-            Form(
-              key: _model.formKey,
-              autovalidateMode: AutovalidateMode.disabled,
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 45.0, 20.0, 0.0),
-                child: FlutterFlowDropDown<String>(
-                  controller: _model.dropDownValueController ??=
-                      FormFieldController<String>(
-                    _model.dropDownValue ??= FFAppState().messname,
-                  ),
-                  options: ['Kamadhenu Mess', 'Akshaya Mess', 'Amrutha Mess'],
-                  onChanged: (val) =>
-                      setState(() => _model.dropDownValue = val),
-                  height: 60.0,
-                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Poppins',
+            body: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        'Please select your mess',
+                        style: FlutterFlowTheme.of(context)
+                            .titleMedium
+                            .override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              fontSize: 16.0,
+                            ),
                       ),
-                  hintText: 'Please select...',
-                  icon: Icon(
-                    Icons.keyboard_arrow_down_rounded,
-                    color: FlutterFlowTheme.of(context).secondaryText,
-                    size: 24.0,
+                    ],
                   ),
-                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                  elevation: 1.0,
-                  borderColor: FlutterFlowTheme.of(context).accent3,
-                  borderWidth: 1.0,
-                  borderRadius: 8.0,
-                  margin: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
-                  hidesUnderline: true,
-                  isSearchable: false,
-                  isMultiSelect: false,
                 ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
-              child: FFButtonWidget(
-                onPressed: () async {
-                  if (_model.formKey.currentState == null ||
-                      !_model.formKey.currentState!.validate()) {
-                    return;
-                  }
-                  if (_model.dropDownValue == null) {
-                    return;
-                  }
-                  FFAppState().update(() {
-                    FFAppState().messname = _model.dropDownValue!;
-                  });
+                Form(
+                  key: _model.formKey,
+                  autovalidateMode: AutovalidateMode.disabled,
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                    child: FlutterFlowDropDown<String>(
+                      controller: _model.dropDownValueController ??=
+                          FormFieldController<String>(
+                        _model.dropDownValue ??= FFAppState().messname,
+                      ),
+                      options: [
+                        'Kamadhenu Mess',
+                        'Akshaya Mess',
+                        'Amrutha Mess'
+                      ],
+                      onChanged: (val) =>
+                          setState(() => _model.dropDownValue = val),
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      height: 55.0,
+                      textStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.override(
+                                fontFamily: 'Poppins',
+                              ),
+                      hintText: 'Please select...',
+                      icon: Icon(
+                        Icons.keyboard_arrow_down_rounded,
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        size: 24.0,
+                      ),
+                      fillColor: FlutterFlowTheme.of(context).bwgrey,
+                      elevation: 1.0,
+                      borderColor: FlutterFlowTheme.of(context).accent3,
+                      borderWidth: 1.0,
+                      borderRadius: 8.0,
+                      margin:
+                          EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+                      hidesUnderline: true,
+                      isOverButton: false,
+                      isSearchable: false,
+                      isMultiSelect: false,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      if (_model.formKey.currentState == null ||
+                          !_model.formKey.currentState!.validate()) {
+                        return;
+                      }
+                      if (_model.dropDownValue == null) {
+                        return;
+                      }
+                      FFAppState().update(() {
+                        FFAppState().messname = _model.dropDownValue!;
+                      });
 
-                  context.goNamed('HomePage');
-                },
-                text: 'Save Changes',
-                options: FFButtonOptions(
-                  width: 190.0,
-                  height: 50.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primary,
-                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Poppins',
-                        color: Colors.white,
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w500,
+                      context.goNamed('HomePage');
+                    },
+                    text: 'Save Changes',
+                    options: FFButtonOptions(
+                      width: 190.0,
+                      height: 50.0,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: FlutterFlowTheme.of(context).primary,
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Poppins',
+                                color: Colors.white,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                      elevation: 3.0,
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1.0,
                       ),
-                  elevation: 3.0,
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1.0,
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
-          ],
-        ),
-      ),
-    );
+          ),
+        ));
   }
 }

@@ -20,14 +20,15 @@ class CanteenCall {
       encodeBodyUtf8: false,
       decodeUtf8: false,
       cache: false,
+      alwaysAllowBody: false,
     );
   }
 
-  static dynamic items(dynamic response) => getJsonField(
+  static List? items(dynamic response) => getJsonField(
         response,
         r'''$.items''',
         true,
-      );
+      ) as List?;
 }
 
 class ApiPagingParams {

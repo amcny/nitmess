@@ -70,154 +70,163 @@ class _CanteenWidgetState extends State<CanteenWidget> {
 
     context.watch<FFAppState>();
 
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).whiteBg,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).whiteBg,
-        automaticallyImplyLeading: false,
-        title: Text(
-          'Canteen',
-          style: FlutterFlowTheme.of(context).titleLarge.override(
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.bold,
-              ),
-        ),
-        actions: [],
-        centerTitle: false,
-        elevation: 0.5,
-      ),
-      body: SafeArea(
-        top: true,
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              if (getRemoteConfigBool('ad'))
-                FlutterFlowAdBanner(
-                  width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: 50.0,
-                  showsTestAd: false,
-                  androidAdUnitID: 'ca-app-pub-3991707481593664/4811954613',
-                ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                child: FlutterFlowChoiceChips(
-                  options: [
-                    ChipData('Biryani\'s'),
-                    ChipData('Chinese'),
-                    ChipData('Non-Veg Starters'),
-                    ChipData('Tandoori Starters'),
-                    ChipData('Veg Starters'),
-                    ChipData('Non-Veg Main course'),
-                    ChipData('Veg Main course'),
-                    ChipData('Ice Creams'),
-                    ChipData('Breads')
-                  ],
-                  onChanged: (val) =>
-                      setState(() => _model.choiceChipsValue = val?.first),
-                  selectedChipStyle: ChipStyle(
-                    backgroundColor: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Readex Pro',
-                          color: Colors.white,
-                          fontSize: 16.0,
-                        ),
-                    iconColor: FlutterFlowTheme.of(context).primaryText,
-                    iconSize: 0.0,
-                    elevation: 4.0,
-                    borderRadius: BorderRadius.circular(16.0),
+    return Title(
+        title: 'Canteen',
+        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
+        child: Scaffold(
+          key: scaffoldKey,
+          backgroundColor: FlutterFlowTheme.of(context).whiteBg,
+          appBar: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).whiteBg,
+            automaticallyImplyLeading: false,
+            title: Text(
+              'Canteen',
+              style: FlutterFlowTheme.of(context).titleLarge.override(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.bold,
                   ),
-                  unselectedChipStyle: ChipStyle(
-                    backgroundColor: FlutterFlowTheme.of(context).alternate,
-                    textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                        ),
-                    iconColor: FlutterFlowTheme.of(context).secondaryText,
-                    iconSize: 18.0,
-                    elevation: 0.0,
-                    borderRadius: BorderRadius.circular(16.0),
-                  ),
-                  chipSpacing: 12.0,
-                  rowSpacing: 12.0,
-                  multiselect: false,
-                  initialized: _model.choiceChipsValue != null,
-                  alignment: WrapAlignment.start,
-                  controller: _model.choiceChipsValueController ??=
-                      FormFieldController<List<String>>(
-                    ['Biryani\'s'],
-                  ),
-                  wrapped: true,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                child: Builder(
-                  builder: (context) {
-                    final info = functions
-                        .jsonfilter(FFAppState().jsondata.toList(),
-                            _model.choiceChipsValue)
-                        .toList();
-                    return Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: List.generate(info.length, (infoIndex) {
-                        final infoItem = info[infoIndex];
-                        return Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  15.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                getJsonField(
-                                  infoItem,
-                                  r'''$.name''',
-                                ).toString(),
-                                style: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 15.0, 0.0),
-                              child: Text(
-                                '₹${getJsonField(
-                                  infoItem,
-                                  r'''$.price''',
-                                ).toString()}',
-                                style: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                              ),
-                            ),
-                          ],
-                        );
-                      })
-                          .divide(SizedBox(height: 25.0))
-                          .around(SizedBox(height: 25.0)),
-                    );
-                  },
-                ),
-              ),
-            ],
+            ),
+            actions: [],
+            centerTitle: false,
+            elevation: 0.5,
           ),
-        ),
-      ),
-    );
+          body: SafeArea(
+            top: true,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  if (getRemoteConfigBool('ad'))
+                    FlutterFlowAdBanner(
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      height: 50.0,
+                      showsTestAd: false,
+                      iOSAdUnitID: 'ca-app-pub-3991707481593664/9600187683',
+                      androidAdUnitID: 'ca-app-pub-3991707481593664/2257448627',
+                    ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                    child: FlutterFlowChoiceChips(
+                      options: [
+                        ChipData('Biryani\'s'),
+                        ChipData('Chinese'),
+                        ChipData('Non-Veg Starters'),
+                        ChipData('Tandoori Starters'),
+                        ChipData('Veg Starters'),
+                        ChipData('Non-Veg Main course'),
+                        ChipData('Veg Main course'),
+                        ChipData('Ice Creams'),
+                        ChipData('Breads')
+                      ],
+                      onChanged: (val) =>
+                          setState(() => _model.choiceChipsValue = val?.first),
+                      selectedChipStyle: ChipStyle(
+                        backgroundColor: FlutterFlowTheme.of(context).primary,
+                        textStyle:
+                            FlutterFlowTheme.of(context).bodyLarge.override(
+                                  fontFamily: 'Readex Pro',
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                ),
+                        iconColor: FlutterFlowTheme.of(context).primaryText,
+                        iconSize: 0.0,
+                        elevation: 4.0,
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                      unselectedChipStyle: ChipStyle(
+                        backgroundColor: FlutterFlowTheme.of(context).alternate,
+                        textStyle: FlutterFlowTheme.of(context)
+                            .bodyMedium
+                            .override(
+                              fontFamily: 'Readex Pro',
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                            ),
+                        iconColor: FlutterFlowTheme.of(context).secondaryText,
+                        iconSize: 18.0,
+                        elevation: 0.0,
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                      chipSpacing: 12.0,
+                      rowSpacing: 12.0,
+                      multiselect: false,
+                      initialized: _model.choiceChipsValue != null,
+                      alignment: WrapAlignment.start,
+                      controller: _model.choiceChipsValueController ??=
+                          FormFieldController<List<String>>(
+                        ['Biryani\'s'],
+                      ),
+                      wrapped: true,
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                    child: Builder(
+                      builder: (context) {
+                        final info = functions
+                            .jsonfilter(FFAppState().jsondata.toList(),
+                                _model.choiceChipsValue)
+                            .toList();
+                        return Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: List.generate(info.length, (infoIndex) {
+                            final infoItem = info[infoIndex];
+                            return Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    getJsonField(
+                                      infoItem,
+                                      r'''$.name''',
+                                    ).toString(),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 15.0, 0.0),
+                                  child: Text(
+                                    '₹${getJsonField(
+                                      infoItem,
+                                      r'''$.price''',
+                                    ).toString()}',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            );
+                          })
+                              .divide(SizedBox(height: 25.0))
+                              .around(SizedBox(height: 25.0)),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ));
   }
 }
