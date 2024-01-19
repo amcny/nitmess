@@ -181,7 +181,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 15.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -252,7 +252,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                         child: FlutterFlowAdBanner(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 50.0,
@@ -586,19 +586,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       ),
                     ),
                   ),
-                  if (getRemoteConfigBool('ad'))
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 5.0),
-                      child: FlutterFlowAdBanner(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: 50.0,
-                        showsTestAd: false,
-                        iOSAdUnitID: 'ca-app-pub-3991707481593664/9600187683',
-                        androidAdUnitID:
-                            'ca-app-pub-3991707481593664/7940680835',
-                      ),
-                    ),
                 ],
               ),
             ),
