@@ -1,19 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import '/backend/backend.dart';
 
 import '/index.dart';
 import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -48,7 +40,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
               ),
             )
-          : OnboardingWidget(),
+          : const OnboardingWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -63,14 +55,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     ),
                   ),
                 )
-              : OnboardingWidget(),
+              : const OnboardingWidget(),
         ),
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'HomePage')
-              : HomePageWidget(),
+              ? const NavBarPage(initialPage: 'HomePage')
+              : const HomePageWidget(),
         ),
         FFRoute(
           name: 'menu',
@@ -84,47 +76,47 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'MenuIndex',
           path: '/menuIndex',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'MenuIndex')
-              : MenuIndexWidget(),
+              ? const NavBarPage(initialPage: 'MenuIndex')
+              : const MenuIndexWidget(),
         ),
         FFRoute(
           name: 'Onboarding',
           path: '/onboarding',
-          builder: (context, params) => OnboardingWidget(),
+          builder: (context, params) => const OnboardingWidget(),
         ),
         FFRoute(
           name: 'Settings',
           path: '/settings',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Settings')
-              : SettingsWidget(),
+              ? const NavBarPage(initialPage: 'Settings')
+              : const SettingsWidget(),
         ),
         FFRoute(
           name: 'ChooseMess',
           path: '/chooseMess',
-          builder: (context, params) => ChooseMessWidget(),
+          builder: (context, params) => const ChooseMessWidget(),
         ),
         FFRoute(
           name: 'About',
           path: '/about',
-          builder: (context, params) => AboutWidget(),
+          builder: (context, params) => const AboutWidget(),
         ),
         FFRoute(
           name: 'Appearance',
           path: '/appearance',
-          builder: (context, params) => AppearanceWidget(),
+          builder: (context, params) => const AppearanceWidget(),
         ),
         FFRoute(
           name: 'messinfo',
           path: '/messinfo',
-          builder: (context, params) => MessinfoWidget(),
+          builder: (context, params) => const MessinfoWidget(),
         ),
         FFRoute(
           name: 'Canteen',
           path: '/canteen',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Canteen')
-              : CanteenWidget(),
+              ? const NavBarPage(initialPage: 'Canteen')
+              : const CanteenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -285,7 +277,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

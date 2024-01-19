@@ -2,19 +2,16 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'menu_index_model.dart';
 export 'menu_index_model.dart';
 
 class MenuIndexWidget extends StatefulWidget {
-  const MenuIndexWidget({Key? key}) : super(key: key);
+  const MenuIndexWidget({super.key});
 
   @override
   _MenuIndexWidgetState createState() => _MenuIndexWidgetState();
@@ -73,7 +70,7 @@ class _MenuIndexWidgetState extends State<MenuIndexWidget> {
                       fontWeight: FontWeight.bold,
                     ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               elevation: 0.5,
             ),
@@ -107,7 +104,7 @@ class _MenuIndexWidgetState extends State<MenuIndexWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -223,7 +220,7 @@ class _MenuIndexWidgetState extends State<MenuIndexWidget> {
                                 final listViewMessRecord =
                                     listViewMessRecordList[listViewIndex];
                                 return Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 16.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -252,14 +249,14 @@ class _MenuIndexWidgetState extends State<MenuIndexWidget> {
                                         shape: BoxShape.rectangle,
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -274,7 +271,7 @@ class _MenuIndexWidgetState extends State<MenuIndexWidget> {
                                             ),
                                             Expanded(
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.9, 0.0),
                                                 child: Icon(
                                                   Icons.arrow_forward_ios,
@@ -298,7 +295,7 @@ class _MenuIndexWidgetState extends State<MenuIndexWidget> {
                       ],
                     ),
                   ),
-                ].addToEnd(SizedBox(height: 15.0)),
+                ].addToEnd(const SizedBox(height: 15.0)),
               ),
             ),
           ),

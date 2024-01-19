@@ -3,24 +3,19 @@ import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
 class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({Key? key}) : super(key: key);
+  const HomePageWidget({super.key});
 
   @override
   _HomePageWidgetState createState() => _HomePageWidgetState();
@@ -40,7 +35,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await actions.lockOrientation();
-      if (FFAppState().messname == null || FFAppState().messname == '') {
+      if (FFAppState().messname == '') {
         context.pushNamed('ChooseMess');
       } else {
         return;
@@ -107,7 +102,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
             },
             backgroundColor: FlutterFlowTheme.of(context).primary,
             elevation: 8.0,
-            child: Icon(
+            child: const Icon(
               Icons.refresh_rounded,
               color: Colors.white,
               size: 26.0,
@@ -122,7 +117,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -142,7 +137,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(2.0),
+                            padding: const EdgeInsets.all(2.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -186,7 +181,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 15.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 5.0, 20.0, 15.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -235,7 +230,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Lottie.asset(
                                       'assets/lottie_animations/star-struck_lottie.json',
@@ -254,10 +249,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   ),
                   if (getRemoteConfigBool('ad'))
                     Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
                         child: FlutterFlowAdBanner(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 50.0,
@@ -270,7 +265,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -283,7 +278,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             child: Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Text(
                                 valueOrDefault<String>(
                                   functions.day(),
@@ -305,11 +300,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(5.0, 10.0, 5.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       height: MediaQuery.sizeOf(context).height * 0.6,
-                      decoration: BoxDecoration(),
+                      decoration: const BoxDecoration(),
                       child: StreamBuilder<List<MessRecord>>(
                         stream: FFAppState().homepage(
                           requestFn: () => queryMessRecord(
@@ -348,7 +343,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                           return Column(
                             children: [
                               Align(
-                                alignment: Alignment(0.0, 0),
+                                alignment: const Alignment(0.0, 0),
                                 child: TabBar(
                                   labelColor:
                                       FlutterFlowTheme.of(context).primaryText,
@@ -368,8 +363,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           ),
                                   indicatorColor:
                                       FlutterFlowTheme.of(context).primary,
-                                  padding: EdgeInsets.all(4.0),
-                                  tabs: [
+                                  padding: const EdgeInsets.all(4.0),
+                                  tabs: const [
                                     Tab(
                                       text: 'Breakfast',
                                     ),
@@ -406,18 +401,18 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             MainAxisAlignment.start,
                                         children: [
                                           Padding(
-                                            padding: EdgeInsets.all(20.0),
+                                            padding: const EdgeInsets.all(20.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
                                               decoration: BoxDecoration(
-                                                color: Color(0x4C1A73E8),
+                                                color: const Color(0x4C1A73E8),
                                                 borderRadius:
                                                     BorderRadius.circular(12.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 15.0, 20.0, 15.0),
                                                 child: Text(
@@ -452,22 +447,22 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             MainAxisAlignment.start,
                                         children: [
                                           Padding(
-                                            padding: EdgeInsets.all(20.0),
+                                            padding: const EdgeInsets.all(20.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
                                               decoration: BoxDecoration(
-                                                color: Color(0x4C1A73E8),
+                                                color: const Color(0x4C1A73E8),
                                                 borderRadius:
                                                     BorderRadius.circular(12.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 15.0, 20.0, 15.0),
                                                 child: Text(
-                                                  tabBarMessRecord!.lunch,
+                                                  tabBarMessRecord.lunch,
                                                   textAlign: TextAlign.start,
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -498,22 +493,22 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             MainAxisAlignment.start,
                                         children: [
                                           Padding(
-                                            padding: EdgeInsets.all(20.0),
+                                            padding: const EdgeInsets.all(20.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
                                               decoration: BoxDecoration(
-                                                color: Color(0x4C1A73E8),
+                                                color: const Color(0x4C1A73E8),
                                                 borderRadius:
                                                     BorderRadius.circular(12.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 15.0, 20.0, 15.0),
                                                 child: Text(
-                                                  tabBarMessRecord!.snacks,
+                                                  tabBarMessRecord.snacks,
                                                   textAlign: TextAlign.start,
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -544,22 +539,22 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             MainAxisAlignment.start,
                                         children: [
                                           Padding(
-                                            padding: EdgeInsets.all(20.0),
+                                            padding: const EdgeInsets.all(20.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   1.0,
                                               decoration: BoxDecoration(
-                                                color: Color(0x4C1A73E8),
+                                                color: const Color(0x4C1A73E8),
                                                 borderRadius:
                                                     BorderRadius.circular(12.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 15.0, 20.0, 15.0),
                                                 child: Text(
-                                                  tabBarMessRecord!.dinner,
+                                                  tabBarMessRecord.dinner,
                                                   textAlign: TextAlign.start,
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -594,7 +589,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   if (getRemoteConfigBool('ad'))
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 5.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 5.0),
                       child: FlutterFlowAdBanner(
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
