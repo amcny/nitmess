@@ -173,7 +173,7 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.settings_rounded,
-              size: 24.0,
+              size: 28.0,
             ),
             label: 'Settings',
             tooltip: '',
