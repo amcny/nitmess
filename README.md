@@ -13,7 +13,7 @@ Welcome to the NIT AP Mess App, the ultimate culinary companion for the students
 The app is available for both Android and iOS devices. You can download it from the Google Play Store or the App Store, by clicking the buttons below:
 
 <a href="https://play.google.com/store/apps/details?id=com.nitmess.com&pli=1">
-  <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="200" height="95" alt="Get it on Google Play">
+  <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="200" alt="Get it on Google Play">
 </a>
 
 <a href="https://apps.apple.com/in/app/nit-ap-mess-app/id6470261118">
