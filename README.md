@@ -22,12 +22,11 @@ The app is available for both Android and iOS devices. You can download it from 
 
 ## Usage
 
-To use the app, you need to register with your NIT AP email address and password. Once you log in, you can access the following features:
+ Once you downloaded the app, you can access the following features:
 
-- To view the menu for a specific meal, tap on the meal icon on the home screen. You can swipe left or right to see the menu for other days.
-- To switch between boys and girls mess, tap on the mess icon on the top right corner of the screen. You can also see the mess name and capacity on the menu screen.
-- To order from the canteen, tap on the canteen icon on the bottom navigation bar. You can browse the categories and items, and add them to your cart. You can also see the canteen information on the top of the screen.
-- To give feedback, tap on the feedback icon on the bottom navigation bar. You can rate the dishes, leave comments, and suggest improvements. You can also see the feedback history and statistics on the feedback screen.
+- To view the menu for a specific meal, tap on the meal on the home screen. You can swipe left or right to see the menu.
+- To switch between boys and girls mess, navigate to settings, tap on choose mess. You can also see the mess name.
+- To check available dishes from the canteen, tap on the canteen icon on the bottom navigation bar. You can browse the categories and items.
 
 ## License
 
