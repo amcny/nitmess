@@ -427,7 +427,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: Text(
-                                'Auto Synchronize with \nCurent Day Food',
+                                'Auto Synchronize with \nCurrent Day Food',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -457,7 +457,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: Text(
-                                'Check the prices and dishes\nthat are available in the canteen',
+                                'Check the prices and dishes\navailable in the canteen',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge

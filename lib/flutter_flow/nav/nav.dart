@@ -80,7 +80,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const MenuindexWidget(),
         ),
         FFRoute(
-          name: 'Onboarding',
+          name: 'onboarding',
           path: '/onboarding',
           builder: (context, params) => const OnboardingWidget(),
         ),
