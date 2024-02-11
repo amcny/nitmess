@@ -14,7 +14,7 @@ class MessinfoWidget extends StatefulWidget {
   const MessinfoWidget({super.key});
 
   @override
-  _MessinfoWidgetState createState() => _MessinfoWidgetState();
+  State<MessinfoWidget> createState() => _MessinfoWidgetState();
 }
 
 class _MessinfoWidgetState extends State<MessinfoWidget> {

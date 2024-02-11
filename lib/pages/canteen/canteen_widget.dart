@@ -16,7 +16,7 @@ class CanteenWidget extends StatefulWidget {
   const CanteenWidget({super.key});
 
   @override
-  _CanteenWidgetState createState() => _CanteenWidgetState();
+  State<CanteenWidget> createState() => _CanteenWidgetState();
 }
 
 class _CanteenWidgetState extends State<CanteenWidget> {

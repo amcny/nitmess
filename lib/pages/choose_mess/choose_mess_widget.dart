@@ -13,7 +13,7 @@ class ChooseMessWidget extends StatefulWidget {
   const ChooseMessWidget({super.key});
 
   @override
-  _ChooseMessWidgetState createState() => _ChooseMessWidgetState();
+  State<ChooseMessWidget> createState() => _ChooseMessWidgetState();
 }
 
 class _ChooseMessWidgetState extends State<ChooseMessWidget> {

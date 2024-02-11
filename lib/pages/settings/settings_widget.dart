@@ -2,7 +2,9 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/devcny/devcny_widget.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
@@ -17,7 +19,7 @@ class SettingsWidget extends StatefulWidget {
   const SettingsWidget({super.key});
 
   @override
-  _SettingsWidgetState createState() => _SettingsWidgetState();
+  State<SettingsWidget> createState() => _SettingsWidgetState();
 }
 
 class _SettingsWidgetState extends State<SettingsWidget> {
@@ -29,6 +31,14 @@ class _SettingsWidgetState extends State<SettingsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SettingsModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.version = await actions.versionActual();
+      setState(() {
+        _model.versionnumber = _model.version!;
+      });
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -411,7 +421,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                             ),
                                       ),
                                       Text(
-                                        'Customize as per your Needs',
+                                        'Select Light mode or Dark mode',
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -583,7 +593,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                             ),
                                       ),
                                       Text(
-                                        'Know mess',
+                                        'See pictures of all messes',
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -676,7 +686,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                               ),
                                         ),
                                         Text(
-                                          'Share the application now',
+                                          'Tell your friends about the app',
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -775,7 +785,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                             ),
                                       ),
                                       Text(
-                                        'Contact Hostel Office',
+                                        'Share feedback and concerns',
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -1021,6 +1031,18 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         ),
                       ),
                     ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                      child: Text(
+                        _model.versionnumber,
+                        style: FlutterFlowTheme.of(context).bodySmall.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              fontWeight: FontWeight.w300,
+                            ),
+                      ),
+                    ),
                     Stack(
                       children: [
                         Opacity(
@@ -1104,6 +1126,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           .bodyLarge
                                           .override(
                                             fontFamily: 'Permanent Marker',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            fontSize: 18.0,
                                           ),
                                     ),
                                   ],

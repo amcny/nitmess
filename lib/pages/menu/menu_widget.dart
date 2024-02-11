@@ -19,7 +19,7 @@ class MenuWidget extends StatefulWidget {
   final DocumentReference? pass;
 
   @override
-  _MenuWidgetState createState() => _MenuWidgetState();
+  State<MenuWidget> createState() => _MenuWidgetState();
 }
 
 class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {

@@ -14,7 +14,7 @@ class MenuIndexWidget extends StatefulWidget {
   const MenuIndexWidget({super.key});
 
   @override
-  _MenuIndexWidgetState createState() => _MenuIndexWidgetState();
+  State<MenuIndexWidget> createState() => _MenuIndexWidgetState();
 }
 
 class _MenuIndexWidgetState extends State<MenuIndexWidget> {

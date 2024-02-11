@@ -11,7 +11,7 @@ class DevcnyWidget extends StatefulWidget {
   const DevcnyWidget({super.key});
 
   @override
-  _DevcnyWidgetState createState() => _DevcnyWidgetState();
+  State<DevcnyWidget> createState() => _DevcnyWidgetState();
 }
 
 class _DevcnyWidgetState extends State<DevcnyWidget> {

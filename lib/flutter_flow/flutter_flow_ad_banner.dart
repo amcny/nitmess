@@ -48,7 +48,7 @@ class _FlutterFlowAdBannerState extends State<FlutterFlowAdBanner> {
 
   @override
   Widget build(BuildContext context) {
-    var loadingText = '';
+    var loadingText = 'Ad Loading... \n\n';
     if (widget.showsTestAd) {
       loadingText +=
           'If this takes a long time, you may have to check whether the ad is '
@@ -63,21 +63,21 @@ class _FlutterFlowAdBannerState extends State<FlutterFlowAdBanner> {
     return _anchoredBanner != null && adWidget != null
         ? Container(
             alignment: Alignment.center,
-            color: Colors.transparent,
+            color: Colors.red,
             width: _anchoredBanner!.size.width.toDouble(),
             height: _anchoredBanner!.size.height.toDouble(),
             child: adWidget,
           )
         : Container(
-            color: Colors.transparent,
+            color: Colors.black,
             alignment: Alignment.center,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 loadingText,
                 style: const TextStyle(
-                  fontSize: 0.0,
-                  color: Colors.transparent,
+                  fontSize: 10.0,
+                  color: Colors.white,
                 ),
               ),
             ),
