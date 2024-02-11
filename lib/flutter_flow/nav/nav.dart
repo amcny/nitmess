@@ -92,9 +92,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const SettingsWidget(),
         ),
         FFRoute(
-          name: 'ChooseMess',
-          path: '/chooseMess',
-          builder: (context, params) => const ChooseMessWidget(),
+          name: 'choosemess',
+          path: '/choosemess',
+          builder: (context, params) => const ChoosemessWidget(),
         ),
         FFRoute(
           name: 'about',

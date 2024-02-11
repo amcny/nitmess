@@ -6,25 +6,25 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'choose_mess_model.dart';
-export 'choose_mess_model.dart';
+import 'choosemess_model.dart';
+export 'choosemess_model.dart';
 
-class ChooseMessWidget extends StatefulWidget {
-  const ChooseMessWidget({super.key});
+class ChoosemessWidget extends StatefulWidget {
+  const ChoosemessWidget({super.key});
 
   @override
-  State<ChooseMessWidget> createState() => _ChooseMessWidgetState();
+  State<ChoosemessWidget> createState() => _ChoosemessWidgetState();
 }
 
-class _ChooseMessWidgetState extends State<ChooseMessWidget> {
-  late ChooseMessModel _model;
+class _ChoosemessWidgetState extends State<ChoosemessWidget> {
+  late ChoosemessModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ChooseMessModel());
+    _model = createModel(context, () => ChoosemessModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -71,7 +71,7 @@ class _ChooseMessWidgetState extends State<ChooseMessWidget> {
           elevation: 0.0,
         ),
         body: Column(
-          mainAxisSize: MainAxisSize.max,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
@@ -79,7 +79,7 @@ class _ChooseMessWidgetState extends State<ChooseMessWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Text(
-                    'Please select your mess',
+                    'Please Choose your mess',
                     style: FlutterFlowTheme.of(context).titleMedium.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).primaryText,

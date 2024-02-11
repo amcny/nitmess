@@ -34,7 +34,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().messname == '') {
-        context.pushNamed('ChooseMess');
+        context.pushNamed('choosemess');
       } else {
         return;
       }

@@ -519,7 +519,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   context.goNamed(
-                                    'ChooseMess',
+                                    'choosemess',
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,

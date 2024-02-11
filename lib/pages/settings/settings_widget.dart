@@ -439,7 +439,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('ChooseMess');
+                            context.pushNamed('choosemess');
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
