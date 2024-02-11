@@ -358,7 +358,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('Appearance');
+                            context.pushNamed('appearance');
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -781,7 +781,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('About');
+                            context.pushNamed('about');
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.min,

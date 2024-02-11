@@ -58,11 +58,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const OnboardingWidget(),
         ),
         FFRoute(
-          name: 'HomePage',
-          path: '/homePage',
+          name: 'homepage',
+          path: '/homepage',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'HomePage')
-              : const HomePageWidget(),
+              ? const NavBarPage(initialPage: 'homepage')
+              : const HomepageWidget(),
         ),
         FFRoute(
           name: 'menu',
@@ -73,11 +73,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'MenuIndex',
-          path: '/menuIndex',
+          name: 'menuindex',
+          path: '/menuindex',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'MenuIndex')
-              : const MenuIndexWidget(),
+              ? const NavBarPage(initialPage: 'menuindex')
+              : const MenuindexWidget(),
         ),
         FFRoute(
           name: 'Onboarding',
@@ -97,12 +97,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ChooseMessWidget(),
         ),
         FFRoute(
-          name: 'About',
+          name: 'about',
           path: '/about',
           builder: (context, params) => const AboutWidget(),
         ),
         FFRoute(
-          name: 'Appearance',
+          name: 'appearance',
           path: '/appearance',
           builder: (context, params) => const AppearanceWidget(),
         ),

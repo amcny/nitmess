@@ -10,26 +10,26 @@ import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'home_page_model.dart';
-export 'home_page_model.dart';
+import 'homepage_model.dart';
+export 'homepage_model.dart';
 
-class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({super.key});
+class HomepageWidget extends StatefulWidget {
+  const HomepageWidget({super.key});
 
   @override
-  State<HomePageWidget> createState() => _HomePageWidgetState();
+  State<HomepageWidget> createState() => _HomepageWidgetState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget>
+class _HomepageWidgetState extends State<HomepageWidget>
     with TickerProviderStateMixin {
-  late HomePageModel _model;
+  late HomepageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HomePageModel());
+    _model = createModel(context, () => HomepageModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {

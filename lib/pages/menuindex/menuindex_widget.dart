@@ -7,25 +7,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'menu_index_model.dart';
-export 'menu_index_model.dart';
+import 'menuindex_model.dart';
+export 'menuindex_model.dart';
 
-class MenuIndexWidget extends StatefulWidget {
-  const MenuIndexWidget({super.key});
+class MenuindexWidget extends StatefulWidget {
+  const MenuindexWidget({super.key});
 
   @override
-  State<MenuIndexWidget> createState() => _MenuIndexWidgetState();
+  State<MenuindexWidget> createState() => _MenuindexWidgetState();
 }
 
-class _MenuIndexWidgetState extends State<MenuIndexWidget> {
-  late MenuIndexModel _model;
+class _MenuindexWidgetState extends State<MenuindexWidget> {
+  late MenuindexModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MenuIndexModel());
+    _model = createModel(context, () => MenuindexModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }

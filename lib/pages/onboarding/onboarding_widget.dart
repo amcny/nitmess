@@ -320,7 +320,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().isonboarding) {
-        context.goNamed('HomePage');
+        context.goNamed('homepage');
       }
     });
 

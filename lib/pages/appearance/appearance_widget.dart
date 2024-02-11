@@ -107,7 +107,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 15.0,
                   mainAxisSpacing: 0.0,
-                  childAspectRatio: 1.0,
+                  childAspectRatio: 0.92,
                 ),
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
@@ -123,11 +123,11 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 100),
                       curve: Curves.linear,
-                      width: 160.0,
-                      height: 135.0,
+                      width: 175.0,
+                      height: 180.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.circular(8.0),
+                        borderRadius: BorderRadius.circular(12.0),
                         border: Border.all(
                           color:
                               Theme.of(context).brightness == Brightness.light
@@ -144,17 +144,18 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(6.0),
+                              borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
                                 'assets/images/IMG_2997.png',
                                 width: MediaQuery.sizeOf(context).width * 1.0,
+                                height: 115.0,
                                 fit: BoxFit.fill,
                               ),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 0.0, 0.0),
+                                10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Light',
                               style: FlutterFlowTheme.of(context)
@@ -181,11 +182,11 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 100),
                       curve: Curves.linear,
-                      width: 160.0,
-                      height: 135.0,
+                      width: 175.0,
+                      height: 180.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.circular(8.0),
+                        borderRadius: BorderRadius.circular(12.0),
                         border: Border.all(
                           color: !(Theme.of(context).brightness ==
                                   Brightness.light)
@@ -202,10 +203,11 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(6.0),
+                              borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
                                 'assets/images/IMG_2998.png',
                                 width: MediaQuery.sizeOf(context).width * 1.0,
+                                height: 115.0,
                                 fit: BoxFit.fill,
                               ),
                             ),

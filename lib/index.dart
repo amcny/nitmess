@@ -1,7 +1,7 @@
 // Export pages
-export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
+export '/pages/homepage/homepage_widget.dart' show HomepageWidget;
 export '/pages/menu/menu_widget.dart' show MenuWidget;
-export '/pages/menu_index/menu_index_widget.dart' show MenuIndexWidget;
+export '/pages/menuindex/menuindex_widget.dart' show MenuindexWidget;
 export '/pages/onboarding/onboarding_widget.dart' show OnboardingWidget;
 export '/pages/settings/settings_widget.dart' show SettingsWidget;
 export '/pages/choose_mess/choose_mess_widget.dart' show ChooseMessWidget;
