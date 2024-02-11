@@ -121,340 +121,333 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
           ),
           body: SafeArea(
             top: true,
-            child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-              child: Column(
-                children: [
-                  Align(
-                    alignment: const Alignment(-1.0, 0),
-                    child: TabBar(
-                      labelColor: FlutterFlowTheme.of(context).primaryText,
-                      unselectedLabelColor:
-                          FlutterFlowTheme.of(context).secondaryText,
-                      labelStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Poppins',
-                              ),
-                      unselectedLabelStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Poppins',
-                              ),
-                      indicatorColor: FlutterFlowTheme.of(context).primary,
-                      padding: const EdgeInsets.all(4.0),
-                      tabs: const [
-                        Tab(
-                          text: 'Breakfast',
-                        ),
-                        Tab(
-                          text: 'Lunch',
-                        ),
-                        Tab(
-                          text: 'Snacks',
-                        ),
-                        Tab(
-                          text: 'Dinner',
-                        ),
-                      ],
-                      controller: _model.tabBarController,
-                      onTap: (i) async {
-                        [
-                          () async {},
-                          () async {},
-                          () async {},
-                          () async {}
-                        ][i]();
-                      },
-                    ),
+            child: Column(
+              children: [
+                Align(
+                  alignment: const Alignment(-1.0, 0),
+                  child: TabBar(
+                    labelColor: FlutterFlowTheme.of(context).primaryText,
+                    unselectedLabelColor:
+                        FlutterFlowTheme.of(context).secondaryText,
+                    labelStyle:
+                        FlutterFlowTheme.of(context).titleSmall.override(
+                              fontFamily: 'Poppins',
+                            ),
+                    unselectedLabelStyle:
+                        FlutterFlowTheme.of(context).titleSmall.override(
+                              fontFamily: 'Poppins',
+                            ),
+                    indicatorColor: FlutterFlowTheme.of(context).primary,
+                    padding: const EdgeInsets.all(4.0),
+                    tabs: const [
+                      Tab(
+                        text: 'Breakfast',
+                      ),
+                      Tab(
+                        text: 'Lunch',
+                      ),
+                      Tab(
+                        text: 'Snacks',
+                      ),
+                      Tab(
+                        text: 'Dinner',
+                      ),
+                    ],
+                    controller: _model.tabBarController,
+                    onTap: (i) async {
+                      [() async {}, () async {}, () async {}, () async {}][i]();
+                    },
                   ),
-                  Expanded(
-                    child: TabBarView(
-                      controller: _model.tabBarController,
-                      children: [
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      width: 150.0,
-                                      height: 130.0,
-                                      decoration: const BoxDecoration(),
-                                      child: SvgPicture.asset(
-                                        'assets/images/eat.svg',
-                                        width: 100.0,
-                                        height: 100.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Text(
-                                      '"Eat Better\n          Not Less"',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            fontSize: 24.0,
-                                            fontWeight: FontWeight.w300,
-                                            fontStyle: FontStyle.italic,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Container(
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0x4C1A73E8),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 15.0, 20.0, 15.0),
-                                    child: Text(
-                                      menuMessRecord.breakfast,
-                                      textAlign: TextAlign.start,
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.w500,
-                                            lineHeight: 2.5,
-                                          ),
+                ),
+                Expanded(
+                  child: TabBarView(
+                    controller: _model.tabBarController,
+                    children: [
+                      SingleChildScrollView(
+                        primary: false,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 150.0,
+                                    height: 130.0,
+                                    decoration: const BoxDecoration(),
+                                    child: SvgPicture.asset(
+                                      'assets/images/eat.svg',
+                                      width: 100.0,
+                                      height: 100.0,
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
+                                  Text(
+                                    '"Eat Better\n          Not Less"',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          fontSize: 24.0,
+                                          fontWeight: FontWeight.w300,
+                                          fontStyle: FontStyle.italic,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Container(
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                decoration: BoxDecoration(
+                                  color: const Color(0x4C1A73E8),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      20.0, 15.0, 20.0, 15.0),
+                                  child: Text(
+                                    menuMessRecord.breakfast,
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.w500,
+                                          lineHeight: 2.5,
+                                        ),
+                                  ),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      width: 150.0,
-                                      height: 130.0,
-                                      decoration: const BoxDecoration(),
-                                      child: SvgPicture.asset(
-                                        'assets/images/eat.svg',
-                                        width: 100.0,
-                                        height: 100.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Text(
-                                      '"Eat Better\n          Not Less"',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            fontSize: 24.0,
-                                            fontWeight: FontWeight.w300,
-                                            fontStyle: FontStyle.italic,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Container(
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0x4C1A73E8),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 15.0, 20.0, 15.0),
-                                    child: Text(
-                                      menuMessRecord.lunch,
-                                      textAlign: TextAlign.start,
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.w500,
-                                            lineHeight: 2.5,
-                                          ),
+                      ),
+                      SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 150.0,
+                                    height: 130.0,
+                                    decoration: const BoxDecoration(),
+                                    child: SvgPicture.asset(
+                                      'assets/images/eat.svg',
+                                      width: 100.0,
+                                      height: 100.0,
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
+                                  Text(
+                                    '"Eat Better\n          Not Less"',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          fontSize: 24.0,
+                                          fontWeight: FontWeight.w300,
+                                          fontStyle: FontStyle.italic,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Container(
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                decoration: BoxDecoration(
+                                  color: const Color(0x4C1A73E8),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      20.0, 15.0, 20.0, 15.0),
+                                  child: Text(
+                                    menuMessRecord.lunch,
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.w500,
+                                          lineHeight: 2.5,
+                                        ),
+                                  ),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      width: 150.0,
-                                      height: 130.0,
-                                      decoration: const BoxDecoration(),
-                                      child: SvgPicture.asset(
-                                        'assets/images/eat.svg',
-                                        width: 100.0,
-                                        height: 100.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Text(
-                                      '"Eat Better\n          Not Less"',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            fontSize: 24.0,
-                                            fontWeight: FontWeight.w300,
-                                            fontStyle: FontStyle.italic,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Container(
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0x4C1A73E8),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 15.0, 20.0, 15.0),
-                                    child: Text(
-                                      menuMessRecord.snacks,
-                                      textAlign: TextAlign.start,
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.w500,
-                                            lineHeight: 2.5,
-                                          ),
+                      ),
+                      SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 150.0,
+                                    height: 130.0,
+                                    decoration: const BoxDecoration(),
+                                    child: SvgPicture.asset(
+                                      'assets/images/eat.svg',
+                                      width: 100.0,
+                                      height: 100.0,
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
+                                  Text(
+                                    '"Eat Better\n          Not Less"',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          fontSize: 24.0,
+                                          fontWeight: FontWeight.w300,
+                                          fontStyle: FontStyle.italic,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Container(
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                decoration: BoxDecoration(
+                                  color: const Color(0x4C1A73E8),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      20.0, 15.0, 20.0, 15.0),
+                                  child: Text(
+                                    menuMessRecord.snacks,
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.w500,
+                                          lineHeight: 2.5,
+                                        ),
+                                  ),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      width: 150.0,
-                                      height: 130.0,
-                                      decoration: const BoxDecoration(),
-                                      child: SvgPicture.asset(
-                                        'assets/images/eat.svg',
-                                        width: 100.0,
-                                        height: 100.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Text(
-                                      '"Eat Better\n          Not Less"',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            fontSize: 24.0,
-                                            fontWeight: FontWeight.w300,
-                                            fontStyle: FontStyle.italic,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Container(
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0x4C1A73E8),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 15.0, 20.0, 15.0),
-                                    child: Text(
-                                      menuMessRecord.dinner,
-                                      textAlign: TextAlign.start,
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.w500,
-                                            lineHeight: 2.5,
-                                          ),
+                      ),
+                      SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 150.0,
+                                    height: 130.0,
+                                    decoration: const BoxDecoration(),
+                                    child: SvgPicture.asset(
+                                      'assets/images/eat.svg',
+                                      width: 100.0,
+                                      height: 100.0,
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
+                                  Text(
+                                    '"Eat Better\n          Not Less"',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          fontSize: 24.0,
+                                          fontWeight: FontWeight.w300,
+                                          fontStyle: FontStyle.italic,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Container(
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                decoration: BoxDecoration(
+                                  color: const Color(0x4C1A73E8),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      20.0, 15.0, 20.0, 15.0),
+                                  child: Text(
+                                    menuMessRecord.dinner,
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 18.0,
+                                          fontWeight: FontWeight.w500,
+                                          lineHeight: 2.5,
+                                        ),
+                                  ),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         );
