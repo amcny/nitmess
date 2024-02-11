@@ -90,12 +90,14 @@ class _CanteenWidgetState extends State<CanteenWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               if (getRemoteConfigBool('ad'))
-                FlutterFlowAdBanner(
-                  width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: 50.0,
-                  showsTestAd: false,
-                  iOSAdUnitID: 'ca-app-pub-3991707481593664/9600187683',
-                  androidAdUnitID: 'ca-app-pub-3991707481593664/2257448627',
+                const Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                  child: FlutterFlowAdBanner(
+                    height: 60.0,
+                    showsTestAd: false,
+                    iOSAdUnitID: 'ca-app-pub-3991707481593664/9600187683',
+                    androidAdUnitID: 'ca-app-pub-3991707481593664/2257448627',
+                  ),
                 ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
@@ -194,7 +196,7 @@ class _CanteenWidgetState extends State<CanteenWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Readex Pro',
+                                      fontFamily: 'Open Sans',
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       fontSize: 15.0,

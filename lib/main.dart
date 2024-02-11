@@ -117,7 +117,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'homepage': const HomepageWidget(),
       'menuindex': const MenuindexWidget(),
-      'Canteen': const CanteenWidget(),
+      'canteen': const CanteenWidget(),
       'Settings': const SettingsWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);

@@ -112,10 +112,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const MessinfoWidget(),
         ),
         FFRoute(
-          name: 'Canteen',
+          name: 'canteen',
           path: '/canteen',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'Canteen')
+              ? const NavBarPage(initialPage: 'canteen')
               : const CanteenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),

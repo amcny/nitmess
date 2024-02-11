@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class CanteenModel extends FlutterFlowModel<CanteenWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (Canteen)] action in Canteen widget.
+  // Stores action output result for [Backend Call - API (Canteen)] action in canteen widget.
   ApiCallResponse? apiResultj4q;
   // State field(s) for ChoiceChips widget.
   String? choiceChipsValue;
