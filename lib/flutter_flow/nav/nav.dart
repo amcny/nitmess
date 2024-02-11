@@ -85,10 +85,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const OnboardingWidget(),
         ),
         FFRoute(
-          name: 'Settings',
+          name: 'settings',
           path: '/settings',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'Settings')
+              ? const NavBarPage(initialPage: 'settings')
               : const SettingsWidget(),
         ),
         FFRoute(

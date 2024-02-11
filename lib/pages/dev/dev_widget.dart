@@ -4,18 +4,18 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'devcny_model.dart';
-export 'devcny_model.dart';
+import 'dev_model.dart';
+export 'dev_model.dart';
 
-class DevcnyWidget extends StatefulWidget {
-  const DevcnyWidget({super.key});
+class DevWidget extends StatefulWidget {
+  const DevWidget({super.key});
 
   @override
-  State<DevcnyWidget> createState() => _DevcnyWidgetState();
+  State<DevWidget> createState() => _DevWidgetState();
 }
 
-class _DevcnyWidgetState extends State<DevcnyWidget> {
-  late DevcnyModel _model;
+class _DevWidgetState extends State<DevWidget> {
+  late DevModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -26,7 +26,7 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DevcnyModel());
+    _model = createModel(context, () => DevModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -50,8 +50,8 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
         borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
-          topLeft: Radius.circular(16.0),
-          topRight: Radius.circular(16.0),
+          topLeft: Radius.circular(24.0),
+          topRight: Radius.circular(24.0),
         ),
       ),
       child: Padding(
@@ -157,27 +157,33 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
                                   fontFamily: 'Poppins',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
+                                  fontSize: 14.0,
                                 ),
                           ),
                         ),
                       ],
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'Application Developer · Batch of 2022\nDepartment of Electronics & Communication',
-                            textAlign: TextAlign.center,
-                            style:
-                                FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'Application Developer · Batch of 2022\nDepartment of Electronics & Communication',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodySmall
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                  ),
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const Divider(
                       thickness: 0.5,
@@ -214,7 +220,8 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
                           },
                           text: 'Linkedin',
                           icon: const FaIcon(
-                            FontAwesomeIcons.linkedin,
+                            FontAwesomeIcons.linkedinIn,
+                            size: 22.0,
                           ),
                           options: FFButtonOptions(
                             width: 150.0,
@@ -246,6 +253,7 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
                           text: 'Instagram',
                           icon: const FaIcon(
                             FontAwesomeIcons.instagram,
+                            size: 24.0,
                           ),
                           options: FFButtonOptions(
                             width: 150.0,
@@ -269,7 +277,7 @@ class _DevcnyWidgetState extends State<DevcnyWidget> {
                             ),
                           ),
                         ),
-                      ].divide(const SizedBox(width: 5.0)),
+                      ].divide(const SizedBox(width: 10.0)),
                     ),
                   ],
                 ),

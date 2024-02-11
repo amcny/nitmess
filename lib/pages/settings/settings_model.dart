@@ -9,7 +9,7 @@ class SettingsModel extends FlutterFlowModel<SettingsWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Custom Action - versionActual] action in Settings widget.
+  // Stores action output result for [Custom Action - versionActual] action in settings widget.
   String? version;
 
   /// Initialization and disposal methods.

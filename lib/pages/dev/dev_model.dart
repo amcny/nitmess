@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'devcny_widget.dart' show DevcnyWidget;
+import 'dev_widget.dart' show DevWidget;
 import 'package:flutter/material.dart';
 
-class DevcnyModel extends FlutterFlowModel<DevcnyWidget> {
+class DevModel extends FlutterFlowModel<DevWidget> {
   /// Initialization and disposal methods.
 
   @override

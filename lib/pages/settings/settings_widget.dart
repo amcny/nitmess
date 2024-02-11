@@ -1,7 +1,7 @@
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/devcny/devcny_widget.dart';
+import '/pages/dev/dev_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -209,23 +209,20 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        'General',
-                        style: FlutterFlowTheme.of(context)
-                            .titleMedium
-                            .override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.w600,
-                            ),
-                      ),
-                    ],
+                Align(
+                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                    child: Text(
+                      'General',
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                            fontFamily: 'Poppins',
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ),
                   ),
                 ),
                 Padding(
@@ -302,10 +299,13 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  child: const Icon(
-                                    Icons.refresh_rounded,
-                                    color: Colors.white,
-                                    size: 26.0,
+                                  child: const Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Icon(
+                                      Icons.published_with_changes,
+                                      color: Colors.white,
+                                      size: 21.0,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -463,10 +463,10 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   ),
                                   child: const Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: Icon(
-                                      Icons.food_bank_outlined,
+                                    child: FaIcon(
+                                      FontAwesomeIcons.handPointer,
                                       color: Colors.white,
-                                      size: 22.0,
+                                      size: 21.0,
                                     ),
                                   ),
                                 ),
@@ -544,8 +544,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   ),
                                   child: const Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: FaIcon(
-                                      FontAwesomeIcons.houzz,
+                                    child: Icon(
+                                      Icons.cottage_outlined,
                                       color: Colors.white,
                                       size: 21.0,
                                     ),
@@ -565,7 +565,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'See pictures of all messes',
+                                    'Images of the all mess',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -826,7 +826,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'App related information',
+                                    'App Information',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -913,7 +913,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               builder: (context) {
                                 return Padding(
                                   padding: MediaQuery.viewInsetsOf(context),
-                                  child: const DevcnyWidget(),
+                                  child: const DevWidget(),
                                 );
                               },
                             ).then((value) => safeSetState(() {}));
