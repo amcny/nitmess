@@ -96,7 +96,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
           FFAppState().update(() {});
         },
         backgroundColor: FlutterFlowTheme.of(context).primary,
-        elevation: 8.0,
+        elevation: 3.0,
         child: const Icon(
           Icons.refresh_rounded,
           color: Colors.white,
@@ -176,23 +176,19 @@ class _HomepageWidgetState extends State<HomepageWidget>
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                    child: Text(
-                      valueOrDefault<String>(
-                        functions.wishes(),
-                        'Wishes',
-                      ),
-                      style:
-                          FlutterFlowTheme.of(context).headlineMedium.override(
-                                fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                fontSize: 23.0,
-                                fontWeight: FontWeight.w600,
-                              ),
+                  Text(
+                    valueOrDefault<String>(
+                      functions.wishes(),
+                      'Wishes',
                     ),
+                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+                          fontFamily: 'Poppins',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          fontSize: 23.0,
+                          fontWeight: FontWeight.w600,
+                        ),
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
