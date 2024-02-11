@@ -73,20 +73,18 @@ class _ChoosemessWidgetState extends State<ChoosemessWidget> {
         body: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Text(
-                    'Please Choose your mess',
-                    style: FlutterFlowTheme.of(context).titleMedium.override(
-                          fontFamily: 'Poppins',
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          fontSize: 16.0,
-                        ),
-                  ),
-                ],
+            Align(
+              alignment: const AlignmentDirectional(-1.0, 0.0),
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
+                child: Text(
+                  'Please Choose your mess',
+                  style: FlutterFlowTheme.of(context).titleMedium.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.of(context).primaryText,
+                        fontSize: 16.0,
+                      ),
+                ),
               ),
             ),
             Form(
