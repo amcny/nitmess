@@ -122,6 +122,10 @@ flutter:
     - assets/lottie_animations/
     - assets/rive_animations/
     - assets/pdfs/
+  fonts:
+    - family: Iconpack1
+      fonts:
+        - asset: assets/fonts/Iconpack1.ttf
 
   
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'menuindex_widget.dart' show MenuindexWidget;
+import 'messindex_widget.dart' show MessindexWidget;
 import 'package:flutter/material.dart';
 
-class MenuindexModel extends FlutterFlowModel<MenuindexWidget> {
+class MessindexModel extends FlutterFlowModel<MessindexWidget> {
   /// Initialization and disposal methods.
 
   @override

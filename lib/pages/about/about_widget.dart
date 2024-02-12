@@ -82,71 +82,75 @@ class _AboutWidgetState extends State<AboutWidget> {
       ),
       body: SafeArea(
         top: true,
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Container(
-              width: MediaQuery.sizeOf(context).width * 1.0,
-              height: 250.0,
-              decoration: const BoxDecoration(),
-              child: ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(8.0),
-                  bottomRight: Radius.circular(8.0),
-                  topLeft: Radius.circular(0.0),
-                  topRight: Radius.circular(0.0),
-                ),
-                child: Image.asset(
-                  Theme.of(context).brightness == Brightness.dark
-                      ? 'assets/images/ps_icon_dark.png'
-                      : 'assets/images/ps_icon.png',
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  RichText(
-                    textScaleFactor: MediaQuery.of(context).textScaleFactor,
-                    text: TextSpan(
-                      children: [
-                        const TextSpan(
-                          text:
-                              'This app aims to make it easier for\nNIT ANDHRA PRADESH Students\nto find the correct food item available\nat the mess based on the current day',
-                          style: TextStyle(),
-                        ),
-                        const TextSpan(
-                          text: '\nPlease stay tuned for further updates.',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        const TextSpan(
-                          text: '\n\nActively Maintained by',
-                          style: TextStyle(),
-                        ),
-                        TextSpan(
-                          text: '\nChaitanya Pullagura',
-                          style: GoogleFonts.getFont(
-                            'Permanent Marker',
-                            color: FlutterFlowTheme.of(context).primary,
-                            fontSize: 18.0,
-                          ),
-                        )
-                      ],
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
-                          ),
-                    ),
-                    textAlign: TextAlign.center,
+        child: Align(
+          alignment: const AlignmentDirectional(0.0, -0.5),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                width: MediaQuery.sizeOf(context).width * 1.0,
+                height: 250.0,
+                decoration: const BoxDecoration(),
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(8.0),
+                    bottomRight: Radius.circular(8.0),
+                    topLeft: Radius.circular(0.0),
+                    topRight: Radius.circular(0.0),
                   ),
-                ],
+                  child: Image.asset(
+                    Theme.of(context).brightness == Brightness.dark
+                        ? 'assets/images/ps_icon_dark.png'
+                        : 'assets/images/ps_icon.png',
+                    fit: BoxFit.contain,
+                  ),
+                ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    RichText(
+                      textScaleFactor: MediaQuery.of(context).textScaleFactor,
+                      text: TextSpan(
+                        children: [
+                          const TextSpan(
+                            text:
+                                'This app aims to make it easier for\nNIT ANDHRA PRADESH Students\nto find the correct food item available\nat the mess based on the current day',
+                            style: TextStyle(),
+                          ),
+                          const TextSpan(
+                            text: '\nPlease stay tuned for further updates.',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const TextSpan(
+                            text: '\n\nActively Maintained by',
+                            style: TextStyle(),
+                          ),
+                          TextSpan(
+                            text: '\nChaitanya Pullagura',
+                            style: GoogleFonts.getFont(
+                              'Permanent Marker',
+                              color: FlutterFlowTheme.of(context).primary,
+                              fontSize: 18.0,
+                            ),
+                          )
+                        ],
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Poppins',
+                            ),
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import '/index.dart';
 import '/main.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -33,9 +34,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       errorBuilder: (context, state) => appStateNotifier.showSplashImage
           ? Builder(
               builder: (context) => Container(
-                color: Colors.transparent,
+                color: FlutterFlowTheme.of(context).whiteBg,
                 child: Image.asset(
-                  'assets/images/splash.jpg',
+                  'assets/images/splash.png',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -48,9 +49,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => appStateNotifier.showSplashImage
               ? Builder(
                   builder: (context) => Container(
-                    color: Colors.transparent,
+                    color: FlutterFlowTheme.of(context).whiteBg,
                     child: Image.asset(
-                      'assets/images/splash.jpg',
+                      'assets/images/splash.png',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -73,11 +74,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'menuindex',
-          path: '/menuindex',
+          name: 'messindex',
+          path: '/messindex',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'menuindex')
-              : const MenuindexWidget(),
+              ? const NavBarPage(initialPage: 'messindex')
+              : const MessindexWidget(),
         ),
         FFRoute(
           name: 'onboarding',

@@ -7,25 +7,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'menuindex_model.dart';
-export 'menuindex_model.dart';
+import 'messindex_model.dart';
+export 'messindex_model.dart';
 
-class MenuindexWidget extends StatefulWidget {
-  const MenuindexWidget({super.key});
+class MessindexWidget extends StatefulWidget {
+  const MessindexWidget({super.key});
 
   @override
-  State<MenuindexWidget> createState() => _MenuindexWidgetState();
+  State<MessindexWidget> createState() => _MessindexWidgetState();
 }
 
-class _MenuindexWidgetState extends State<MenuindexWidget> {
-  late MenuindexModel _model;
+class _MessindexWidgetState extends State<MessindexWidget> {
+  late MessindexModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MenuindexModel());
+    _model = createModel(context, () => MessindexModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }

@@ -7,7 +7,6 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'index.dart';
 
 void main() async {
@@ -116,7 +115,7 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'homepage': const HomepageWidget(),
-      'menuindex': const MenuindexWidget(),
+      'messindex': const MessindexWidget(),
       'canteen': const CanteenWidget(),
       'settings': const SettingsWidget(),
     };
@@ -138,33 +137,49 @@ class _NavBarPageState extends State<NavBarPage> {
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.home,
-              size: 24.0,
+            icon: Icon(
+              FFIcons.khomeOutline,
+              size: 25.0,
+            ),
+            activeIcon: Icon(
+              FFIcons.khomeFilled,
+              size: 25.0,
             ),
             label: 'Home',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.menu_book,
-              size: 28.0,
+              FFIcons.kmenuOutline,
+              size: 25.0,
+            ),
+            activeIcon: Icon(
+              FFIcons.kmenuFilled,
+              size: 25.0,
             ),
             label: 'Menu',
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.store,
-              size: 24.0,
+            icon: Icon(
+              FFIcons.kcanteenOutline,
+              size: 25.0,
+            ),
+            activeIcon: Icon(
+              FFIcons.kcanteenFilled,
+              size: 25.0,
             ),
             label: 'Canteen',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.settings_rounded,
-              size: 28.0,
+              FFIcons.ksettingsOutline,
+              size: 25.0,
+            ),
+            activeIcon: Icon(
+              FFIcons.ksettingsFilled,
+              size: 25.0,
             ),
             label: 'Settings',
             tooltip: '',
