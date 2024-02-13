@@ -106,7 +106,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
       body: SafeArea(
         top: true,
         child: Column(
-          mainAxisSize: MainAxisSize.max,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
@@ -171,56 +171,54 @@ class _HomepageWidgetState extends State<HomepageWidget>
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 10.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    valueOrDefault<String>(
-                      functions.wishes(),
-                      'Wishes',
+            Align(
+              alignment: const AlignmentDirectional(-1.0, 0.0),
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
+                child: Text(
+                  valueOrDefault<String>(
+                    functions.wishes(),
+                    'Wishes',
+                  ),
+                  style: FlutterFlowTheme.of(context).titleLarge,
+                ),
+              ),
+            ),
+            Align(
+              alignment: const AlignmentDirectional(-1.0, 0.0),
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 5.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'Hope you are having Great Day',
+                      textAlign: TextAlign.start,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Poppins',
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.normal,
+                          ),
                     ),
-                    style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          fontFamily: 'Poppins',
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          fontSize: 23.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        'Hope you are having Great Day',
-                        textAlign: TextAlign.start,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.normal,
-                            ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                      child: Lottie.asset(
+                        'assets/lottie_animations/star-struck_lottie.json',
+                        width: 1.0,
+                        height: 25.0,
+                        fit: BoxFit.cover,
+                        animate: true,
                       ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
-                        child: Lottie.asset(
-                          'assets/lottie_animations/star-struck_lottie.json',
-                          height: 25.0,
-                          fit: BoxFit.cover,
-                          animate: true,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
             ),
             if (getRemoteConfigBool('ad'))
               const Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 5.0),
                 child: FlutterFlowAdBanner(
                   height: 60.0,
                   showsTestAd: false,
@@ -253,7 +251,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                 ),
               ),
             ),
-            Expanded(
+            Flexible(
               child: StreamBuilder<List<MessRecord>>(
                 stream: FFAppState().homepage(
                   requestFn: () => queryMessRecord(
@@ -298,6 +296,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                           labelStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Poppins',
+                                    fontSize: 16.0,
                                   ),
                           unselectedLabelStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(

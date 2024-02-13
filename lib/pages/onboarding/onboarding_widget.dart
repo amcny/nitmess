@@ -352,10 +352,10 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
       backgroundColor: FlutterFlowTheme.of(context).whiteBg,
       body: Column(
         mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(30.0, 50.0, 30.0, 20.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 20.0),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
               child: Image.asset(
@@ -370,7 +370,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           ),
           SizedBox(
             width: double.infinity,
-            height: 255.0,
+            height: 236.0,
             child: Stack(
               children: [
                 Padding(

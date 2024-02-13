@@ -199,8 +199,8 @@ class _CanteenWidgetState extends State<CanteenWidget> {
                                       fontFamily: 'Open Sans',
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.normal,
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w500,
                                     ),
                               ),
                             ),
