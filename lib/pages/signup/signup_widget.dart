@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/emailverification/emailverification_widget.dart';
 import '/components/support/support_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -337,20 +338,41 @@ class _SignupWidgetState extends State<SignupWidget> {
                               await authManager.refreshUser();
                               if (functions.emailvalid(
                                   _model.emailAddressController.text)!) {
+                                GoRouter.of(context).prepareAuthEvent();
+
+                                final user =
+                                    await authManager.createAccountWithEmail(
+                                  context,
+                                  _model.emailAddressController.text,
+                                  _model.passwordController.text,
+                                );
+                                if (user == null) {
+                                  return;
+                                }
+
                                 await authManager.sendEmailVerification();
+                                await showModalBottomSheet(
+                                  isScrollControlled: true,
+                                  backgroundColor: Colors.transparent,
+                                  enableDrag: false,
+                                  context: context,
+                                  builder: (context) {
+                                    return GestureDetector(
+                                      onTap: () => _model
+                                              .unfocusNode.canRequestFocus
+                                          ? FocusScope.of(context)
+                                              .requestFocus(_model.unfocusNode)
+                                          : FocusScope.of(context).unfocus(),
+                                      child: Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child: const EmailverificationWidget(),
+                                      ),
+                                    );
+                                  },
+                                ).then((value) => safeSetState(() {}));
+
                                 if (currentUserEmailVerified) {
-                                  GoRouter.of(context).prepareAuthEvent();
-
-                                  final user =
-                                      await authManager.createAccountWithEmail(
-                                    context,
-                                    _model.emailAddressController.text,
-                                    _model.passwordController.text,
-                                  );
-                                  if (user == null) {
-                                    return;
-                                  }
-
                                   context.goNamedAuth(
                                       'choosemess', context.mounted);
 
