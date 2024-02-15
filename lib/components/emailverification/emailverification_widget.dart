@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/alert_verification/alert_verification_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -79,7 +80,7 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
 
     return Container(
       width: MediaQuery.sizeOf(context).width * 1.0,
-      height: 382.0,
+      height: 410.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: const BorderRadius.only(
@@ -102,6 +103,26 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
                 decoration: BoxDecoration(
                   color: const Color(0x67616161),
                   borderRadius: BorderRadius.circular(18.0),
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: const AlignmentDirectional(1.0, -1.0),
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  Navigator.pop(context);
+                },
+                child: Icon(
+                  Icons.close_rounded,
+                  color: FlutterFlowTheme.of(context).secondaryText,
+                  size: 30.0,
                 ),
               ),
             ),
@@ -159,55 +180,57 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
-            child: FFButtonWidget(
-              onPressed: () async {
-                await authManager.refreshUser();
-                if (currentUserEmailVerified) {
-                  context.goNamed('choosemess');
+          Builder(
+            builder: (context) => Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+              child: FFButtonWidget(
+                onPressed: () async {
+                  await authManager.refreshUser();
+                  if (currentUserEmailVerified) {
+                    context.goNamed('choosemess');
 
-                  return;
-                } else {
-                  await showDialog(
-                    context: context,
-                    builder: (alertDialogContext) {
-                      return AlertDialog(
-                        title: const Text('Email Verification'),
-                        content: const Text(
-                            'Please verify your email for successful sign up'),
-                        actions: [
-                          TextButton(
-                            onPressed: () => Navigator.pop(alertDialogContext),
-                            child: const Text('Ok'),
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                  return;
-                }
-              },
-              text: 'Verify',
-              options: FFButtonOptions(
-                width: double.infinity,
-                height: 60.0,
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: FlutterFlowTheme.of(context).primaryText,
-                textStyle: FlutterFlowTheme.of(context).titleMedium.override(
-                      fontFamily: 'Poppins',
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                    ),
-                elevation: 4.0,
-                borderSide: const BorderSide(
-                  color: Colors.transparent,
-                  width: 1.0,
+                    return;
+                  } else {
+                    await showDialog(
+                      barrierDismissible: false,
+                      context: context,
+                      builder: (dialogContext) {
+                        return Dialog(
+                          elevation: 0,
+                          insetPadding: EdgeInsets.zero,
+                          backgroundColor: Colors.transparent,
+                          alignment: const AlignmentDirectional(0.0, 0.0)
+                              .resolve(Directionality.of(context)),
+                          child: const AlertVerificationWidget(),
+                        );
+                      },
+                    ).then((value) => setState(() {}));
+
+                    return;
+                  }
+                },
+                text: 'Verify',
+                options: FFButtonOptions(
+                  width: double.infinity,
+                  height: 60.0,
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  iconPadding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: FlutterFlowTheme.of(context).primaryText,
+                  textStyle: FlutterFlowTheme.of(context).titleMedium.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                      ),
+                  elevation: 4.0,
+                  borderSide: const BorderSide(
+                    color: Colors.transparent,
+                    width: 1.0,
+                  ),
+                  borderRadius: BorderRadius.circular(50.0),
+                  hoverColor: FlutterFlowTheme.of(context).primaryText,
                 ),
-                borderRadius: BorderRadius.circular(50.0),
-                hoverColor: FlutterFlowTheme.of(context).primaryText,
-              ),
-            ).animateOnPageLoad(animationsMap['buttonOnPageLoadAnimation']!),
+              ).animateOnPageLoad(animationsMap['buttonOnPageLoadAnimation']!),
+            ),
           ),
         ],
       ),
