@@ -7,7 +7,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'login_model.dart';
 export 'login_model.dart';
@@ -408,26 +407,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
-                                      'Please Verify your mail to Log In',
-                                      style: GoogleFonts.getFont(
-                                        'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                      ),
+                                      'Please verify your mail id',
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Colors.white,
+                                          ),
                                     ),
-                                    duration: const Duration(milliseconds: 4000),
+                                    duration: const Duration(milliseconds: 2500),
                                     backgroundColor:
-                                        FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                    action: SnackBarAction(
-                                      label: 'Dismiss',
-                                      textColor: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      onPressed: () async {
-                                        ScaffoldMessenger.of(context)
-                                            .hideCurrentSnackBar();
-                                      },
-                                    ),
+                                        FlutterFlowTheme.of(context).primary,
                                   ),
                                 );
                                 return;
