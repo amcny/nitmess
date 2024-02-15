@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'emailverification_model.dart';
 export 'emailverification_model.dart';
@@ -170,26 +169,21 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
 
                   return;
                 } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                        'Please Verify your mail to sign up',
-                        style: GoogleFonts.getFont(
-                          'Poppins',
-                          color: FlutterFlowTheme.of(context).primaryText,
-                        ),
-                      ),
-                      duration: const Duration(milliseconds: 4000),
-                      backgroundColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      action: SnackBarAction(
-                        label: 'Dismiss',
-                        textColor: FlutterFlowTheme.of(context).primaryText,
-                        onPressed: () async {
-                          ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                        },
-                      ),
-                    ),
+                  await showDialog(
+                    context: context,
+                    builder: (alertDialogContext) {
+                      return AlertDialog(
+                        title: const Text('Email Verification'),
+                        content: const Text(
+                            'Please verify your email for successful sign up'),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(alertDialogContext),
+                            child: const Text('Ok'),
+                          ),
+                        ],
+                      );
+                    },
                   );
                   return;
                 }

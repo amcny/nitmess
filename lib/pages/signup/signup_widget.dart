@@ -335,7 +335,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                               0.0, 0.0, 0.0, 16.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              await authManager.refreshUser();
+                              Function() navigate = () {};
                               if (functions.emailvalid(
                                   _model.emailAddressController.text)!) {
                                 GoRouter.of(context).prepareAuthEvent();
@@ -350,6 +350,8 @@ class _SignupWidgetState extends State<SignupWidget> {
                                   return;
                                 }
 
+                                navigate = () => context.goNamedAuth(
+                                    'homepage', context.mounted);
                                 await authManager.sendEmailVerification();
                                 await showModalBottomSheet(
                                   isScrollControlled: true,
@@ -373,31 +375,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                   },
                                 ).then((value) => safeSetState(() {}));
 
-                                if (currentUserEmailVerified) {
-                                  context.goNamedAuth(
-                                      'choosemess', context.mounted);
-
-                                  return;
-                                } else {
-                                  await showDialog(
-                                    context: context,
-                                    builder: (alertDialogContext) {
-                                      return AlertDialog(
-                                        title: const Text('Email Verification'),
-                                        content: const Text(
-                                            'Please verify your email for successful sign up'),
-                                        actions: [
-                                          TextButton(
-                                            onPressed: () => Navigator.pop(
-                                                alertDialogContext),
-                                            child: const Text('Ok'),
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
-                                  return;
-                                }
+                                return;
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
@@ -426,6 +404,8 @@ class _SignupWidgetState extends State<SignupWidget> {
                                 );
                                 return;
                               }
+
+                              navigate();
                             },
                             text: 'Sign Up',
                             options: FFButtonOptions(
