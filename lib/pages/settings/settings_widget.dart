@@ -1,7 +1,8 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/components/dev/dev_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/dev/dev_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -827,6 +828,91 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   ),
                                   Text(
                                     'App Information',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                              Expanded(
+                                child: Align(
+                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 10.0, 0.0),
+                                    child: Icon(
+                                      Icons.chevron_right_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            GoRouter.of(context).prepareAuthEvent();
+                            await authManager.signOut();
+                            GoRouter.of(context).clearRedirectLocation();
+
+                            context.goNamedAuth('onboarding', context.mounted);
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Container(
+                                  width: 53.0,
+                                  height: 54.0,
+                                  decoration: BoxDecoration(
+                                    gradient: const LinearGradient(
+                                      colors: [
+                                        Color(0xFFF44D50),
+                                        Color(0xFFE60000)
+                                      ],
+                                      stops: [0.0, 1.0],
+                                      begin: AlignmentDirectional(-1.0, -1.0),
+                                      end: AlignmentDirectional(1.0, 1.0),
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  child: const Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Icon(
+                                      Icons.logout_rounded,
+                                      color: Colors.white,
+                                      size: 21.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Logout',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                        ),
+                                  ),
+                                  Text(
+                                    'Log out of the application',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(

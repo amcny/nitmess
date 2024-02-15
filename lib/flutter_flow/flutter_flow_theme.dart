@@ -246,58 +246,58 @@ class ThemeTypography extends Typography {
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Readex Pro';
+  String get titleMediumFamily => 'Open Sans';
   TextStyle get titleMedium => GoogleFonts.getFont(
-        'Readex Pro',
+        'Open Sans',
         color: theme.info,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Readex Pro';
+  String get titleSmallFamily => 'Open Sans';
   TextStyle get titleSmall => GoogleFonts.getFont(
-        'Readex Pro',
+        'Open Sans',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Readex Pro';
+  String get labelLargeFamily => 'Open Sans';
   TextStyle get labelLarge => GoogleFonts.getFont(
-        'Readex Pro',
+        'Open Sans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Readex Pro';
+  String get labelMediumFamily => 'Open Sans';
   TextStyle get labelMedium => GoogleFonts.getFont(
-        'Readex Pro',
+        'Open Sans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Readex Pro';
+  String get labelSmallFamily => 'Open Sans';
   TextStyle get labelSmall => GoogleFonts.getFont(
-        'Readex Pro',
+        'Open Sans',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Readex Pro';
+  String get bodyLargeFamily => 'Open Sans';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Readex Pro',
+        'Open Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Readex Pro';
+  String get bodyMediumFamily => 'Open Sans';
   TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Readex Pro',
+        'Open Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Readex Pro';
+  String get bodySmallFamily => 'Open Sans';
   TextStyle get bodySmall => GoogleFonts.getFont(
-        'Readex Pro',
+        'Open Sans',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
@@ -312,7 +312,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFF1A73E8);
+  late Color primary = const Color(0xFF1A73E6);
   late Color secondary = const Color(0xFF39D2C0);
   late Color tertiary = const Color(0xFFEE8B60);
   late Color alternate = const Color(0xFF262D34);

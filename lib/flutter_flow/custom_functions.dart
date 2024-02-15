@@ -10,6 +10,7 @@ import 'place.dart';
 import 'uploaded_file.dart';
 import '/backend/backend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import '/auth/firebase_auth/auth_util.dart';
 
 String? day() {
   // write code that displays day
@@ -81,4 +82,12 @@ bool timebreakfast(DateTime currenttime) {
   } else {
     return false;
   }
+}
+
+bool? emailvalid(String? email) {
+  // return true if domail of email is student.nitandhra.ac.in
+  if (email == null || email.isEmpty) {
+    return false;
+  }
+  return email.endsWith('@student.nitandhra.ac.in');
 }

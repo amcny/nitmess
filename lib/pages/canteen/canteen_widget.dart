@@ -130,7 +130,7 @@ class _CanteenWidgetState extends State<CanteenWidget> {
                   unselectedChipStyle: ChipStyle(
                     backgroundColor: FlutterFlowTheme.of(context).alternate,
                     textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
+                          fontFamily: 'Open Sans',
                           color: FlutterFlowTheme.of(context).secondaryText,
                         ),
                     iconColor: FlutterFlowTheme.of(context).secondaryText,

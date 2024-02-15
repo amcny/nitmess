@@ -21,9 +21,6 @@ class FFAppState extends ChangeNotifier {
   Future initializePersistedState() async {
     prefs = await SharedPreferences.getInstance();
     _safeInit(() {
-      _isonboarding = prefs.getBool('ff_isonboarding') ?? _isonboarding;
-    });
-    _safeInit(() {
       _messname = prefs.getString('ff_messname') ?? _messname;
     });
     _safeInit(() {
@@ -45,13 +42,6 @@ class FFAppState extends ChangeNotifier {
   }
 
   late SharedPreferences prefs;
-
-  bool _isonboarding = false;
-  bool get isonboarding => _isonboarding;
-  set isonboarding(bool value) {
-    _isonboarding = value;
-    prefs.setBool('ff_isonboarding', value);
-  }
 
   String _messname = '';
   String get messname => _messname;
