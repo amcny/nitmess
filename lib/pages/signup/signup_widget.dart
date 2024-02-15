@@ -354,6 +354,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                 await showModalBottomSheet(
                                   isScrollControlled: true,
                                   backgroundColor: Colors.transparent,
+                                  isDismissible: false,
                                   enableDrag: false,
                                   context: context,
                                   builder: (context) {
@@ -378,30 +379,22 @@ class _SignupWidgetState extends State<SignupWidget> {
 
                                   return;
                                 } else {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                      content: Text(
-                                        'Please Verify your mail to sign up',
-                                        style: GoogleFonts.getFont(
-                                          'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                        ),
-                                      ),
-                                      duration: const Duration(milliseconds: 4000),
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                      action: SnackBarAction(
-                                        label: 'Dismiss',
-                                        textColor: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        onPressed: () async {
-                                          ScaffoldMessenger.of(context)
-                                              .hideCurrentSnackBar();
-                                        },
-                                      ),
-                                    ),
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: const Text('Email Verification'),
+                                        content: const Text(
+                                            'Please verify your email for successful sign up'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: const Text('Ok'),
+                                          ),
+                                        ],
+                                      );
+                                    },
                                   );
                                   return;
                                 }

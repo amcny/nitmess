@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -5,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'emailverification_model.dart';
 export 'emailverification_model.dart';
@@ -161,8 +163,36 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
             child: FFButtonWidget(
-              onPressed: () {
-                print('Button pressed ...');
+              onPressed: () async {
+                await authManager.refreshUser();
+                if (currentUserEmailVerified) {
+                  context.goNamed('choosemess');
+
+                  return;
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        'Please Verify your mail to sign up',
+                        style: GoogleFonts.getFont(
+                          'Poppins',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                        ),
+                      ),
+                      duration: const Duration(milliseconds: 4000),
+                      backgroundColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                      action: SnackBarAction(
+                        label: 'Dismiss',
+                        textColor: FlutterFlowTheme.of(context).primaryText,
+                        onPressed: () async {
+                          ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                        },
+                      ),
+                    ),
+                  );
+                  return;
+                }
               },
               text: 'Verify',
               options: FFButtonOptions(
