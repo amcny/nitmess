@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'messindex_widget.dart' show MessindexWidget;
+import 'vdb_widget.dart' show VdbWidget;
 import 'package:flutter/material.dart';
 
-class MessindexModel extends FlutterFlowModel<MessindexWidget> {
+class VdbModel extends FlutterFlowModel<VdbWidget> {
   /// Initialization and disposal methods.
 
   @override

@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'messindex_widget.dart' show MessindexWidget;
+import 'km_widget.dart' show KmWidget;
 import 'package:flutter/material.dart';
 
-class MessindexModel extends FlutterFlowModel<MessindexWidget> {
+class KmModel extends FlutterFlowModel<KmWidget> {
   /// Initialization and disposal methods.
 
   @override

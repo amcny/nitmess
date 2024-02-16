@@ -2,11 +2,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'support_model.dart';
@@ -52,7 +49,7 @@ class _SupportWidgetState extends State<SupportWidget> {
       height: 445.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(24.0),
@@ -63,21 +60,21 @@ class _SupportWidgetState extends State<SupportWidget> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
               child: Container(
                 width: 70.0,
                 height: 3.5,
                 decoration: BoxDecoration(
-                  color: Color(0x67616161),
+                  color: const Color(0x67616161),
                   borderRadius: BorderRadius.circular(18.0),
                 ),
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -114,7 +111,7 @@ class _SupportWidgetState extends State<SupportWidget> {
             ],
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -130,7 +127,7 @@ class _SupportWidgetState extends State<SupportWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 10.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 10.0),
             child: InkWell(
               splashColor: Colors.transparent,
               focusColor: Colors.transparent,
@@ -154,12 +151,12 @@ class _SupportWidgetState extends State<SupportWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                     child: Text(
                       '622241@student.nitandhra.ac.in',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
-                            color: Color(0xFF95A1AC),
+                            color: const Color(0xFF95A1AC),
                             fontWeight: FontWeight.w500,
                           ),
                     ),
@@ -168,14 +165,14 @@ class _SupportWidgetState extends State<SupportWidget> {
               ),
             ),
           ),
-          Divider(
+          const Divider(
             thickness: 1.0,
             indent: 10.0,
             endIndent: 10.0,
             color: Color(0x67616161),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 15.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 15.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -209,16 +206,16 @@ class _SupportWidgetState extends State<SupportWidget> {
                           .join('&')));
                 },
                 text: 'Submit here',
-                icon: FaIcon(
+                icon: const FaIcon(
                   FontAwesomeIcons.bug,
                   size: 15.0,
                 ),
                 options: FFButtonOptions(
                   width: 150.0,
                   height: 50.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Poppins',
@@ -227,7 +224,7 @@ class _SupportWidgetState extends State<SupportWidget> {
                         fontWeight: FontWeight.normal,
                       ),
                   elevation: 2.0,
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),

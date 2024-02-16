@@ -150,13 +150,13 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFF757575);
 
-  late Color grayIcon = Color(0xFF95A1AC);
-  late Color gray200 = Color(0xFFDBE2E7);
-  late Color gray600 = Color(0xFF262D34);
-  late Color black600 = Color(0xFF090F13);
-  late Color textColor = Color(0xFF1E2429);
-  late Color whiteBg = Color(0xFFFFFFFF);
-  late Color bwgrey = Color(0xFFF7F7F7);
+  late Color grayIcon = const Color(0xFF95A1AC);
+  late Color gray200 = const Color(0xFFDBE2E7);
+  late Color gray600 = const Color(0xFF262D34);
+  late Color black600 = const Color(0xFF090F13);
+  late Color textColor = const Color(0xFF1E2429);
+  late Color whiteBg = const Color(0xFFFFFFFF);
+  late Color bwgrey = const Color(0xFFF7F7F7);
 }
 
 abstract class Typography {
@@ -329,13 +329,13 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFE0E0E0);
 
-  late Color grayIcon = Color(0xFF95A1AC);
-  late Color gray200 = Color(0xFFDBE2E7);
-  late Color gray600 = Color(0xFF262D34);
-  late Color black600 = Color(0xFF090F13);
-  late Color textColor = Color(0xFF1E2429);
-  late Color whiteBg = Color(0xFF000000);
-  late Color bwgrey = Color(0xFF101010);
+  late Color grayIcon = const Color(0xFF95A1AC);
+  late Color gray200 = const Color(0xFFDBE2E7);
+  late Color gray600 = const Color(0xFF262D34);
+  late Color black600 = const Color(0xFF090F13);
+  late Color textColor = const Color(0xFF1E2429);
+  late Color whiteBg = const Color(0xFF000000);
+  late Color bwgrey = const Color(0xFF101010);
 }
 
 extension TextStyleHelper on TextStyle {

@@ -3,14 +3,11 @@ import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'canteen_model.dart';
 export 'canteen_model.dart';
@@ -82,7 +79,7 @@ class _CanteenWidgetState extends State<CanteenWidget> {
                 fontWeight: FontWeight.bold,
               ),
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.5,
       ),
@@ -93,7 +90,7 @@ class _CanteenWidgetState extends State<CanteenWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               if (getRemoteConfigBool('ad'))
-                Padding(
+                const Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                   child: FlutterFlowAdBanner(
                     height: 60.0,
@@ -103,9 +100,9 @@ class _CanteenWidgetState extends State<CanteenWidget> {
                   ),
                 ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: FlutterFlowChoiceChips(
-                  options: [
+                  options: const [
                     ChipData('Biryani\'s'),
                     ChipData('Chinese'),
                     ChipData('Non-Veg Starters'),
@@ -154,7 +151,7 @@ class _CanteenWidgetState extends State<CanteenWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: Builder(
                   builder: (context) {
                     final info = functions
@@ -170,7 +167,7 @@ class _CanteenWidgetState extends State<CanteenWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 getJsonField(
@@ -189,7 +186,7 @@ class _CanteenWidgetState extends State<CanteenWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 15.0, 0.0),
                               child: Text(
                                 '₹${getJsonField(
@@ -210,8 +207,8 @@ class _CanteenWidgetState extends State<CanteenWidget> {
                           ],
                         );
                       })
-                          .divide(SizedBox(height: 25.0))
-                          .around(SizedBox(height: 25.0)),
+                          .divide(const SizedBox(height: 25.0))
+                          .around(const SizedBox(height: 25.0)),
                     );
                   },
                 ),

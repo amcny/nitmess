@@ -5,12 +5,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'emailverification_model.dart';
 export 'emailverification_model.dart';
@@ -43,15 +39,15 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: Offset(0.0, 20.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 20.0),
+          end: const Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: Offset(0.9, 0.9),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(0.9, 0.9),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -87,7 +83,7 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
       height: 410.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(24.0),
@@ -98,23 +94,23 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
         mainAxisSize: MainAxisSize.max,
         children: [
           Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 5.0),
               child: Container(
                 width: 70.0,
                 height: 3.5,
                 decoration: BoxDecoration(
-                  color: Color(0x67616161),
+                  color: const Color(0x67616161),
                   borderRadius: BorderRadius.circular(18.0),
                 ),
               ),
             ),
           ),
           Align(
-            alignment: AlignmentDirectional(1.0, -1.0),
+            alignment: const AlignmentDirectional(1.0, -1.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
@@ -132,7 +128,7 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -166,7 +162,7 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -186,7 +182,7 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
           ),
           Builder(
             builder: (context) => Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   await authManager.refreshUser();
@@ -203,9 +199,9 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
                           elevation: 0,
                           insetPadding: EdgeInsets.zero,
                           backgroundColor: Colors.transparent,
-                          alignment: AlignmentDirectional(0.0, 0.0)
+                          alignment: const AlignmentDirectional(0.0, 0.0)
                               .resolve(Directionality.of(context)),
-                          child: AlertVerificationWidget(),
+                          child: const AlertVerificationWidget(),
                         );
                       },
                     ).then((value) => setState(() {}));
@@ -217,16 +213,16 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
                 options: FFButtonOptions(
                   width: double.infinity,
                   height: 60.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primaryText,
                   textStyle: FlutterFlowTheme.of(context).titleMedium.override(
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                   elevation: 4.0,
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),

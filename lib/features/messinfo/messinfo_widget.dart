@@ -1,16 +1,13 @@
-import '/components/dev/dev_widget.dart';
+import '/components/km/km_widget.dart';
+import '/components/vdb/vdb_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'messinfo_model.dart';
 export 'messinfo_model.dart';
@@ -84,7 +81,7 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                 fontWeight: FontWeight.bold,
               ),
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -94,9 +91,9 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Align(
-              alignment: AlignmentDirectional(-1.0, 0.0),
+              alignment: const AlignmentDirectional(-1.0, 0.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 0.0, 10.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 0.0, 10.0),
                 child: Text(
                   'Mess',
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
@@ -107,15 +104,15 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-              child: Container(
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+              child: SizedBox(
                 width: double.infinity,
                 height: 250.0,
                 child: Stack(
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                       child: PageView(
                         controller: _model.pageViewController ??=
                             PageController(initialPage: 0),
@@ -155,17 +152,17 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 1.0),
+                                alignment: const AlignmentDirectional(0.0, 1.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 50.0,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color(0x7914181B),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
@@ -176,7 +173,7 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                                                 .titleMedium
                                                 .override(
                                                   fontFamily: 'Poppins',
-                                                  color: Color(0xA7FDFDFD),
+                                                  color: const Color(0xA7FDFDFD),
                                                 ),
                                           ),
                                         ],
@@ -226,17 +223,17 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 1.0),
+                                alignment: const AlignmentDirectional(0.0, 1.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 50.0,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color(0x7914181B),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
@@ -247,7 +244,7 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                                                 .titleMedium
                                                 .override(
                                                   fontFamily: 'Poppins',
-                                                  color: Color(0xA7FDFDFD),
+                                                  color: const Color(0xA7FDFDFD),
                                                 ),
                                           ),
                                         ],
@@ -297,17 +294,17 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 1.0),
+                                alignment: const AlignmentDirectional(0.0, 1.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 50.0,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     color: Color(0x7914181B),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
@@ -318,7 +315,7 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                                                 .titleMedium
                                                 .override(
                                                   fontFamily: 'Poppins',
-                                                  color: Color(0xA7FDFDFD),
+                                                  color: const Color(0xA7FDFDFD),
                                                 ),
                                           ),
                                         ],
@@ -333,9 +330,9 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, 1.0),
+                      alignment: const AlignmentDirectional(-1.0, 1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 0.0, 16.0),
                         child: smooth_page_indicator.SmoothPageIndicator(
                           controller: _model.pageViewController ??=
@@ -345,7 +342,7 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                           onDotClicked: (i) async {
                             await _model.pageViewController!.animateToPage(
                               i,
-                              duration: Duration(milliseconds: 500),
+                              duration: const Duration(milliseconds: 500),
                               curve: Curves.ease,
                             );
                           },
@@ -368,9 +365,9 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(-1.0, 0.0),
+              alignment: const AlignmentDirectional(-1.0, 0.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 10.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 0.0, 0.0),
                 child: Text(
                   'Contact',
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
@@ -381,7 +378,7 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 decoration: BoxDecoration(
@@ -401,7 +398,7 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                       builder: (context) {
                         return Padding(
                           padding: MediaQuery.viewInsetsOf(context),
-                          child: DevWidget(),
+                          child: const KmWidget(),
                         );
                       },
                     ).then((value) => safeSetState(() {}));
@@ -410,11 +407,11 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Padding(
-                        padding: EdgeInsets.all(12.0),
+                        padding: const EdgeInsets.all(12.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(40.0),
-                          child: Image.network(
-                            'https://nitandhra.ac.in/main/images/hostel/km.webp',
+                          child: Image.asset(
+                            'assets/images/km.webp',
                             width: 50.0,
                             height: 50.0,
                             fit: BoxFit.cover,
@@ -447,9 +444,9 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                       ),
                       Expanded(
                         child: Align(
-                          alignment: AlignmentDirectional(1.0, 0.0),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: Icon(
                               Icons.chevron_right_rounded,
@@ -465,7 +462,7 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 20.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 20.0),
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 decoration: BoxDecoration(
@@ -485,7 +482,7 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                       builder: (context) {
                         return Padding(
                           padding: MediaQuery.viewInsetsOf(context),
-                          child: DevWidget(),
+                          child: const VdbWidget(),
                         );
                       },
                     ).then((value) => safeSetState(() {}));
@@ -494,11 +491,11 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Padding(
-                        padding: EdgeInsets.all(12.0),
+                        padding: const EdgeInsets.all(12.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(40.0),
-                          child: Image.network(
-                            'https://nitandhra.ac.in/main/images/hostel/venkata%20dinesh%20babu.webp',
+                          child: Image.asset(
+                            'assets/images/dinesh.webp',
                             width: 50.0,
                             height: 50.0,
                             fit: BoxFit.cover,
@@ -510,7 +507,7 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Mr. Venkata Dinesh Babu K',
+                            'Mr. K. Venkata Dinesh Babu',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -531,9 +528,9 @@ class _MessinfoWidgetState extends State<MessinfoWidget> {
                       ),
                       Expanded(
                         child: Align(
-                          alignment: AlignmentDirectional(1.0, 0.0),
+                          alignment: const AlignmentDirectional(1.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 10.0, 0.0),
                             child: Icon(
                               Icons.chevron_right_rounded,

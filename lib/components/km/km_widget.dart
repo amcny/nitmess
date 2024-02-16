@@ -2,20 +2,20 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'dev_model.dart';
-export 'dev_model.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'km_model.dart';
+export 'km_model.dart';
 
-class DevWidget extends StatefulWidget {
-  const DevWidget({super.key});
+class KmWidget extends StatefulWidget {
+  const KmWidget({super.key});
 
   @override
-  State<DevWidget> createState() => _DevWidgetState();
+  State<KmWidget> createState() => _KmWidgetState();
 }
 
-class _DevWidgetState extends State<DevWidget> {
-  late DevModel _model;
+class _KmWidgetState extends State<KmWidget> {
+  late KmModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -26,7 +26,7 @@ class _DevWidgetState extends State<DevWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DevModel());
+    _model = createModel(context, () => KmModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -78,7 +78,7 @@ class _DevWidgetState extends State<DevWidget> {
             Align(
               alignment: const AlignmentDirectional(0.0, 0.0),
               child: Text(
-                'Developer Info',
+                'Contact Info',
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).titleLarge.override(
                       fontFamily: 'Poppins',
@@ -113,7 +113,7 @@ class _DevWidgetState extends State<DevWidget> {
                             shape: BoxShape.circle,
                           ),
                           child: Image.asset(
-                            'assets/images/dev.jpeg',
+                            'assets/images/km.webp',
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -126,7 +126,7 @@ class _DevWidgetState extends State<DevWidget> {
             Align(
               alignment: const AlignmentDirectional(0.0, 0.0),
               child: Text(
-                'Chaitanya Pullagura',
+                'Dr. J Krishnamurthy',
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Poppins',
@@ -138,7 +138,7 @@ class _DevWidgetState extends State<DevWidget> {
             Align(
               alignment: const AlignmentDirectional(0.0, 0.0),
               child: Text(
-                'Application Developer · Batch of 2022\nDepartment of Electronics & Communication',
+                'Hostel Chief Warden\nNational Institute of Technology\nTadepalligudem, Andhra Pradesh',
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).bodySmall.override(
                       fontFamily: 'Poppins',
@@ -155,7 +155,7 @@ class _DevWidgetState extends State<DevWidget> {
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 15.0),
                 child: Text(
-                  'Developer Handle\'s',
+                  'chiefwarden@nitandhra.ac.in',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily: 'Poppins',
@@ -164,69 +164,35 @@ class _DevWidgetState extends State<DevWidget> {
                 ),
               ),
             ),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                FFButtonWidget(
-                  onPressed: () async {
-                    await launchURL(
-                        'https://www.linkedin.com/in/chaitanyapullagura/');
-                  },
-                  text: 'Linkedin',
-                  icon: const FaIcon(
-                    FontAwesomeIcons.linkedinIn,
-                    size: 22.0,
-                  ),
-                  options: FFButtonOptions(
-                    width: 150.0,
-                    height: 50.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Poppins',
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.normal,
-                        ),
-                    borderSide: const BorderSide(
-                      color: Colors.transparent,
-                      width: 1.0,
+            FFButtonWidget(
+              onPressed: () async {
+                await launchUrl(Uri(
+                  scheme: 'mailto',
+                  path: 'chiefwarden@nitandhra.ac.in',
+                ));
+              },
+              text: 'Send Email',
+              icon: const Icon(
+                Icons.mail_outline_rounded,
+                size: 22.0,
+              ),
+              options: FFButtonOptions(
+                width: MediaQuery.sizeOf(context).width * 1.0,
+                height: 50.0,
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                color: FlutterFlowTheme.of(context).primary,
+                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                      fontFamily: 'Poppins',
+                      color: Colors.white,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.normal,
                     ),
-                  ),
+                borderSide: const BorderSide(
+                  color: Colors.transparent,
+                  width: 1.0,
                 ),
-                FFButtonWidget(
-                  onPressed: () async {
-                    await launchURL(
-                        'https://instagram.com/am_cny?igshid=Yjk4NWM2ZWVkMw==');
-                  },
-                  text: 'Instagram',
-                  icon: const FaIcon(
-                    FontAwesomeIcons.instagram,
-                    size: 24.0,
-                  ),
-                  options: FFButtonOptions(
-                    width: 150.0,
-                    height: 50.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Poppins',
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.normal,
-                        ),
-                    borderSide: const BorderSide(
-                      color: Colors.transparent,
-                      width: 1.0,
-                    ),
-                  ),
-                ),
-              ].divide(const SizedBox(width: 10.0)),
+              ),
             ),
           ],
         ),

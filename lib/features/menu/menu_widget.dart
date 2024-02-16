@@ -2,13 +2,10 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'menu_model.dart';
 export 'menu_model.dart';
@@ -118,7 +115,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                     fontWeight: FontWeight.bold,
                   ),
             ),
-            actions: [],
+            actions: const [],
             centerTitle: false,
             elevation: 0.0,
           ),
@@ -127,7 +124,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
             child: Column(
               children: [
                 Align(
-                  alignment: Alignment(-1.0, 0),
+                  alignment: const Alignment(-1.0, 0),
                   child: TabBar(
                     labelColor: FlutterFlowTheme.of(context).primaryText,
                     unselectedLabelColor:
@@ -141,8 +138,8 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                               fontFamily: 'Poppins',
                             ),
                     indicatorColor: FlutterFlowTheme.of(context).primary,
-                    padding: EdgeInsets.all(4.0),
-                    tabs: [
+                    padding: const EdgeInsets.all(4.0),
+                    tabs: const [
                       Tab(
                         text: 'Breakfast',
                       ),
@@ -173,7 +170,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -184,7 +181,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                   Container(
                                     width: 150.0,
                                     height: 130.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: SvgPicture.asset(
                                       'assets/images/eat.svg',
                                       width: 100.0,
@@ -193,7 +190,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                   Text(
-                                    '\"Eat Better\n          Not Less\"',
+                                    '"Eat Better\n          Not Less"',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -207,15 +204,15 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.all(20.0),
+                              padding: const EdgeInsets.all(20.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0x4C1A73E8),
+                                  color: const Color(0x4C1A73E8),
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 15.0, 20.0, 15.0),
                                   child: Text(
                                     menuMessRecord.breakfast,
@@ -243,7 +240,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -254,7 +251,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                   Container(
                                     width: 150.0,
                                     height: 130.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: SvgPicture.asset(
                                       'assets/images/eat.svg',
                                       width: 100.0,
@@ -263,7 +260,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                   Text(
-                                    '\"Eat Better\n          Not Less\"',
+                                    '"Eat Better\n          Not Less"',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -277,15 +274,15 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.all(20.0),
+                              padding: const EdgeInsets.all(20.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0x4C1A73E8),
+                                  color: const Color(0x4C1A73E8),
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 15.0, 20.0, 15.0),
                                   child: Text(
                                     menuMessRecord.lunch,
@@ -313,7 +310,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -324,7 +321,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                   Container(
                                     width: 150.0,
                                     height: 130.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: SvgPicture.asset(
                                       'assets/images/eat.svg',
                                       width: 100.0,
@@ -333,7 +330,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                   Text(
-                                    '\"Eat Better\n          Not Less\"',
+                                    '"Eat Better\n          Not Less"',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -347,15 +344,15 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.all(20.0),
+                              padding: const EdgeInsets.all(20.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0x4C1A73E8),
+                                  color: const Color(0x4C1A73E8),
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 15.0, 20.0, 15.0),
                                   child: Text(
                                     menuMessRecord.snacks,
@@ -383,7 +380,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -394,7 +391,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                   Container(
                                     width: 150.0,
                                     height: 130.0,
-                                    decoration: BoxDecoration(),
+                                    decoration: const BoxDecoration(),
                                     child: SvgPicture.asset(
                                       'assets/images/eat.svg',
                                       width: 100.0,
@@ -403,7 +400,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                   Text(
-                                    '\"Eat Better\n          Not Less\"',
+                                    '"Eat Better\n          Not Less"',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -417,15 +414,15 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.all(20.0),
+                              padding: const EdgeInsets.all(20.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 decoration: BoxDecoration(
-                                  color: Color(0x4C1A73E8),
+                                  color: const Color(0x4C1A73E8),
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20.0, 15.0, 20.0, 15.0),
                                   child: Text(
                                     menuMessRecord.dinner,

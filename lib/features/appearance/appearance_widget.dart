@@ -1,11 +1,8 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'appearance_model.dart';
 export 'appearance_model.dart';
@@ -79,7 +76,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                 fontWeight: FontWeight.bold,
               ),
         ),
-        actions: [],
+        actions: const [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -89,9 +86,9 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Align(
-              alignment: AlignmentDirectional(-1.0, 0.0),
+              alignment: const AlignmentDirectional(-1.0, 0.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 0.0, 0.0),
                 child: Text(
                   'Themes',
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
@@ -103,10 +100,10 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 0.0),
               child: GridView(
                 padding: EdgeInsets.zero,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 15.0,
                   mainAxisSpacing: 0.0,
@@ -124,7 +121,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                       setDarkModeSetting(context, ThemeMode.light);
                     },
                     child: AnimatedContainer(
-                      duration: Duration(milliseconds: 100),
+                      duration: const Duration(milliseconds: 100),
                       curve: Curves.linear,
                       width: 175.0,
                       height: 180.0,
@@ -135,7 +132,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                           color:
                               Theme.of(context).brightness == Brightness.light
                                   ? FlutterFlowTheme.of(context).primary
-                                  : Color(0x00000000),
+                                  : const Color(0x00000000),
                           width: 2.5,
                         ),
                       ),
@@ -145,7 +142,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
@@ -157,7 +154,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Light',
@@ -183,7 +180,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                       setDarkModeSetting(context, ThemeMode.dark);
                     },
                     child: AnimatedContainer(
-                      duration: Duration(milliseconds: 100),
+                      duration: const Duration(milliseconds: 100),
                       curve: Curves.linear,
                       width: 175.0,
                       height: 180.0,
@@ -194,7 +191,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                           color: !(Theme.of(context).brightness ==
                                   Brightness.light)
                               ? FlutterFlowTheme.of(context).primary
-                              : Color(0x00000000),
+                              : const Color(0x00000000),
                           width: 2.5,
                         ),
                       ),
@@ -204,7 +201,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
@@ -216,7 +213,7 @@ class _AppearanceWidgetState extends State<AppearanceWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Dark',
