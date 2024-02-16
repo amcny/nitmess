@@ -455,8 +455,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
-                                        Color(0xFFA044FF),
-                                        Color(0xFF6A3093)
+                                        Color(0xFF6441A5),
+                                        Color(0xFF2A0845)
                                       ],
                                       stops: [0.0, 1.0],
                                       begin: AlignmentDirectional(-1.0, -1.0),
@@ -536,8 +536,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
-                                        Color(0xFFC6426E),
-                                        Color(0xFF642B73)
+                                        Color(0xFF00C6FF),
+                                        Color(0xFF0072FF)
                                       ],
                                       stops: [0.0, 1.0],
                                       begin: AlignmentDirectional(-1.0, -1.0),
@@ -560,7 +560,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Mess Info',
+                                    'Mess and Contacts',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -568,7 +568,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Images of the all mess',
+                                    'Know mess and Officials',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -716,8 +716,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
-                                        Color(0xFF999966),
-                                        Color(0xFF666600)
+                                        Color(0xFF43B692),
+                                        Color(0xFF099773)
                                       ],
                                       stops: [0.0, 1.0],
                                       begin: AlignmentDirectional(-1.0, -1.0),
@@ -728,7 +728,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   child: const Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Icon(
-                                      Icons.note_alt_outlined,
+                                      Icons.contact_support_outlined,
                                       color: Colors.white,
                                       size: 21.0,
                                     ),
@@ -740,7 +740,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Write a Complaint',
+                                    'Support',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -809,7 +809,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   child: const Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Icon(
-                                      Icons.contact_support_outlined,
+                                      Icons.info_outline_rounded,
                                       color: Colors.white,
                                       size: 21.0,
                                     ),
