@@ -160,6 +160,7 @@ class _VdbWidgetState extends State<VdbWidget> {
                   style: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.of(context).secondaryText,
+                        fontWeight: FontWeight.w500,
                       ),
                 ),
               ),

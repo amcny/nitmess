@@ -1,4 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/confirm_delete/confirm_delete_widget.dart';
+import '/components/confirm_logout/confirm_logout_widget.dart';
 import '/components/dev/dev_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -477,7 +479,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Choose Mess',
+                                    'Change Mess',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -857,17 +859,57 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             ],
                           ),
                         ),
+                      ],
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                    child: Text(
+                      'Account',
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                            fontFamily: 'Poppins',
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Container(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
                         InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            GoRouter.of(context).prepareAuthEvent();
-                            await authManager.signOut();
-                            GoRouter.of(context).clearRedirectLocation();
-
-                            context.goNamedAuth('onboarding', context.mounted);
+                            if (currentUserEmail.isEmpty) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text(
+                                    'Email required!',
+                                  ),
+                                ),
+                              );
+                              return;
+                            }
+                            await authManager.resetPassword(
+                              email: currentUserEmail,
+                              context: context,
+                            );
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -880,8 +922,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   decoration: BoxDecoration(
                                     gradient: const LinearGradient(
                                       colors: [
-                                        Color(0xFFF44D50),
-                                        Color(0xFFE60000)
+                                        Color(0xFF642B73),
+                                        Color(0xFF41295A)
                                       ],
                                       stops: [0.0, 1.0],
                                       begin: AlignmentDirectional(-1.0, -1.0),
@@ -892,7 +934,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   child: const Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Icon(
-                                      Icons.logout_rounded,
+                                      Icons.lock_person_outlined,
                                       color: Colors.white,
                                       size: 21.0,
                                     ),
@@ -904,7 +946,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Logout',
+                                    'Password',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -912,7 +954,189 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Log out of the application',
+                                    'Change or Reset Password',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                              Expanded(
+                                child: Align(
+                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 10.0, 0.0),
+                                    child: Icon(
+                                      Icons.chevron_right_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              context: context,
+                              builder: (context) {
+                                return Padding(
+                                  padding: MediaQuery.viewInsetsOf(context),
+                                  child: const ConfirmLogoutWidget(),
+                                );
+                              },
+                            ).then((value) => safeSetState(() {}));
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Container(
+                                  width: 53.0,
+                                  height: 54.0,
+                                  decoration: BoxDecoration(
+                                    gradient: const LinearGradient(
+                                      colors: [
+                                        Color(0xFF8F94FB),
+                                        Color(0xFF4E54C8)
+                                      ],
+                                      stops: [0.0, 1.0],
+                                      begin: AlignmentDirectional(-1.0, -1.0),
+                                      end: AlignmentDirectional(1.0, 1.0),
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  child: const Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: FaIcon(
+                                      FontAwesomeIcons.signOutAlt,
+                                      color: Colors.white,
+                                      size: 21.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Log out',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                        ),
+                                  ),
+                                  Text(
+                                    'Remove account from app',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodySmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          fontWeight: FontWeight.w300,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                              Expanded(
+                                child: Align(
+                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 10.0, 0.0),
+                                    child: Icon(
+                                      Icons.chevron_right_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              context: context,
+                              builder: (context) {
+                                return Padding(
+                                  padding: MediaQuery.viewInsetsOf(context),
+                                  child: const ConfirmDeleteWidget(),
+                                );
+                              },
+                            ).then((value) => safeSetState(() {}));
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Container(
+                                  width: 53.0,
+                                  height: 54.0,
+                                  decoration: BoxDecoration(
+                                    gradient: const LinearGradient(
+                                      colors: [
+                                        Color(0xFFED213A),
+                                        Color(0xFF93291E)
+                                      ],
+                                      stops: [0.0, 1.0],
+                                      begin: AlignmentDirectional(-1.0, -1.0),
+                                      end: AlignmentDirectional(1.0, 1.0),
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  child: const Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Icon(
+                                      Icons.security_rounded,
+                                      color: Colors.white,
+                                      size: 21.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Delete Account',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                        ),
+                                  ),
+                                  Text(
+                                    'Removes the user account',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(

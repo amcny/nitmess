@@ -160,6 +160,7 @@ class _KmWidgetState extends State<KmWidget> {
                   style: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.of(context).secondaryText,
+                        fontWeight: FontWeight.w500,
                       ),
                 ),
               ),
