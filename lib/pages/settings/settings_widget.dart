@@ -3,12 +3,17 @@ import '/components/dev/dev_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -80,7 +85,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.5,
         ),
@@ -92,7 +97,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                   child: Container(
                     width: double.infinity,
                     height: 85.0,
@@ -104,7 +109,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 0.0, 0.0, 0.0),
                           child: Container(
                             width: 55.0,
@@ -118,7 +123,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(2.0),
+                              padding: EdgeInsets.all(2.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -159,7 +164,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -211,10 +216,10 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                  alignment: AlignmentDirectional(-1.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
                     child: Text(
                       'General',
                       style: FlutterFlowTheme.of(context).titleMedium.override(
@@ -227,7 +232,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
                   child: Container(
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     decoration: BoxDecoration(
@@ -254,7 +259,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         color: Colors.white,
                                       ),
                                 ),
-                                duration: const Duration(milliseconds: 2000),
+                                duration: Duration(milliseconds: 2000),
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).primary,
                               ),
@@ -274,7 +279,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         color: Colors.white,
                                       ),
                                 ),
-                                duration: const Duration(milliseconds: 2000),
+                                duration: Duration(milliseconds: 2000),
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).primary,
                               ),
@@ -284,12 +289,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Container(
                                   width: 53.0,
                                   height: 54.0,
                                   decoration: BoxDecoration(
-                                    gradient: const LinearGradient(
+                                    gradient: LinearGradient(
                                       colors: [
                                         Color(0xFF8F94FB),
                                         Color(0xFF4E54C8)
@@ -300,7 +305,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  child: const Align(
+                                  child: Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Icon(
                                       Icons.published_with_changes,
@@ -337,9 +342,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Icon(
                                       Icons.chevron_right_rounded,
@@ -365,12 +370,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Container(
                                   width: 53.0,
                                   height: 54.0,
                                   decoration: BoxDecoration(
-                                    gradient: const LinearGradient(
+                                    gradient: LinearGradient(
                                       colors: [
                                         Color(0xFFCC2B5E),
                                         Color(0xFFD31027)
@@ -381,7 +386,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  child: const Align(
+                                  child: Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     child: FaIcon(
                                       FontAwesomeIcons.brush,
@@ -418,9 +423,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Icon(
                                       Icons.chevron_right_rounded,
@@ -446,12 +451,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Container(
                                   width: 53.0,
                                   height: 54.0,
                                   decoration: BoxDecoration(
-                                    gradient: const LinearGradient(
+                                    gradient: LinearGradient(
                                       colors: [
                                         Color(0xFFA044FF),
                                         Color(0xFF6A3093)
@@ -462,7 +467,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  child: const Align(
+                                  child: Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     child: FaIcon(
                                       FontAwesomeIcons.handPointer,
@@ -499,9 +504,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Icon(
                                       Icons.chevron_right_rounded,
@@ -527,12 +532,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Container(
                                   width: 53.0,
                                   height: 54.0,
                                   decoration: BoxDecoration(
-                                    gradient: const LinearGradient(
+                                    gradient: LinearGradient(
                                       colors: [
                                         Color(0xFFC6426E),
                                         Color(0xFF642B73)
@@ -543,7 +548,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  child: const Align(
+                                  child: Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Icon(
                                       Icons.cottage_outlined,
@@ -580,9 +585,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Icon(
                                       Icons.chevron_right_rounded,
@@ -615,12 +620,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.all(12.0),
+                                  padding: EdgeInsets.all(12.0),
                                   child: Container(
                                     width: 53.0,
                                     height: 54.0,
                                     decoration: BoxDecoration(
-                                      gradient: const LinearGradient(
+                                      gradient: LinearGradient(
                                         colors: [
                                           Color(0xFF1488CC),
                                           Color(0xFF2B32B2)
@@ -631,7 +636,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
-                                    child: const Align(
+                                    child: Align(
                                       alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Icon(
                                         Icons.people_rounded,
@@ -668,9 +673,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 ),
                                 Expanded(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(1.0, 0.0),
+                                    alignment: AlignmentDirectional(1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: Icon(
                                         Icons.chevron_right_rounded,
@@ -707,12 +712,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Container(
                                   width: 53.0,
                                   height: 54.0,
                                   decoration: BoxDecoration(
-                                    gradient: const LinearGradient(
+                                    gradient: LinearGradient(
                                       colors: [
                                         Color(0xFF999966),
                                         Color(0xFF666600)
@@ -723,7 +728,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  child: const Align(
+                                  child: Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Icon(
                                       Icons.note_alt_outlined,
@@ -760,9 +765,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Icon(
                                       Icons.chevron_right_rounded,
@@ -788,12 +793,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Container(
                                   width: 53.0,
                                   height: 54.0,
                                   decoration: BoxDecoration(
-                                    gradient: const LinearGradient(
+                                    gradient: LinearGradient(
                                       colors: [
                                         Color(0xFFF9D423),
                                         Color(0xFFE65C00)
@@ -804,7 +809,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  child: const Align(
+                                  child: Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Icon(
                                       Icons.contact_support_outlined,
@@ -841,9 +846,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Icon(
                                       Icons.chevron_right_rounded,
@@ -873,12 +878,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Container(
                                   width: 53.0,
                                   height: 54.0,
                                   decoration: BoxDecoration(
-                                    gradient: const LinearGradient(
+                                    gradient: LinearGradient(
                                       colors: [
                                         Color(0xFFF44D50),
                                         Color(0xFFE60000)
@@ -889,7 +894,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  child: const Align(
+                                  child: Align(
                                     alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Icon(
                                       Icons.logout_rounded,
@@ -926,9 +931,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Icon(
                                       Icons.chevron_right_rounded,
@@ -947,7 +952,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -961,7 +966,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 ),
                         colors: [
                           FlutterFlowTheme.of(context).primary,
-                          const Color(0xFF5894E2)
+                          Color(0xFF5894E2)
                         ],
                         gradientDirection: GradientDirection.ltr,
                         gradientType: GradientType.linear,
@@ -976,7 +981,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
                   child: Container(
                     width: MediaQuery.sizeOf(context).width * 1.0,
                     decoration: BoxDecoration(
@@ -999,7 +1004,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               builder: (context) {
                                 return Padding(
                                   padding: MediaQuery.viewInsetsOf(context),
-                                  child: const DevWidget(),
+                                  child: DevWidget(),
                                 );
                               },
                             ).then((value) => safeSetState(() {}));
@@ -1008,7 +1013,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(40.0),
                                   child: Image.asset(
@@ -1046,9 +1051,9 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Icon(
                                       Icons.chevron_right_rounded,
@@ -1067,7 +1072,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                   child: Text(
                     _model.versionnumber,
                     style: FlutterFlowTheme.of(context).bodySmall.override(
@@ -1095,13 +1100,13 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(50.0, 5.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(50.0, 5.0, 0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
@@ -1121,7 +1126,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1139,7 +1144,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -1168,7 +1173,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                               ],
                             ),
                           ),
-                        ].divide(const SizedBox(height: 5.0)),
+                        ].divide(SizedBox(height: 5.0)),
                       ),
                     ),
                   ],

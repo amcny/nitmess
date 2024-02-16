@@ -2,7 +2,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'dev_model.dart';
 export 'dev_model.dart';
@@ -47,7 +50,7 @@ class _DevWidgetState extends State<DevWidget> {
       height: 400.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: const BorderRadius.only(
+        borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(24.0),
@@ -55,28 +58,28 @@ class _DevWidgetState extends State<DevWidget> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 4.0),
+        padding: EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 24.0, 4.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                 child: Container(
                   width: 55.0,
                   height: 3.5,
                   decoration: BoxDecoration(
-                    color: const Color(0x67616161),
+                    color: Color(0x67616161),
                     borderRadius: BorderRadius.circular(18.0),
                   ),
                 ),
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Text(
                 'Developer Info',
                 textAlign: TextAlign.center,
@@ -86,30 +89,30 @@ class _DevWidgetState extends State<DevWidget> {
                     ),
               ),
             ),
-            const Divider(
+            Divider(
               thickness: 0.5,
               color: Color(0x67616161),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                 child: Container(
                   width: 100.0,
                   height: 100.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Color(0xFFDBE2E7),
                     shape: BoxShape.circle,
                   ),
                   child: Stack(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: EdgeInsets.all(4.0),
                         child: Container(
                           width: 120.0,
                           height: 120.0,
                           clipBehavior: Clip.antiAlias,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             shape: BoxShape.circle,
                           ),
                           child: Image.asset(
@@ -124,7 +127,7 @@ class _DevWidgetState extends State<DevWidget> {
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Text(
                 'Chaitanya Pullagura',
                 textAlign: TextAlign.center,
@@ -136,7 +139,7 @@ class _DevWidgetState extends State<DevWidget> {
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Text(
                 'Application Developer · Batch of 2022\nDepartment of Electronics & Communication',
                 textAlign: TextAlign.center,
@@ -146,14 +149,14 @@ class _DevWidgetState extends State<DevWidget> {
                     ),
               ),
             ),
-            const Divider(
+            Divider(
               thickness: 0.5,
               color: Color(0x67616161),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 15.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 15.0),
                 child: Text(
                   'Developer Handle\'s',
                   textAlign: TextAlign.center,
@@ -174,16 +177,16 @@ class _DevWidgetState extends State<DevWidget> {
                         'https://www.linkedin.com/in/chaitanyapullagura/');
                   },
                   text: 'Linkedin',
-                  icon: const FaIcon(
+                  icon: FaIcon(
                     FontAwesomeIcons.linkedinIn,
                     size: 22.0,
                   ),
                   options: FFButtonOptions(
                     width: 150.0,
                     height: 50.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
@@ -191,7 +194,7 @@ class _DevWidgetState extends State<DevWidget> {
                           fontSize: 16.0,
                           fontWeight: FontWeight.normal,
                         ),
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -203,16 +206,16 @@ class _DevWidgetState extends State<DevWidget> {
                         'https://instagram.com/am_cny?igshid=Yjk4NWM2ZWVkMw==');
                   },
                   text: 'Instagram',
-                  icon: const FaIcon(
+                  icon: FaIcon(
                     FontAwesomeIcons.instagram,
                     size: 24.0,
                   ),
                   options: FFButtonOptions(
                     width: 150.0,
                     height: 50.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
@@ -220,13 +223,13 @@ class _DevWidgetState extends State<DevWidget> {
                           fontSize: 16.0,
                           fontWeight: FontWeight.normal,
                         ),
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
                   ),
                 ),
-              ].divide(const SizedBox(width: 10.0)),
+              ].divide(SizedBox(width: 10.0)),
             ),
           ],
         ),

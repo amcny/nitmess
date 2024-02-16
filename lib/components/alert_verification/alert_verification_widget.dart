@@ -3,6 +3,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'alert_verification_model.dart';
 export 'alert_verification_model.dart';
@@ -56,7 +59,7 @@ class _AlertVerificationWidgetState extends State<AlertVerificationWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 25.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 25.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -69,12 +72,12 @@ class _AlertVerificationWidgetState extends State<AlertVerificationWidget> {
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Please verify your mail for successful\nsign up',
+                  'Please verify your mail for successful\nsign up and login',
                   style: FlutterFlowTheme.of(context).titleMedium.override(
                         fontFamily: 'Open Sans',
                         color: FlutterFlowTheme.of(context).secondaryText,
@@ -85,9 +88,9 @@ class _AlertVerificationWidgetState extends State<AlertVerificationWidget> {
           ),
           Expanded(
             child: Align(
-              alignment: const AlignmentDirectional(1.0, 1.0),
+              alignment: AlignmentDirectional(1.0, 1.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -96,22 +99,38 @@ class _AlertVerificationWidgetState extends State<AlertVerificationWidget> {
                     FFButtonWidget(
                       onPressed: () async {
                         await authManager.sendEmailVerification();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Done Resend E-mail Verification',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                            ),
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).primary,
+                          ),
+                        );
                       },
-                      text: 'Re-send email ',
+                      text: 'Resend email ',
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: const Color(0xFF757575),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: Color(0xFF757575),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Open Sans',
                                   color: Colors.white,
                                 ),
                         elevation: 1.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
@@ -125,10 +144,10 @@ class _AlertVerificationWidgetState extends State<AlertVerificationWidget> {
                       text: 'OK',
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -136,14 +155,14 @@ class _AlertVerificationWidgetState extends State<AlertVerificationWidget> {
                                   color: Colors.white,
                                 ),
                         elevation: 1.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
-                  ].divide(const SizedBox(width: 20.0)).around(const SizedBox(width: 20.0)),
+                  ].divide(SizedBox(width: 20.0)).around(SizedBox(width: 20.0)),
                 ),
               ),
             ),

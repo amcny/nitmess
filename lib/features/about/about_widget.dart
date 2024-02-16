@@ -1,8 +1,11 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'about_model.dart';
@@ -76,14 +79,14 @@ class _AboutWidgetState extends State<AboutWidget> {
                 fontWeight: FontWeight.bold,
               ),
         ),
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 0.0,
       ),
       body: SafeArea(
         top: true,
         child: Align(
-          alignment: const AlignmentDirectional(0.0, -0.5),
+          alignment: AlignmentDirectional(0.0, -0.5),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -91,9 +94,9 @@ class _AboutWidgetState extends State<AboutWidget> {
               Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 250.0,
-                decoration: const BoxDecoration(),
+                decoration: BoxDecoration(),
                 child: ClipRRect(
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(8.0),
                     bottomRight: Radius.circular(8.0),
                     topLeft: Radius.circular(0.0),
@@ -108,7 +111,7 @@ class _AboutWidgetState extends State<AboutWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -116,18 +119,18 @@ class _AboutWidgetState extends State<AboutWidget> {
                       textScaleFactor: MediaQuery.of(context).textScaleFactor,
                       text: TextSpan(
                         children: [
-                          const TextSpan(
+                          TextSpan(
                             text:
                                 'This app aims to make it easier for\nNIT ANDHRA PRADESH Students\nto find the correct food item available\nat the mess based on the current day',
                             style: TextStyle(),
                           ),
-                          const TextSpan(
+                          TextSpan(
                             text: '\nPlease stay tuned for further updates.',
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          const TextSpan(
+                          TextSpan(
                             text: '\n\nActively Maintained by',
                             style: TextStyle(),
                           ),

@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/alert_verification/alert_verification_widget.dart';
 import '/components/support/support_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -6,7 +7,9 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'login_model.dart';
 export 'login_model.dart';
@@ -76,21 +79,21 @@ class _LoginWidgetState extends State<LoginWidget> {
                   height: 120.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(16.0),
                       bottomRight: Radius.circular(16.0),
                       topLeft: Radius.circular(0.0),
                       topRight: Radius.circular(0.0),
                     ),
                   ),
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -100,7 +103,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             context.goNamed(
                               'onboarding',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
+                                kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
                                   transitionType:
                                       PageTransitionType.leftToRight,
@@ -121,7 +124,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               ),
                             ),
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: FaIcon(
                                 FontAwesomeIcons.arrowLeft,
                                 color:
@@ -134,11 +137,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
                         child: Container(
                           width: 60.0,
                           height: 60.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Image.asset(
                             'assets/images/nit-logo.png',
                             fit: BoxFit.contain,
@@ -149,9 +152,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsets.all(32.0),
+                    padding: EdgeInsets.all(32.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -167,7 +170,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 24.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -185,14 +188,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
-                          child: SizedBox(
+                          child: Container(
                             width: 370.0,
                             child: TextFormField(
                               controller: _model.emailAddressController,
                               focusNode: _model.emailAddressFocusNode,
-                              autofillHints: const [AutofillHints.email],
+                              autofillHints: [AutofillHints.email],
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: 'Email',
@@ -234,7 +237,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                suffixIcon: const Icon(
+                                suffixIcon: Icon(
                                   Icons.person_rounded,
                                   color: Color(0xFF757575),
                                   size: 22.0,
@@ -252,9 +255,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
-                          child: SizedBox(
+                          child: Container(
                             width: 370.0,
                             child: TextFormField(
                               controller: _model.passwordController,
@@ -310,7 +313,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     _model.passwordVisibility
                                         ? Icons.visibility_outlined
                                         : Icons.visibility_off_outlined,
-                                    color: const Color(0xFF757575),
+                                    color: Color(0xFF757575),
                                     size: 22.0,
                                   ),
                                 ),
@@ -326,9 +329,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(1.0, 0.0),
+                          alignment: AlignmentDirectional(1.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -339,7 +342,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 if (_model
                                     .emailAddressController.text.isEmpty) {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                    const SnackBar(
+                                    SnackBar(
                                       content: Text(
                                         'Email required!',
                                       ),
@@ -359,17 +362,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   color: () {
                                     if (Theme.of(context).brightness ==
                                         Brightness.light) {
-                                      return const Color(0xFFF7F7F7);
+                                      return Color(0xFFF7F7F7);
                                     } else if (Theme.of(context).brightness ==
                                         Brightness.dark) {
-                                      return const Color(0xFF171717);
+                                      return Color(0xFF171717);
                                     } else {
-                                      return const Color(0x00000000);
+                                      return Color(0x00000000);
                                     }
                                   }(),
                                   borderRadius: BorderRadius.circular(15.0),
                                 ),
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Text(
                                   'Forgot Password?',
                                   style: FlutterFlowTheme.of(context)
@@ -386,73 +389,86 @@ class _LoginWidgetState extends State<LoginWidget> {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 16.0),
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              await authManager.refreshUser();
-                              if (currentUserEmailVerified) {
-                                GoRouter.of(context).prepareAuthEvent();
+                        Builder(
+                          builder: (context) => Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 16.0),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                await authManager.refreshUser();
+                                if (currentUserEmailVerified) {
+                                  GoRouter.of(context).prepareAuthEvent();
 
-                                final user = await authManager.signInWithEmail(
-                                  context,
-                                  _model.emailAddressController.text,
-                                  _model.passwordController.text,
-                                );
-                                if (user == null) {
+                                  final user =
+                                      await authManager.signInWithEmail(
+                                    context,
+                                    _model.emailAddressController.text,
+                                    _model.passwordController.text,
+                                  );
+                                  if (user == null) {
+                                    return;
+                                  }
+                                } else {
+                                  await showDialog(
+                                    barrierDismissible: false,
+                                    context: context,
+                                    builder: (dialogContext) {
+                                      return Dialog(
+                                        elevation: 0,
+                                        insetPadding: EdgeInsets.zero,
+                                        backgroundColor: Colors.transparent,
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        child: GestureDetector(
+                                          onTap: () => _model
+                                                  .unfocusNode.canRequestFocus
+                                              ? FocusScope.of(context)
+                                                  .requestFocus(
+                                                      _model.unfocusNode)
+                                              : FocusScope.of(context)
+                                                  .unfocus(),
+                                          child: AlertVerificationWidget(),
+                                        ),
+                                      );
+                                    },
+                                  ).then((value) => setState(() {}));
+
                                   return;
                                 }
-                              } else {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'Please verify your mail id',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: Colors.white,
-                                          ),
-                                    ),
-                                    duration: const Duration(milliseconds: 2500),
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                  ),
-                                );
-                                return;
-                              }
 
-                              context.goNamedAuth(
-                                  'choosemess', context.mounted);
-                            },
-                            text: 'Sign In',
-                            options: FFButtonOptions(
-                              width: 370.0,
-                              height: 55.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).primary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                    fontSize: 15.0,
-                                  ),
-                              elevation: 3.0,
-                              borderSide: const BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
+                                context.goNamedAuth(
+                                    'choosemess', context.mounted);
+                              },
+                              text: 'Sign In',
+                              options: FFButtonOptions(
+                                width: 370.0,
+                                height: 55.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 15.0,
+                                    ),
+                                elevation: 3.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(15.0),
                               ),
-                              borderRadius: BorderRadius.circular(15.0),
                             ),
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -472,7 +488,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         : FocusScope.of(context).unfocus(),
                                     child: Padding(
                                       padding: MediaQuery.viewInsetsOf(context),
-                                      child: const SupportWidget(),
+                                      child: SupportWidget(),
                                     ),
                                   );
                                 },
@@ -492,9 +508,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: RichText(
                               textScaleFactor:
@@ -528,7 +544,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         context.goNamed(
                                           'signup',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,

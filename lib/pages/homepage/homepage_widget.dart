@@ -3,12 +3,16 @@ import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'homepage_model.dart';
 export 'homepage_model.dart';
@@ -33,7 +37,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().messname == '') {
+      if (FFAppState().messname == null || FFAppState().messname == '') {
         context.pushNamed('choosemess');
       } else {
         return;
@@ -97,7 +101,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
         },
         backgroundColor: FlutterFlowTheme.of(context).primary,
         elevation: 3.0,
-        child: const Icon(
+        child: Icon(
           Icons.refresh_rounded,
           color: Colors.white,
           size: 26.0,
@@ -109,7 +113,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,7 +133,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(2.0),
+                      padding: EdgeInsets.all(2.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -172,9 +176,9 @@ class _HomepageWidgetState extends State<HomepageWidget>
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(-1.0, 0.0),
+              alignment: AlignmentDirectional(-1.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
                 child: Text(
                   valueOrDefault<String>(
                     functions.wishes(),
@@ -185,9 +189,9 @@ class _HomepageWidgetState extends State<HomepageWidget>
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(-1.0, 0.0),
+              alignment: AlignmentDirectional(-1.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 5.0),
+                padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 5.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -203,7 +207,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                       child: Lottie.asset(
                         'assets/lottie_animations/star-struck_lottie.json',
                         width: 1.0,
@@ -217,7 +221,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
               ),
             ),
             if (getRemoteConfigBool('ad'))
-              const Padding(
+              Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 5.0),
                 child: FlutterFlowAdBanner(
                   height: 60.0,
@@ -227,7 +231,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                 ),
               ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
               child: Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 60.0,
@@ -236,7 +240,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                   borderRadius: BorderRadius.circular(12.0),
                 ),
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     valueOrDefault<String>(
                       functions.day(),
@@ -288,7 +292,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                   return Column(
                     children: [
                       Align(
-                        alignment: const Alignment(0.0, 0),
+                        alignment: Alignment(0.0, 0),
                         child: TabBar(
                           labelColor: FlutterFlowTheme.of(context).primaryText,
                           unselectedLabelColor:
@@ -303,8 +307,8 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                     fontFamily: 'Poppins',
                                   ),
                           indicatorColor: FlutterFlowTheme.of(context).primary,
-                          padding: const EdgeInsets.all(4.0),
-                          tabs: const [
+                          padding: EdgeInsets.all(4.0),
+                          tabs: [
                             Tab(
                               text: 'Breakfast',
                             ),
@@ -340,17 +344,17 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(20.0),
+                                    padding: EdgeInsets.all(20.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       decoration: BoxDecoration(
-                                        color: const Color(0x4C1A73E8),
+                                        color: Color(0x4C1A73E8),
                                         borderRadius:
                                             BorderRadius.circular(12.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 15.0, 20.0, 15.0),
                                         child: Text(
                                           tabBarMessRecord!.breakfast,
@@ -380,20 +384,20 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(20.0),
+                                    padding: EdgeInsets.all(20.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       decoration: BoxDecoration(
-                                        color: const Color(0x4C1A73E8),
+                                        color: Color(0x4C1A73E8),
                                         borderRadius:
                                             BorderRadius.circular(12.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 15.0, 20.0, 15.0),
                                         child: Text(
-                                          tabBarMessRecord.lunch,
+                                          tabBarMessRecord!.lunch,
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
@@ -420,20 +424,20 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(20.0),
+                                    padding: EdgeInsets.all(20.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       decoration: BoxDecoration(
-                                        color: const Color(0x4C1A73E8),
+                                        color: Color(0x4C1A73E8),
                                         borderRadius:
                                             BorderRadius.circular(12.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 15.0, 20.0, 15.0),
                                         child: Text(
-                                          tabBarMessRecord.snacks,
+                                          tabBarMessRecord!.snacks,
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
@@ -460,20 +464,20 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(20.0),
+                                    padding: EdgeInsets.all(20.0),
                                     child: Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       decoration: BoxDecoration(
-                                        color: const Color(0x4C1A73E8),
+                                        color: Color(0x4C1A73E8),
                                         borderRadius:
                                             BorderRadius.circular(12.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             20.0, 15.0, 20.0, 15.0),
                                         child: Text(
-                                          tabBarMessRecord.dinner,
+                                          tabBarMessRecord!.dinner,
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium

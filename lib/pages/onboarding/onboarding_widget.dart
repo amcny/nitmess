@@ -5,8 +5,11 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'onboarding_model.dart';
 export 'onboarding_model.dart';
@@ -34,8 +37,8 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 3000.ms,
-          begin: const Offset(1.0, 1.0),
-          end: const Offset(0.8, 0.8),
+          begin: Offset(1.0, 1.0),
+          end: Offset(0.8, 0.8),
         ),
       ],
     ),
@@ -54,15 +57,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -81,15 +84,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -108,15 +111,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -135,15 +138,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -162,15 +165,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -189,15 +192,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -216,15 +219,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -243,15 +246,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -270,15 +273,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -297,15 +300,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -324,15 +327,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -351,15 +354,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -378,15 +381,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -405,15 +408,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.0, 20.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 20.0),
+          end: Offset(0.0, 0.0),
         ),
         ScaleEffect(
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: const Offset(0.9, 0.9),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.9, 0.9),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -456,9 +459,9 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
         children: [
           Flexible(
             child: Align(
-              alignment: const AlignmentDirectional(0.0, -0.2),
+              alignment: AlignmentDirectional(0.0, -0.2),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
@@ -475,15 +478,15 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
           ),
           Flexible(
             child: Align(
-              alignment: const AlignmentDirectional(0.0, -1.5),
-              child: SizedBox(
+              alignment: AlignmentDirectional(0.0, -1.5),
+              child: Container(
                 width: double.infinity,
                 height: 295.0,
                 child: Stack(
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
                       child: PageView(
                         physics: const NeverScrollableScrollPhysics(),
                         controller: _model.pageViewController ??=
@@ -491,7 +494,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                         scrollDirection: Axis.horizontal,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 20.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -505,7 +508,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                 ).animateOnPageLoad(
                                     animationsMap['textOnPageLoadAnimation1']!),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 0.0),
                                   child: Text(
                                     'Actively Maintained\nBy Chaitanya Pullagura',
@@ -520,12 +523,12 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                       'textOnPageLoadAnimation2']!),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 16.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       await _model.pageViewController?.nextPage(
-                                        duration: const Duration(milliseconds: 300),
+                                        duration: Duration(milliseconds: 300),
                                         curve: Curves.ease,
                                       );
                                     },
@@ -533,10 +536,10 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 60.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -548,7 +551,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                                 .secondaryBackground,
                                           ),
                                       elevation: 4.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -563,7 +566,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 20.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -577,7 +580,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                 ).animateOnPageLoad(
                                     animationsMap['textOnPageLoadAnimation3']!),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 0.0),
                                   child: Text(
                                     'Auto Synchronize with \nCurrent Day Food',
@@ -591,12 +594,12 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                       'textOnPageLoadAnimation4']!),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 16.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       await _model.pageViewController?.nextPage(
-                                        duration: const Duration(milliseconds: 300),
+                                        duration: Duration(milliseconds: 300),
                                         curve: Curves.ease,
                                       );
                                     },
@@ -604,10 +607,10 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 60.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -619,7 +622,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                                 .secondaryBackground,
                                           ),
                                       elevation: 4.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -634,7 +637,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 20.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -648,7 +651,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                 ).animateOnPageLoad(
                                     animationsMap['textOnPageLoadAnimation5']!),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 0.0),
                                   child: Text(
                                     'Check the prices and dishes\navailable in the canteen',
@@ -662,12 +665,12 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                       'textOnPageLoadAnimation6']!),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 16.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       await _model.pageViewController?.nextPage(
-                                        duration: const Duration(milliseconds: 300),
+                                        duration: Duration(milliseconds: 300),
                                         curve: Curves.ease,
                                       );
                                     },
@@ -675,10 +678,10 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 60.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -690,7 +693,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                                 .secondaryBackground,
                                           ),
                                       elevation: 4.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -705,7 +708,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 20.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -719,7 +722,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                 ).animateOnPageLoad(
                                     animationsMap['textOnPageLoadAnimation7']!),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 0.0),
                                   child: Text(
                                     'Retrive latest mess menu info by just clicking refresh button or from settings',
@@ -733,12 +736,12 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                       'textOnPageLoadAnimation8']!),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 16.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       await _model.pageViewController?.nextPage(
-                                        duration: const Duration(milliseconds: 300),
+                                        duration: Duration(milliseconds: 300),
                                         curve: Curves.ease,
                                       );
                                     },
@@ -746,10 +749,10 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 60.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -761,7 +764,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                                 .secondaryBackground,
                                           ),
                                       elevation: 4.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -776,7 +779,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 48.0, 0.0, 48.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -790,14 +793,14 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                 ).animateOnPageLoad(
                                     animationsMap['textOnPageLoadAnimation9']!),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 16.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       context.pushNamed(
                                         'login',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -811,10 +814,10 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 60.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -826,7 +829,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                                                 .secondaryBackground,
                                           ),
                                       elevation: 4.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),
@@ -844,10 +847,10 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 1.0),
+                      alignment: AlignmentDirectional(0.0, 1.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                         child: smooth_page_indicator.SmoothPageIndicator(
                           controller: _model.pageViewController ??=
                               PageController(initialPage: 0),
@@ -856,7 +859,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget>
                           onDotClicked: (i) async {
                             await _model.pageViewController!.animateToPage(
                               i,
-                              duration: const Duration(milliseconds: 500),
+                              duration: Duration(milliseconds: 500),
                               curve: Curves.ease,
                             );
                           },

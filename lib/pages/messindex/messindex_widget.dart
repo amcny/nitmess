@@ -2,10 +2,13 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'messindex_model.dart';
 export 'messindex_model.dart';
@@ -67,7 +70,7 @@ class _MessindexWidgetState extends State<MessindexWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.5,
         ),
@@ -75,9 +78,9 @@ class _MessindexWidgetState extends State<MessindexWidget> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                 child: Text(
                   'Choose a day to see the messmenu',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -90,7 +93,7 @@ class _MessindexWidgetState extends State<MessindexWidget> {
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: RichText(
                 textScaleFactor: MediaQuery.of(context).textScaleFactor,
                 text: TextSpan(
@@ -126,7 +129,7 @@ class _MessindexWidgetState extends State<MessindexWidget> {
               ),
             ),
             if (getRemoteConfigBool('ad'))
-              const Padding(
+              Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 0.0),
                 child: FlutterFlowAdBanner(
                   height: 60.0,
@@ -171,7 +174,7 @@ class _MessindexWidgetState extends State<MessindexWidget> {
                       final listViewMessRecord =
                           listViewMessRecordList[listViewIndex];
                       return Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -199,14 +202,14 @@ class _MessindexWidgetState extends State<MessindexWidget> {
                               shape: BoxShape.rectangle,
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       listViewMessRecord.day,
@@ -218,7 +221,7 @@ class _MessindexWidgetState extends State<MessindexWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 5.0, 0.0),
                                     child: Icon(
                                       Icons.arrow_forward_ios,
@@ -238,7 +241,7 @@ class _MessindexWidgetState extends State<MessindexWidget> {
                 },
               ),
             ),
-          ].addToEnd(const SizedBox(height: 15.0)),
+          ].addToEnd(SizedBox(height: 15.0)),
         ),
       ),
     );

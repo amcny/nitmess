@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'choosemess_model.dart';
 export 'choosemess_model.dart';
@@ -66,7 +68,7 @@ class _ChoosemessWidgetState extends State<ChoosemessWidget> {
                   fontWeight: FontWeight.bold,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -74,9 +76,9 @@ class _ChoosemessWidgetState extends State<ChoosemessWidget> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Align(
-              alignment: const AlignmentDirectional(-1.0, 0.0),
+              alignment: AlignmentDirectional(-1.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 10.0, 20.0, 0.0),
                 child: Text(
                   'Please Choose your mess',
                   style: FlutterFlowTheme.of(context).titleMedium.override(
@@ -91,13 +93,13 @@ class _ChoosemessWidgetState extends State<ChoosemessWidget> {
               key: _model.formKey,
               autovalidateMode: AutovalidateMode.disabled,
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                 child: FlutterFlowDropDown<String>(
                   controller: _model.dropDownValueController ??=
                       FormFieldController<String>(
                     _model.dropDownValue ??= FFAppState().messname,
                   ),
-                  options: const ['Kamadhenu Mess', 'Akshaya Mess', 'Amrutha Mess'],
+                  options: ['Kamadhenu Mess', 'Akshaya Mess', 'Amrutha Mess'],
                   onChanged: (val) =>
                       setState(() => _model.dropDownValue = val),
                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -116,7 +118,7 @@ class _ChoosemessWidgetState extends State<ChoosemessWidget> {
                   borderColor: FlutterFlowTheme.of(context).accent3,
                   borderWidth: 1.0,
                   borderRadius: 8.0,
-                  margin: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+                  margin: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
                   hidesUnderline: true,
                   isOverButton: false,
                   isSearchable: false,
@@ -125,7 +127,7 @@ class _ChoosemessWidgetState extends State<ChoosemessWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
               child: FFButtonWidget(
                 onPressed: () async {
                   if (_model.formKey.currentState == null ||
@@ -145,9 +147,9 @@ class _ChoosemessWidgetState extends State<ChoosemessWidget> {
                 options: FFButtonOptions(
                   width: 190.0,
                   height: 50.0,
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Poppins',
@@ -156,7 +158,7 @@ class _ChoosemessWidgetState extends State<ChoosemessWidget> {
                         fontWeight: FontWeight.w500,
                       ),
                   elevation: 3.0,
-                  borderSide: const BorderSide(
+                  borderSide: BorderSide(
                     color: Colors.transparent,
                     width: 1.0,
                   ),

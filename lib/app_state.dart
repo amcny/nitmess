@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'flutter_flow/request_manager.dart';
 import '/backend/backend.dart';
+import 'backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'dart:convert';
@@ -45,48 +46,48 @@ class FFAppState extends ChangeNotifier {
 
   String _messname = '';
   String get messname => _messname;
-  set messname(String value) {
-    _messname = value;
-    prefs.setString('ff_messname', value);
+  set messname(String _value) {
+    _messname = _value;
+    prefs.setString('ff_messname', _value);
   }
 
   List<dynamic> _jsondata = [];
   List<dynamic> get jsondata => _jsondata;
-  set jsondata(List<dynamic> value) {
-    _jsondata = value;
+  set jsondata(List<dynamic> _value) {
+    _jsondata = _value;
     prefs.setStringList(
-        'ff_jsondata', value.map((x) => jsonEncode(x)).toList());
+        'ff_jsondata', _value.map((x) => jsonEncode(x)).toList());
   }
 
-  void addToJsondata(dynamic value) {
-    _jsondata.add(value);
-    prefs.setStringList(
-        'ff_jsondata', _jsondata.map((x) => jsonEncode(x)).toList());
-  }
-
-  void removeFromJsondata(dynamic value) {
-    _jsondata.remove(value);
+  void addToJsondata(dynamic _value) {
+    _jsondata.add(_value);
     prefs.setStringList(
         'ff_jsondata', _jsondata.map((x) => jsonEncode(x)).toList());
   }
 
-  void removeAtIndexFromJsondata(int index) {
-    _jsondata.removeAt(index);
+  void removeFromJsondata(dynamic _value) {
+    _jsondata.remove(_value);
+    prefs.setStringList(
+        'ff_jsondata', _jsondata.map((x) => jsonEncode(x)).toList());
+  }
+
+  void removeAtIndexFromJsondata(int _index) {
+    _jsondata.removeAt(_index);
     prefs.setStringList(
         'ff_jsondata', _jsondata.map((x) => jsonEncode(x)).toList());
   }
 
   void updateJsondataAtIndex(
-    int index,
+    int _index,
     dynamic Function(dynamic) updateFn,
   ) {
-    _jsondata[index] = updateFn(_jsondata[index]);
+    _jsondata[_index] = updateFn(_jsondata[_index]);
     prefs.setStringList(
         'ff_jsondata', _jsondata.map((x) => jsonEncode(x)).toList());
   }
 
-  void insertAtIndexInJsondata(int index, dynamic value) {
-    _jsondata.insert(index, value);
+  void insertAtIndexInJsondata(int _index, dynamic _value) {
+    _jsondata.insert(_index, _value);
     prefs.setStringList(
         'ff_jsondata', _jsondata.map((x) => jsonEncode(x)).toList());
   }
