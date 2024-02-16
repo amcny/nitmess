@@ -151,11 +151,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'signup',
           path: '/signup',
           builder: (context, params) => const SignupWidget(),
-        ),
-        FFRoute(
-          name: 'editprofile',
-          path: '/editprofile',
-          builder: (context, params) => const EditprofileWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
