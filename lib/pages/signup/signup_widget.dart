@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'signup_model.dart';
@@ -48,15 +47,6 @@ class _SignupWidgetState extends State<SignupWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -334,7 +324,6 @@ class _SignupWidgetState extends State<SignupWidget> {
                               0.0, 0.0, 0.0, 16.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              Function() navigate = () {};
                               if (functions.emailvalid(
                                   _model.emailAddressController.text)!) {
                                 GoRouter.of(context).prepareAuthEvent();
@@ -349,8 +338,6 @@ class _SignupWidgetState extends State<SignupWidget> {
                                   return;
                                 }
 
-                                navigate = () => context.goNamedAuth(
-                                    'homepage', context.mounted);
                                 await authManager.sendEmailVerification();
                                 await showModalBottomSheet(
                                   isScrollControlled: true,
@@ -379,7 +366,7 @@ class _SignupWidgetState extends State<SignupWidget> {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
-                                      'Please use Institute Mail ID onlyUpdated.',
+                                      'Please use Institute Mail ID only',
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -394,8 +381,6 @@ class _SignupWidgetState extends State<SignupWidget> {
                                 );
                                 return;
                               }
-
-                              navigate();
                             },
                             text: 'Sign Up',
                             options: FFButtonOptions(

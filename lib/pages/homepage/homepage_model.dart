@@ -10,6 +10,8 @@ class HomepageModel extends FlutterFlowModel<HomepageWidget> {
   int get tabBarCurrentIndex =>
       tabBarController != null ? tabBarController!.index : 0;
 
+  var scanResult = '';
+
   /// Initialization and disposal methods.
 
   @override

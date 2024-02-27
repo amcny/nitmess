@@ -6,7 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -74,15 +74,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     context.watch<FFAppState>();
 
     return Scaffold(
@@ -90,15 +81,35 @@ class _HomepageWidgetState extends State<HomepageWidget>
       backgroundColor: FlutterFlowTheme.of(context).whiteBg,
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          FFAppState().clearHomepageCache();
-          FFAppState().clearIndexpageCache();
-          FFAppState().clearMenupageCache();
-          FFAppState().update(() {});
+          _model.scanResult = await FlutterBarcodeScanner.scanBarcode(
+            '#C62828', // scanning line color
+            'Cancel', // cancel button text
+            true, // whether to show the flash icon
+            ScanMode.QR,
+          );
+
+          await showDialog(
+            context: context,
+            builder: (alertDialogContext) {
+              return AlertDialog(
+                title: const Text('Scan result'),
+                content: Text(_model.scanResult),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(alertDialogContext),
+                    child: const Text('Ok'),
+                  ),
+                ],
+              );
+            },
+          );
+
+          setState(() {});
         },
         backgroundColor: FlutterFlowTheme.of(context).primary,
         elevation: 3.0,
         child: const Icon(
-          Icons.refresh_rounded,
+          Icons.qr_code_rounded,
           color: Colors.white,
           size: 26.0,
         ),

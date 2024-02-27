@@ -44,8 +44,8 @@ class _AlertVerificationWidgetState extends State<AlertVerificationWidget> {
     context.watch<FFAppState>();
 
     return Container(
-      width: 350.0,
-      height: 250.0,
+      width: 320.0,
+      height: 230.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.circular(12.0),
@@ -74,7 +74,7 @@ class _AlertVerificationWidgetState extends State<AlertVerificationWidget> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'Please verify your mail for successful\nsign up and login',
+                  'Please verify your mail for\nsuccessful sign up and login',
                   style: FlutterFlowTheme.of(context).titleMedium.override(
                         fontFamily: 'Open Sans',
                         color: FlutterFlowTheme.of(context).secondaryText,
@@ -95,6 +95,7 @@ class _AlertVerificationWidgetState extends State<AlertVerificationWidget> {
                   children: [
                     FFButtonWidget(
                       onPressed: () async {
+                        Navigator.pop(context);
                         await authManager.sendEmailVerification();
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(

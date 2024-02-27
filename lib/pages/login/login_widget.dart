@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'login_model.dart';
@@ -47,15 +46,6 @@ class _LoginWidgetState extends State<LoginWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -394,7 +384,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             child: FFButtonWidget(
                               onPressed: () async {
                                 await authManager.refreshUser();
-                                if (currentUserEmailVerified) {
+                                if (currentUserEmailVerified == true) {
                                   GoRouter.of(context).prepareAuthEvent();
 
                                   final user =
@@ -406,9 +396,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   if (user == null) {
                                     return;
                                   }
+
+                                  context.goNamedAuth(
+                                      'choosemess', context.mounted);
+
+                                  return;
                                 } else {
                                   await showDialog(
-                                    barrierDismissible: false,
                                     context: context,
                                     builder: (dialogContext) {
                                       return Dialog(
@@ -435,9 +429,6 @@ class _LoginWidgetState extends State<LoginWidget> {
 
                                   return;
                                 }
-
-                                context.goNamedAuth(
-                                    'choosemess', context.mounted);
                               },
                               text: 'Sign In',
                               options: FFButtonOptions(

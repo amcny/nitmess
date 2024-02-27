@@ -167,7 +167,7 @@ class _EmailverificationWidgetState extends State<EmailverificationWidget>
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        'We have sent a confirmation mail\nto the mail id you provided to sign up\nPlease tap confirm if you\'re done verifying',
+                        'We have sent a confirmation mail\nto the mail id you provided to sign up\nPlease tap verify if you\'re done verifying',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
