@@ -384,19 +384,18 @@ class _LoginWidgetState extends State<LoginWidget> {
                             child: FFButtonWidget(
                               onPressed: () async {
                                 await authManager.refreshUser();
+                                GoRouter.of(context).prepareAuthEvent();
+
+                                final user = await authManager.signInWithEmail(
+                                  context,
+                                  _model.emailAddressController.text,
+                                  _model.passwordController.text,
+                                );
+                                if (user == null) {
+                                  return;
+                                }
+
                                 if (currentUserEmailVerified == true) {
-                                  GoRouter.of(context).prepareAuthEvent();
-
-                                  final user =
-                                      await authManager.signInWithEmail(
-                                    context,
-                                    _model.emailAddressController.text,
-                                    _model.passwordController.text,
-                                  );
-                                  if (user == null) {
-                                    return;
-                                  }
-
                                   context.goNamedAuth(
                                       'choosemess', context.mounted);
 
