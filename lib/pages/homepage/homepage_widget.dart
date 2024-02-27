@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/components/qrverify/qrverify_widget.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -6,7 +7,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -81,30 +81,17 @@ class _HomepageWidgetState extends State<HomepageWidget>
       backgroundColor: FlutterFlowTheme.of(context).whiteBg,
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          _model.scanResult = await FlutterBarcodeScanner.scanBarcode(
-            '#C62828', // scanning line color
-            'Cancel', // cancel button text
-            true, // whether to show the flash icon
-            ScanMode.QR,
-          );
-
-          await showDialog(
+          await showModalBottomSheet(
+            isScrollControlled: true,
+            backgroundColor: Colors.transparent,
             context: context,
-            builder: (alertDialogContext) {
-              return AlertDialog(
-                title: const Text('Scan result'),
-                content: Text(_model.scanResult),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.pop(alertDialogContext),
-                    child: const Text('Ok'),
-                  ),
-                ],
+            builder: (context) {
+              return Padding(
+                padding: MediaQuery.viewInsetsOf(context),
+                child: const QrverifyWidget(),
               );
             },
-          );
-
-          setState(() {});
+          ).then((value) => safeSetState(() {}));
         },
         backgroundColor: FlutterFlowTheme.of(context).primary,
         elevation: 3.0,
