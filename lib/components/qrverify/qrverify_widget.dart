@@ -115,7 +115,7 @@ class _QrverifyWidgetState extends State<QrverifyWidget> {
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                   child: BarcodeWidget(
-                    data: currentUserUid,
+                    data: currentUserEmail,
                     barcode: Barcode.qrCode(),
                     width: 200.0,
                     height: 200.0,
