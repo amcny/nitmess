@@ -339,39 +339,48 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(15.0, 25.0, 15.0, 0.0),
-                      child: Container(
-                        width: double.infinity,
-                        height: 40.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(24.0),
-                          border: Border.all(
-                            color: FlutterFlowTheme.of(context).alternate,
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          HapticFeedback.selectionClick();
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 40.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: BorderRadius.circular(24.0),
+                            border: Border.all(
+                              color: FlutterFlowTheme.of(context).alternate,
+                            ),
                           ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 5.0, 0.0),
-                              child: Icon(
-                                Icons.add_a_photo_outlined,
-                                color: FlutterFlowTheme.of(context).primary,
-                                size: 22.0,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 5.0, 0.0),
+                                child: Icon(
+                                  Icons.add_a_photo_outlined,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 22.0,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'Add Photos ( if necessary )',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                  ),
-                            ),
-                          ],
+                              Text(
+                                'Add Photos ( if necessary )',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                    ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -383,8 +392,8 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                 child: Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 5.0),
                   child: FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      HapticFeedback.selectionClick();
                     },
                     text: 'Submit',
                     options: FFButtonOptions(
