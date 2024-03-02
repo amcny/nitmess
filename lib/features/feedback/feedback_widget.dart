@@ -82,11 +82,12 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
         ),
         body: SafeArea(
           top: true,
-          child: Stack(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               SingleChildScrollView(
                 child: Column(
-                  mainAxisSize: MainAxisSize.max,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Align(
                       alignment: const AlignmentDirectional(-1.0, 0.0),
@@ -289,7 +290,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontWeight: FontWeight.normal,
                               ),
-                          alignLabelWithHint: false,
+                          alignLabelWithHint: true,
                           hintText:
                               'Share details of your own experience of\nthis particular meal',
                           hintStyle:
@@ -358,64 +359,76 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               color: FlutterFlowTheme.of(context).alternate,
                             ),
                           ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 5.0, 0.0),
-                                child: Icon(
-                                  Icons.add_a_photo_outlined,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 22.0,
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              HapticFeedback.selectionClick();
+                            },
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 5.0, 0.0),
+                                  child: Icon(
+                                    Icons.add_a_photo_outlined,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 22.0,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                'Add Photos ( if necessary )',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                    ),
-                              ),
-                            ],
+                                Text(
+                                  'Add Photos ( if necessary )',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                      ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ],
+                  ].addToEnd(const SizedBox(height: 60.0)),
                 ),
               ),
-              Align(
-                alignment: const AlignmentDirectional(0.0, 1.0),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 5.0),
-                  child: FFButtonWidget(
-                    onPressed: () async {
-                      HapticFeedback.selectionClick();
-                    },
-                    text: 'Submit',
-                    options: FFButtonOptions(
-                      width: double.infinity,
-                      height: 47.0,
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                      iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
-                      textStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Poppins',
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal,
-                              ),
-                      elevation: 0.0,
-                      borderSide: const BorderSide(
-                        color: Colors.transparent,
-                        width: 1.0,
+              Flexible(
+                child: Align(
+                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 10.0),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        HapticFeedback.selectionClick();
+                      },
+                      text: 'Submit',
+                      options: FFButtonOptions(
+                        width: double.infinity,
+                        height: 50.0,
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            24.0, 0.0, 24.0, 0.0),
+                        iconPadding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).primary,
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                        elevation: 0.0,
+                        borderSide: const BorderSide(
+                          color: Colors.transparent,
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(24.0),
                       ),
-                      borderRadius: BorderRadius.circular(24.0),
                     ),
                   ),
                 ),
