@@ -291,7 +291,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               ),
                           alignLabelWithHint: false,
                           hintText:
-                              'Share details of your own experience at\nthis particular day',
+                              'Share details of your own experience of\nthis particular meal',
                           hintStyle:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Poppins',
