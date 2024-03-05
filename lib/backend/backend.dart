@@ -7,6 +7,7 @@ import 'schema/util/firestore_util.dart';
 
 import 'schema/mess_record.dart';
 import 'schema/users_record.dart';
+import 'schema/feedback_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -16,6 +17,7 @@ export 'schema/util/schema_util.dart';
 
 export 'schema/mess_record.dart';
 export 'schema/users_record.dart';
+export 'schema/feedback_record.dart';
 
 /// Functions to query MessRecords (as a Stream and as a Future).
 Future<int> queryMessRecordCount({
@@ -86,6 +88,43 @@ Future<List<UsersRecord>> queryUsersRecordOnce({
     queryCollectionOnce(
       UsersRecord.collection,
       UsersRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query FeedbackRecords (as a Stream and as a Future).
+Future<int> queryFeedbackRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      FeedbackRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<FeedbackRecord>> queryFeedbackRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      FeedbackRecord.collection,
+      FeedbackRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<FeedbackRecord>> queryFeedbackRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      FeedbackRecord.collection,
+      FeedbackRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

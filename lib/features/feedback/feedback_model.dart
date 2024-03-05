@@ -16,6 +16,8 @@ class FeedbackModel extends FlutterFlowModel<FeedbackWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
+  bool isDataUploading = false;
+  List<FFUploadedFile> uploadedLocalFiles = [];
 
   /// Initialization and disposal methods.
 

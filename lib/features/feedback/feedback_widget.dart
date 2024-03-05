@@ -1,8 +1,10 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -391,6 +393,53 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                         highlightColor: Colors.transparent,
                         onTap: () async {
                           HapticFeedback.selectionClick();
+                          final selectedMedia = await selectMedia(
+                            maxWidth: 500.00,
+                            maxHeight: 500.00,
+                            imageQuality: 80,
+                            mediaSource: MediaSource.photoGallery,
+                            multiImage: true,
+                          );
+                          if (selectedMedia != null &&
+                              selectedMedia.every((m) =>
+                                  validateFileFormat(m.storagePath, context))) {
+                            setState(() => _model.isDataUploading = true);
+                            var selectedUploadedFiles = <FFUploadedFile>[];
+
+                            try {
+                              showUploadMessage(
+                                context,
+                                'Uploading file...',
+                                showLoading: true,
+                              );
+                              selectedUploadedFiles = selectedMedia
+                                  .map((m) => FFUploadedFile(
+                                        name: m.storagePath.split('/').last,
+                                        bytes: m.bytes,
+                                        height: m.dimensions?.height,
+                                        width: m.dimensions?.width,
+                                        blurHash: m.blurHash,
+                                      ))
+                                  .toList();
+                            } finally {
+                              ScaffoldMessenger.of(context)
+                                  .hideCurrentSnackBar();
+                              _model.isDataUploading = false;
+                            }
+                            if (selectedUploadedFiles.length ==
+                                selectedMedia.length) {
+                              setState(() {
+                                _model.uploadedLocalFiles =
+                                    selectedUploadedFiles;
+                              });
+                              showUploadMessage(context, 'Success!');
+                            } else {
+                              setState(() {});
+                              showUploadMessage(
+                                  context, 'Failed to upload data');
+                              return;
+                            }
+                          }
                         },
                         child: Container(
                           width: double.infinity,
@@ -403,39 +452,55 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                               color: FlutterFlowTheme.of(context).alternate,
                             ),
                           ),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              HapticFeedback.selectionClick();
-                            },
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 5.0, 0.0),
-                                  child: Icon(
-                                    Icons.add_a_photo_outlined,
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    size: 22.0,
-                                  ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 5.0, 0.0),
+                                child: Icon(
+                                  Icons.add_a_photo_outlined,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 22.0,
                                 ),
-                                Text(
-                                  'Add Photos ( if necessary )',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                      ),
-                                ),
-                              ],
-                            ),
+                              ),
+                              Text(
+                                'Add Photos ( if necessary )',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                    ),
+                              ),
+                            ],
                           ),
                         ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 0.0),
+                      child: Builder(
+                        builder: (context) {
+                          final images = _model.uploadedLocalFiles.toList();
+                          return Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children:
+                                List.generate(images.length, (imagesIndex) {
+                              final imagesItem = images[imagesIndex];
+                              return ClipRRect(
+                                borderRadius: BorderRadius.circular(12.0),
+                                child: Image.memory(
+                                  imagesItem.bytes ?? Uint8List.fromList([]),
+                                  width: 100.0,
+                                  height: 100.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              );
+                            }).divide(const SizedBox(width: 10.0)),
+                          );
+                        },
                       ),
                     ),
                   ].addToEnd(const SizedBox(height: 60.0)),
@@ -450,6 +515,17 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                     child: FFButtonWidget(
                       onPressed: () async {
                         HapticFeedback.selectionClick();
+
+                        await FeedbackRecord.collection
+                            .doc()
+                            .set(createFeedbackRecordData(
+                              email: currentUserEmail,
+                              mealname: 'test',
+                              foodRating: _model.ratingBarValue1,
+                              serviceRating: _model.ratingBarValue2,
+                              hygieneRating: _model.ratingBarValue3,
+                              description: _model.textController.text,
+                            ));
                       },
                       text: 'Submit',
                       options: FFButtonOptions(
