@@ -637,6 +637,23 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                             description: _model.textController.text,
                             image: _model.uploadedFileUrl,
                           ));
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            'Feedback submitted successfully',
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.white,
+                                ),
+                          ),
+                          duration: const Duration(milliseconds: 4000),
+                          backgroundColor: FlutterFlowTheme.of(context).primary,
+                        ),
+                      );
+
+                      context.goNamed('homepage');
                     },
                     text: 'Submit',
                     options: FFButtonOptions(
