@@ -226,25 +226,34 @@ class _HomepageWidgetState extends State<HomepageWidget>
               ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
-              child: Container(
-                width: MediaQuery.sizeOf(context).width * 1.0,
-                height: 60.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).primary,
-                  borderRadius: BorderRadius.circular(12.0),
-                ),
-                child: Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: Text(
-                    valueOrDefault<String>(
-                      functions.day(),
-                      'Display Day',
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.goNamed('feedback');
+                },
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: 60.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).primary,
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  child: Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Text(
+                      valueOrDefault<String>(
+                        functions.day(),
+                        'Display Day',
+                      ),
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.of(context).titleLarge.override(
+                            fontFamily: 'Poppins',
+                            color: Colors.white,
+                          ),
                     ),
-                    textAlign: TextAlign.center,
-                    style: FlutterFlowTheme.of(context).titleLarge.override(
-                          fontFamily: 'Poppins',
-                          color: Colors.white,
-                        ),
                   ),
                 ),
               ),

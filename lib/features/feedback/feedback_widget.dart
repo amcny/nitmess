@@ -1,13 +1,16 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
 import 'feedback_model.dart';
@@ -20,10 +23,53 @@ class FeedbackWidget extends StatefulWidget {
   State<FeedbackWidget> createState() => _FeedbackWidgetState();
 }
 
-class _FeedbackWidgetState extends State<FeedbackWidget> {
+class _FeedbackWidgetState extends State<FeedbackWidget>
+    with TickerProviderStateMixin {
   late FeedbackModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = {
+    'ratingBarOnActionTriggerAnimation1': AnimationInfo(
+      trigger: AnimationTrigger.onActionTrigger,
+      applyInitialState: true,
+      effects: [
+        ScaleEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 150.ms,
+          begin: const Offset(0.88, 0.88),
+          end: const Offset(1.0, 1.0),
+        ),
+      ],
+    ),
+    'ratingBarOnActionTriggerAnimation2': AnimationInfo(
+      trigger: AnimationTrigger.onActionTrigger,
+      applyInitialState: true,
+      effects: [
+        ScaleEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 150.ms,
+          begin: const Offset(0.88, 0.88),
+          end: const Offset(1.0, 1.0),
+        ),
+      ],
+    ),
+    'ratingBarOnActionTriggerAnimation3': AnimationInfo(
+      trigger: AnimationTrigger.onActionTrigger,
+      applyInitialState: true,
+      effects: [
+        ScaleEffect(
+          curve: Curves.easeInOut,
+          delay: 0.ms,
+          duration: 150.ms,
+          begin: const Offset(0.88, 0.88),
+          end: const Offset(1.0, 1.0),
+        ),
+      ],
+    ),
+  };
 
   @override
   void initState() {
@@ -32,6 +78,13 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
+
+    setupAnimations(
+      animationsMap.values.where((anim) =>
+          anim.trigger == AnimationTrigger.onActionTrigger ||
+          !anim.applyInitialState),
+      this,
+    );
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -68,7 +121,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              context.goNamed('homepage');
             },
           ),
           title: Text(
@@ -203,10 +256,18 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 15.0, 0.0),
                                 child: RatingBar.builder(
-                                  onRatingUpdate: (newValue) {
+                                  onRatingUpdate: (newValue) async {
                                     setState(() =>
                                         _model.ratingBarValue1 = newValue);
                                     HapticFeedback.selectionClick();
+                                    if (animationsMap[
+                                            'ratingBarOnActionTriggerAnimation1'] !=
+                                        null) {
+                                      await animationsMap[
+                                              'ratingBarOnActionTriggerAnimation1']!
+                                          .controller
+                                          .forward(from: 0.0);
+                                    }
                                   },
                                   itemBuilder: (context, index) => Icon(
                                     Icons.star,
@@ -220,6 +281,9 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                   itemSize: 40.0,
                                   glowColor:
                                       FlutterFlowTheme.of(context).warning,
+                                ).animateOnActionTrigger(
+                                  animationsMap[
+                                      'ratingBarOnActionTriggerAnimation1']!,
                                 ),
                               ),
                             ),
@@ -250,10 +314,18 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 15.0, 0.0),
                                 child: RatingBar.builder(
-                                  onRatingUpdate: (newValue) {
+                                  onRatingUpdate: (newValue) async {
                                     setState(() =>
                                         _model.ratingBarValue2 = newValue);
                                     HapticFeedback.selectionClick();
+                                    if (animationsMap[
+                                            'ratingBarOnActionTriggerAnimation2'] !=
+                                        null) {
+                                      await animationsMap[
+                                              'ratingBarOnActionTriggerAnimation2']!
+                                          .controller
+                                          .forward(from: 0.0);
+                                    }
                                   },
                                   itemBuilder: (context, index) => Icon(
                                     Icons.star,
@@ -267,6 +339,9 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                   itemSize: 40.0,
                                   glowColor:
                                       FlutterFlowTheme.of(context).warning,
+                                ).animateOnActionTrigger(
+                                  animationsMap[
+                                      'ratingBarOnActionTriggerAnimation2']!,
                                 ),
                               ),
                             ),
@@ -297,10 +372,18 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 15.0, 0.0),
                                 child: RatingBar.builder(
-                                  onRatingUpdate: (newValue) {
+                                  onRatingUpdate: (newValue) async {
                                     setState(() =>
                                         _model.ratingBarValue3 = newValue);
                                     HapticFeedback.selectionClick();
+                                    if (animationsMap[
+                                            'ratingBarOnActionTriggerAnimation3'] !=
+                                        null) {
+                                      await animationsMap[
+                                              'ratingBarOnActionTriggerAnimation3']!
+                                          .controller
+                                          .forward(from: 0.0);
+                                    }
                                   },
                                   itemBuilder: (context, index) => Icon(
                                     Icons.star,
@@ -314,6 +397,9 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                   itemSize: 40.0,
                                   glowColor:
                                       FlutterFlowTheme.of(context).warning,
+                                ).animateOnActionTrigger(
+                                  animationsMap[
+                                      'ratingBarOnActionTriggerAnimation3']!,
                                 ),
                               ),
                             ),
@@ -409,6 +495,11 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
 
                             var downloadUrls = <String>[];
                             try {
+                              showUploadMessage(
+                                context,
+                                'Uploading file...',
+                                showLoading: true,
+                              );
                               selectedUploadedFiles = selectedMedia
                                   .map((m) => FFUploadedFile(
                                         name: m.storagePath.split('/').last,
@@ -429,6 +520,8 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                   .map((u) => u!)
                                   .toList();
                             } finally {
+                              ScaffoldMessenger.of(context)
+                                  .hideCurrentSnackBar();
                               _model.isDataUploading = false;
                             }
                             if (selectedUploadedFiles.length ==
@@ -439,8 +532,11 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                     selectedUploadedFiles;
                                 _model.uploadedFileUrls = downloadUrls;
                               });
+                              showUploadMessage(context, 'Success!');
                             } else {
                               setState(() {});
+                              showUploadMessage(
+                                  context, 'Failed to upload data');
                               return;
                             }
                           }
@@ -495,14 +591,42 @@ class _FeedbackWidgetState extends State<FeedbackWidget> {
                                 (imagePreviewIndex) {
                               final imagePreviewItem =
                                   imagePreview[imagePreviewIndex];
-                              return ClipRRect(
-                                borderRadius: BorderRadius.circular(12.0),
-                                child: Image.network(
-                                  imagePreviewItem,
-                                  width: 100.0,
-                                  height: 100.0,
-                                  fit: BoxFit.cover,
-                                ),
+                              return Stack(
+                                alignment: const AlignmentDirectional(1.0, -1.0),
+                                children: [
+                                  Align(
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      child: Image.network(
+                                        imagePreviewItem,
+                                        width: 100.0,
+                                        height: 100.0,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  Align(
+                                    alignment:
+                                        const AlignmentDirectional(0.62, -0.07),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        await FirebaseStorage.instance
+                                            .refFromURL(imagePreviewItem)
+                                            .delete();
+                                      },
+                                      child: const Icon(
+                                        Icons.remove_circle_rounded,
+                                        color: Color(0xC157636C),
+                                        size: 24.0,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               );
                             }).divide(const SizedBox(width: 10.0)),
                           );
