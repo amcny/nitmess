@@ -46,10 +46,10 @@ class FeedbackRecord extends FirestoreRecord {
   String get description => _description ?? '';
   bool hasDescription() => _description != null;
 
-  // "images" field.
-  List<String>? _images;
-  List<String> get images => _images ?? const [];
-  bool hasImages() => _images != null;
+  // "image" field.
+  String? _image;
+  String get image => _image ?? '';
+  bool hasImage() => _image != null;
 
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
@@ -58,7 +58,7 @@ class FeedbackRecord extends FirestoreRecord {
     _serviceRating = castToType<double>(snapshotData['service_rating']);
     _hygieneRating = castToType<double>(snapshotData['hygiene_rating']);
     _description = snapshotData['description'] as String?;
-    _images = getDataList(snapshotData['images']);
+    _image = snapshotData['image'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -102,6 +102,7 @@ Map<String, dynamic> createFeedbackRecordData({
   double? serviceRating,
   double? hygieneRating,
   String? description,
+  String? image,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -111,6 +112,7 @@ Map<String, dynamic> createFeedbackRecordData({
       'service_rating': serviceRating,
       'hygiene_rating': hygieneRating,
       'description': description,
+      'image': image,
     }.withoutNulls,
   );
 
@@ -122,14 +124,13 @@ class FeedbackRecordDocumentEquality implements Equality<FeedbackRecord> {
 
   @override
   bool equals(FeedbackRecord? e1, FeedbackRecord? e2) {
-    const listEquality = ListEquality();
     return e1?.email == e2?.email &&
         e1?.mealname == e2?.mealname &&
         e1?.foodRating == e2?.foodRating &&
         e1?.serviceRating == e2?.serviceRating &&
         e1?.hygieneRating == e2?.hygieneRating &&
         e1?.description == e2?.description &&
-        listEquality.equals(e1?.images, e2?.images);
+        e1?.image == e2?.image;
   }
 
   @override
@@ -140,7 +141,7 @@ class FeedbackRecordDocumentEquality implements Equality<FeedbackRecord> {
         e?.serviceRating,
         e?.hygieneRating,
         e?.description,
-        e?.images
+        e?.image
       ]);
 
   @override

@@ -2,13 +2,14 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -28,14 +29,16 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
   late FeedbackModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
+  var hasRatingBarTriggered1 = false;
+  var hasRatingBarTriggered2 = false;
+  var hasRatingBarTriggered3 = false;
   final animationsMap = {
     'ratingBarOnActionTriggerAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onActionTrigger,
-      applyInitialState: true,
+      applyInitialState: false,
       effects: [
         ScaleEffect(
-          curve: Curves.easeInOut,
+          curve: Curves.linear,
           delay: 0.ms,
           duration: 150.ms,
           begin: const Offset(0.88, 0.88),
@@ -45,10 +48,10 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
     ),
     'ratingBarOnActionTriggerAnimation2': AnimationInfo(
       trigger: AnimationTrigger.onActionTrigger,
-      applyInitialState: true,
+      applyInitialState: false,
       effects: [
         ScaleEffect(
-          curve: Curves.easeInOut,
+          curve: Curves.linear,
           delay: 0.ms,
           duration: 150.ms,
           begin: const Offset(0.88, 0.88),
@@ -58,10 +61,10 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
     ),
     'ratingBarOnActionTriggerAnimation3': AnimationInfo(
       trigger: AnimationTrigger.onActionTrigger,
-      applyInitialState: true,
+      applyInitialState: false,
       effects: [
         ScaleEffect(
-          curve: Curves.easeInOut,
+          curve: Curves.linear,
           delay: 0.ms,
           duration: 150.ms,
           begin: const Offset(0.88, 0.88),
@@ -263,10 +266,14 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                                     if (animationsMap[
                                             'ratingBarOnActionTriggerAnimation1'] !=
                                         null) {
-                                      await animationsMap[
-                                              'ratingBarOnActionTriggerAnimation1']!
-                                          .controller
-                                          .forward(from: 0.0);
+                                      setState(
+                                          () => hasRatingBarTriggered1 = true);
+                                      SchedulerBinding.instance
+                                          .addPostFrameCallback((_) async =>
+                                              await animationsMap[
+                                                      'ratingBarOnActionTriggerAnimation1']!
+                                                  .controller
+                                                  .forward(from: 0.0));
                                     }
                                   },
                                   itemBuilder: (context, index) => Icon(
@@ -274,7 +281,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                                     color: FlutterFlowTheme.of(context).warning,
                                   ),
                                   direction: Axis.horizontal,
-                                  initialRating: _model.ratingBarValue1 ??= 3.0,
+                                  initialRating: _model.ratingBarValue1 ??= 0.0,
                                   unratedColor:
                                       FlutterFlowTheme.of(context).accent3,
                                   itemCount: 5,
@@ -282,9 +289,9 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                                   glowColor:
                                       FlutterFlowTheme.of(context).warning,
                                 ).animateOnActionTrigger(
-                                  animationsMap[
-                                      'ratingBarOnActionTriggerAnimation1']!,
-                                ),
+                                    animationsMap[
+                                        'ratingBarOnActionTriggerAnimation1']!,
+                                    hasBeenTriggered: hasRatingBarTriggered1),
                               ),
                             ),
                           ),
@@ -321,10 +328,14 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                                     if (animationsMap[
                                             'ratingBarOnActionTriggerAnimation2'] !=
                                         null) {
-                                      await animationsMap[
-                                              'ratingBarOnActionTriggerAnimation2']!
-                                          .controller
-                                          .forward(from: 0.0);
+                                      setState(
+                                          () => hasRatingBarTriggered2 = true);
+                                      SchedulerBinding.instance
+                                          .addPostFrameCallback((_) async =>
+                                              await animationsMap[
+                                                      'ratingBarOnActionTriggerAnimation2']!
+                                                  .controller
+                                                  .forward(from: 0.0));
                                     }
                                   },
                                   itemBuilder: (context, index) => Icon(
@@ -332,7 +343,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                                     color: FlutterFlowTheme.of(context).warning,
                                   ),
                                   direction: Axis.horizontal,
-                                  initialRating: _model.ratingBarValue2 ??= 3.0,
+                                  initialRating: _model.ratingBarValue2 ??= 0.0,
                                   unratedColor:
                                       FlutterFlowTheme.of(context).accent3,
                                   itemCount: 5,
@@ -340,9 +351,9 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                                   glowColor:
                                       FlutterFlowTheme.of(context).warning,
                                 ).animateOnActionTrigger(
-                                  animationsMap[
-                                      'ratingBarOnActionTriggerAnimation2']!,
-                                ),
+                                    animationsMap[
+                                        'ratingBarOnActionTriggerAnimation2']!,
+                                    hasBeenTriggered: hasRatingBarTriggered2),
                               ),
                             ),
                           ),
@@ -379,10 +390,14 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                                     if (animationsMap[
                                             'ratingBarOnActionTriggerAnimation3'] !=
                                         null) {
-                                      await animationsMap[
-                                              'ratingBarOnActionTriggerAnimation3']!
-                                          .controller
-                                          .forward(from: 0.0);
+                                      setState(
+                                          () => hasRatingBarTriggered3 = true);
+                                      SchedulerBinding.instance
+                                          .addPostFrameCallback((_) async =>
+                                              await animationsMap[
+                                                      'ratingBarOnActionTriggerAnimation3']!
+                                                  .controller
+                                                  .forward(from: 0.0));
                                     }
                                   },
                                   itemBuilder: (context, index) => Icon(
@@ -390,7 +405,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                                     color: FlutterFlowTheme.of(context).warning,
                                   ),
                                   direction: Axis.horizontal,
-                                  initialRating: _model.ratingBarValue3 ??= 3.0,
+                                  initialRating: _model.ratingBarValue3 ??= 0.0,
                                   unratedColor:
                                       FlutterFlowTheme.of(context).accent3,
                                   itemCount: 5,
@@ -398,9 +413,9 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                                   glowColor:
                                       FlutterFlowTheme.of(context).warning,
                                 ).animateOnActionTrigger(
-                                  animationsMap[
-                                      'ratingBarOnActionTriggerAnimation3']!,
-                                ),
+                                    animationsMap[
+                                        'ratingBarOnActionTriggerAnimation3']!,
+                                    hasBeenTriggered: hasRatingBarTriggered3),
                               ),
                             ),
                           ),
@@ -484,8 +499,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                             maxWidth: 500.00,
                             maxHeight: 500.00,
                             imageQuality: 80,
-                            mediaSource: MediaSource.photoGallery,
-                            multiImage: true,
+                            multiImage: false,
                           );
                           if (selectedMedia != null &&
                               selectedMedia.every((m) =>
@@ -528,9 +542,9 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                                     selectedMedia.length &&
                                 downloadUrls.length == selectedMedia.length) {
                               setState(() {
-                                _model.uploadedLocalFiles =
-                                    selectedUploadedFiles;
-                                _model.uploadedFileUrls = downloadUrls;
+                                _model.uploadedLocalFile =
+                                    selectedUploadedFiles.first;
+                                _model.uploadedFileUrl = downloadUrls.first;
                               });
                               showUploadMessage(context, 'Success!');
                             } else {
@@ -566,7 +580,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                                 ),
                               ),
                               Text(
-                                'Add Photos ( if necessary )',
+                                'Add Photo ( if necessary )',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -578,59 +592,47 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                         ),
                       ),
                     ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 0.0),
-                      child: Builder(
-                        builder: (context) {
-                          final imagePreview =
-                              _model.uploadedFileUrls.map((e) => e).toList();
-                          return Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: List.generate(imagePreview.length,
-                                (imagePreviewIndex) {
-                              final imagePreviewItem =
-                                  imagePreview[imagePreviewIndex];
-                              return Stack(
-                                alignment: const AlignmentDirectional(1.0, -1.0),
-                                children: [
-                                  Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      child: Image.network(
-                                        imagePreviewItem,
-                                        width: 100.0,
-                                        height: 100.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
+                    Align(
+                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      child: Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            15.0, 15.0, 15.0, 0.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await Navigator.push(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.fade,
+                                child: FlutterFlowExpandedImageView(
+                                  image: Image.network(
+                                    _model.uploadedFileUrl,
+                                    fit: BoxFit.contain,
                                   ),
-                                  Align(
-                                    alignment:
-                                        const AlignmentDirectional(0.62, -0.07),
-                                    child: InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        await FirebaseStorage.instance
-                                            .refFromURL(imagePreviewItem)
-                                            .delete();
-                                      },
-                                      child: const Icon(
-                                        Icons.remove_circle_rounded,
-                                        color: Color(0xC157636C),
-                                        size: 24.0,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              );
-                            }).divide(const SizedBox(width: 10.0)),
-                          );
-                        },
+                                  allowRotation: false,
+                                  tag: _model.uploadedFileUrl,
+                                  useHeroAnimation: true,
+                                ),
+                              ),
+                            );
+                          },
+                          child: Hero(
+                            tag: _model.uploadedFileUrl,
+                            transitionOnUserGestures: true,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12.0),
+                              child: Image.network(
+                                _model.uploadedFileUrl,
+                                width: 100.0,
+                                height: 100.0,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ].addToEnd(const SizedBox(height: 60.0)),
@@ -646,21 +648,17 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                       onPressed: () async {
                         HapticFeedback.selectionClick();
 
-                        await FeedbackRecord.collection.doc().set({
-                          ...createFeedbackRecordData(
-                            email: currentUserEmail,
-                            mealname: 'test',
-                            foodRating: _model.ratingBarValue1,
-                            serviceRating: _model.ratingBarValue2,
-                            hygieneRating: _model.ratingBarValue3,
-                            description: _model.textController.text,
-                          ),
-                          ...mapToFirestore(
-                            {
-                              'images': _model.uploadedFileUrls,
-                            },
-                          ),
-                        });
+                        await FeedbackRecord.collection
+                            .doc()
+                            .set(createFeedbackRecordData(
+                              email: currentUserEmail,
+                              mealname: 'test',
+                              foodRating: _model.ratingBarValue1,
+                              serviceRating: _model.ratingBarValue2,
+                              hygieneRating: _model.ratingBarValue3,
+                              description: _model.textController.text,
+                              image: _model.uploadedFileUrl,
+                            ));
                       },
                       text: 'Submit',
                       options: FFButtonOptions(
