@@ -143,7 +143,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Flexible(
+              Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,

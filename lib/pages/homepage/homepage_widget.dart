@@ -216,7 +216,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
             ),
             if (getRemoteConfigBool('ad'))
               const Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 5.0),
+                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                 child: FlutterFlowAdBanner(
                   height: 60.0,
                   showsTestAd: false,
@@ -225,7 +225,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                 ),
               ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
               child: InkWell(
                 splashColor: Colors.transparent,
                 focusColor: Colors.transparent,
