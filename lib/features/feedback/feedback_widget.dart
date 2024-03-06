@@ -2,7 +2,6 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -144,486 +143,467 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            15.0, 15.0, 0.0, 15.0),
-                        child: RichText(
-                          textScaleFactor:
-                              MediaQuery.of(context).textScaleFactor,
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: 'Student: ',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                              ),
-                              TextSpan(
-                                text: currentUserEmail,
-                                style: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                              )
-                            ],
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
+              Flexible(
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Align(
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              15.0, 15.0, 0.0, 15.0),
+                          child: RichText(
+                            textScaleFactor:
+                                MediaQuery.of(context).textScaleFactor,
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'Student: ',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                 ),
+                                TextSpan(
+                                  text: currentUserEmail,
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                )
+                              ],
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                  ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            15.0, 0.0, 0.0, 15.0),
-                        child: RichText(
-                          textScaleFactor:
-                              MediaQuery.of(context).textScaleFactor,
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: 'Session: ',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                              ),
-                              TextSpan(
-                                text: 'Meal Name',
-                                style: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                              )
-                            ],
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
+                      Align(
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              15.0, 0.0, 0.0, 15.0),
+                          child: RichText(
+                            textScaleFactor:
+                                MediaQuery.of(context).textScaleFactor,
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'Session: ',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                 ),
+                                TextSpan(
+                                  text: 'Meal Name',
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                )
+                              ],
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                  ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 0.0, 25.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Food',
-                            textAlign: TextAlign.start,
-                            style:
-                                FlutterFlowTheme.of(context).bodyLarge.override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 18.0,
-                                    ),
-                          ),
-                          Flexible(
-                            child: Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 15.0, 0.0),
-                                child: RatingBar.builder(
-                                  onRatingUpdate: (newValue) async {
-                                    setState(() =>
-                                        _model.ratingBarValue1 = newValue);
-                                    HapticFeedback.selectionClick();
-                                    if (animationsMap[
-                                            'ratingBarOnActionTriggerAnimation1'] !=
-                                        null) {
-                                      setState(
-                                          () => hasRatingBarTriggered1 = true);
-                                      SchedulerBinding.instance
-                                          .addPostFrameCallback((_) async =>
-                                              await animationsMap[
-                                                      'ratingBarOnActionTriggerAnimation1']!
-                                                  .controller
-                                                  .forward(from: 0.0));
-                                    }
-                                  },
-                                  itemBuilder: (context, index) => Icon(
-                                    Icons.star,
-                                    color: FlutterFlowTheme.of(context).warning,
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            15.0, 10.0, 0.0, 25.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Food',
+                              textAlign: TextAlign.start,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyLarge
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 18.0,
                                   ),
-                                  direction: Axis.horizontal,
-                                  initialRating: _model.ratingBarValue1 ??= 0.0,
-                                  unratedColor:
-                                      FlutterFlowTheme.of(context).accent3,
-                                  itemCount: 5,
-                                  itemSize: 40.0,
-                                  glowColor:
-                                      FlutterFlowTheme.of(context).warning,
-                                ).animateOnActionTrigger(
-                                    animationsMap[
-                                        'ratingBarOnActionTriggerAnimation1']!,
-                                    hasBeenTriggered: hasRatingBarTriggered1),
+                            ),
+                            Flexible(
+                              child: Align(
+                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 15.0, 0.0),
+                                  child: RatingBar.builder(
+                                    onRatingUpdate: (newValue) async {
+                                      setState(() =>
+                                          _model.ratingBarValue1 = newValue);
+                                      HapticFeedback.selectionClick();
+                                      if (animationsMap[
+                                              'ratingBarOnActionTriggerAnimation1'] !=
+                                          null) {
+                                        setState(() =>
+                                            hasRatingBarTriggered1 = true);
+                                        SchedulerBinding.instance
+                                            .addPostFrameCallback((_) async =>
+                                                await animationsMap[
+                                                        'ratingBarOnActionTriggerAnimation1']!
+                                                    .controller
+                                                    .forward(from: 0.0));
+                                      }
+                                    },
+                                    itemBuilder: (context, index) => Icon(
+                                      Icons.star,
+                                      color:
+                                          FlutterFlowTheme.of(context).warning,
+                                    ),
+                                    direction: Axis.horizontal,
+                                    initialRating: _model.ratingBarValue1 ??=
+                                        0.0,
+                                    unratedColor:
+                                        FlutterFlowTheme.of(context).accent3,
+                                    itemCount: 5,
+                                    itemSize: 40.0,
+                                    glowColor:
+                                        FlutterFlowTheme.of(context).warning,
+                                  ).animateOnActionTrigger(
+                                      animationsMap[
+                                          'ratingBarOnActionTriggerAnimation1']!,
+                                      hasBeenTriggered: hasRatingBarTriggered1),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 0.0, 25.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Service',
-                            textAlign: TextAlign.start,
-                            style:
-                                FlutterFlowTheme.of(context).bodyLarge.override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 18.0,
-                                    ),
-                          ),
-                          Flexible(
-                            child: Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 15.0, 0.0),
-                                child: RatingBar.builder(
-                                  onRatingUpdate: (newValue) async {
-                                    setState(() =>
-                                        _model.ratingBarValue2 = newValue);
-                                    HapticFeedback.selectionClick();
-                                    if (animationsMap[
-                                            'ratingBarOnActionTriggerAnimation2'] !=
-                                        null) {
-                                      setState(
-                                          () => hasRatingBarTriggered2 = true);
-                                      SchedulerBinding.instance
-                                          .addPostFrameCallback((_) async =>
-                                              await animationsMap[
-                                                      'ratingBarOnActionTriggerAnimation2']!
-                                                  .controller
-                                                  .forward(from: 0.0));
-                                    }
-                                  },
-                                  itemBuilder: (context, index) => Icon(
-                                    Icons.star,
-                                    color: FlutterFlowTheme.of(context).warning,
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            15.0, 10.0, 0.0, 25.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Service',
+                              textAlign: TextAlign.start,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyLarge
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 18.0,
                                   ),
-                                  direction: Axis.horizontal,
-                                  initialRating: _model.ratingBarValue2 ??= 0.0,
-                                  unratedColor:
-                                      FlutterFlowTheme.of(context).accent3,
-                                  itemCount: 5,
-                                  itemSize: 40.0,
-                                  glowColor:
-                                      FlutterFlowTheme.of(context).warning,
-                                ).animateOnActionTrigger(
-                                    animationsMap[
-                                        'ratingBarOnActionTriggerAnimation2']!,
-                                    hasBeenTriggered: hasRatingBarTriggered2),
+                            ),
+                            Flexible(
+                              child: Align(
+                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 15.0, 0.0),
+                                  child: RatingBar.builder(
+                                    onRatingUpdate: (newValue) async {
+                                      setState(() =>
+                                          _model.ratingBarValue2 = newValue);
+                                      HapticFeedback.selectionClick();
+                                      if (animationsMap[
+                                              'ratingBarOnActionTriggerAnimation2'] !=
+                                          null) {
+                                        setState(() =>
+                                            hasRatingBarTriggered2 = true);
+                                        SchedulerBinding.instance
+                                            .addPostFrameCallback((_) async =>
+                                                await animationsMap[
+                                                        'ratingBarOnActionTriggerAnimation2']!
+                                                    .controller
+                                                    .forward(from: 0.0));
+                                      }
+                                    },
+                                    itemBuilder: (context, index) => Icon(
+                                      Icons.star,
+                                      color:
+                                          FlutterFlowTheme.of(context).warning,
+                                    ),
+                                    direction: Axis.horizontal,
+                                    initialRating: _model.ratingBarValue2 ??=
+                                        0.0,
+                                    unratedColor:
+                                        FlutterFlowTheme.of(context).accent3,
+                                    itemCount: 5,
+                                    itemSize: 40.0,
+                                    glowColor:
+                                        FlutterFlowTheme.of(context).warning,
+                                  ).animateOnActionTrigger(
+                                      animationsMap[
+                                          'ratingBarOnActionTriggerAnimation2']!,
+                                      hasBeenTriggered: hasRatingBarTriggered2),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 10.0, 0.0, 25.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Hygiene',
-                            textAlign: TextAlign.start,
-                            style:
-                                FlutterFlowTheme.of(context).bodyLarge.override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 18.0,
-                                    ),
-                          ),
-                          Flexible(
-                            child: Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 15.0, 0.0),
-                                child: RatingBar.builder(
-                                  onRatingUpdate: (newValue) async {
-                                    setState(() =>
-                                        _model.ratingBarValue3 = newValue);
-                                    HapticFeedback.selectionClick();
-                                    if (animationsMap[
-                                            'ratingBarOnActionTriggerAnimation3'] !=
-                                        null) {
-                                      setState(
-                                          () => hasRatingBarTriggered3 = true);
-                                      SchedulerBinding.instance
-                                          .addPostFrameCallback((_) async =>
-                                              await animationsMap[
-                                                      'ratingBarOnActionTriggerAnimation3']!
-                                                  .controller
-                                                  .forward(from: 0.0));
-                                    }
-                                  },
-                                  itemBuilder: (context, index) => Icon(
-                                    Icons.star,
-                                    color: FlutterFlowTheme.of(context).warning,
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            15.0, 10.0, 0.0, 25.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Hygiene',
+                              textAlign: TextAlign.start,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyLarge
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 18.0,
                                   ),
-                                  direction: Axis.horizontal,
-                                  initialRating: _model.ratingBarValue3 ??= 0.0,
-                                  unratedColor:
-                                      FlutterFlowTheme.of(context).accent3,
-                                  itemCount: 5,
-                                  itemSize: 40.0,
-                                  glowColor:
-                                      FlutterFlowTheme.of(context).warning,
-                                ).animateOnActionTrigger(
-                                    animationsMap[
-                                        'ratingBarOnActionTriggerAnimation3']!,
-                                    hasBeenTriggered: hasRatingBarTriggered3),
+                            ),
+                            Flexible(
+                              child: Align(
+                                alignment: const AlignmentDirectional(1.0, 0.0),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 15.0, 0.0),
+                                  child: RatingBar.builder(
+                                    onRatingUpdate: (newValue) async {
+                                      setState(() =>
+                                          _model.ratingBarValue3 = newValue);
+                                      HapticFeedback.selectionClick();
+                                      if (animationsMap[
+                                              'ratingBarOnActionTriggerAnimation3'] !=
+                                          null) {
+                                        setState(() =>
+                                            hasRatingBarTriggered3 = true);
+                                        SchedulerBinding.instance
+                                            .addPostFrameCallback((_) async =>
+                                                await animationsMap[
+                                                        'ratingBarOnActionTriggerAnimation3']!
+                                                    .controller
+                                                    .forward(from: 0.0));
+                                      }
+                                    },
+                                    itemBuilder: (context, index) => Icon(
+                                      Icons.star,
+                                      color:
+                                          FlutterFlowTheme.of(context).warning,
+                                    ),
+                                    direction: Axis.horizontal,
+                                    initialRating: _model.ratingBarValue3 ??=
+                                        0.0,
+                                    unratedColor:
+                                        FlutterFlowTheme.of(context).accent3,
+                                    itemCount: 5,
+                                    itemSize: 40.0,
+                                    glowColor:
+                                        FlutterFlowTheme.of(context).warning,
+                                  ).animateOnActionTrigger(
+                                      animationsMap[
+                                          'ratingBarOnActionTriggerAnimation3']!,
+                                      hasBeenTriggered: hasRatingBarTriggered3),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 20.0, 15.0, 0.0),
-                      child: TextFormField(
-                        controller: _model.textController,
-                        focusNode: _model.textFieldFocusNode,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          labelText: 'Feedback',
-                          labelStyle: FlutterFlowTheme.of(context)
-                              .labelMedium
+                      Padding(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            15.0, 20.0, 15.0, 0.0),
+                        child: TextFormField(
+                          controller: _model.textController,
+                          focusNode: _model.textFieldFocusNode,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: 'Feedback',
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                            alignLabelWithHint: true,
+                            hintText:
+                                'Share details of your own experience of\nthis particular meal',
+                            hintStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w300,
+                                ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).alternate,
+                                width: 1.5,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primary,
+                                width: 1.5,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 1.5,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 1.5,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
                               .override(
                                 fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.of(context).primaryText,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
                                 fontWeight: FontWeight.normal,
                               ),
-                          alignLabelWithHint: true,
-                          hintText:
-                              'Share details of your own experience of\nthis particular meal',
-                          hintStyle:
-                              FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
-                              width: 1.5,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primary,
-                              width: 1.5,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 1.5,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 1.5,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              fontWeight: FontWeight.normal,
-                            ),
-                        maxLines: null,
-                        validator:
-                            _model.textControllerValidator.asValidator(context),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 25.0, 15.0, 0.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          HapticFeedback.selectionClick();
-                          final selectedMedia = await selectMedia(
-                            maxWidth: 500.00,
-                            maxHeight: 500.00,
-                            imageQuality: 80,
-                            multiImage: false,
-                          );
-                          if (selectedMedia != null &&
-                              selectedMedia.every((m) =>
-                                  validateFileFormat(m.storagePath, context))) {
-                            setState(() => _model.isDataUploading = true);
-                            var selectedUploadedFiles = <FFUploadedFile>[];
-
-                            var downloadUrls = <String>[];
-                            try {
-                              showUploadMessage(
-                                context,
-                                'Uploading file...',
-                                showLoading: true,
-                              );
-                              selectedUploadedFiles = selectedMedia
-                                  .map((m) => FFUploadedFile(
-                                        name: m.storagePath.split('/').last,
-                                        bytes: m.bytes,
-                                        height: m.dimensions?.height,
-                                        width: m.dimensions?.width,
-                                        blurHash: m.blurHash,
-                                      ))
-                                  .toList();
-
-                              downloadUrls = (await Future.wait(
-                                selectedMedia.map(
-                                  (m) async =>
-                                      await uploadData(m.storagePath, m.bytes),
-                                ),
-                              ))
-                                  .where((u) => u != null)
-                                  .map((u) => u!)
-                                  .toList();
-                            } finally {
-                              ScaffoldMessenger.of(context)
-                                  .hideCurrentSnackBar();
-                              _model.isDataUploading = false;
-                            }
-                            if (selectedUploadedFiles.length ==
-                                    selectedMedia.length &&
-                                downloadUrls.length == selectedMedia.length) {
-                              setState(() {
-                                _model.uploadedLocalFile =
-                                    selectedUploadedFiles.first;
-                                _model.uploadedFileUrl = downloadUrls.first;
-                              });
-                              showUploadMessage(context, 'Success!');
-                            } else {
-                              setState(() {});
-                              showUploadMessage(
-                                  context, 'Failed to upload data');
-                              return;
-                            }
-                          }
-                        },
-                        child: Container(
-                          width: double.infinity,
-                          height: 40.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(24.0),
-                            border: Border.all(
-                              color: FlutterFlowTheme.of(context).alternate,
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 5.0, 0.0),
-                                child: Icon(
-                                  Icons.add_a_photo_outlined,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 22.0,
-                                ),
-                              ),
-                              Text(
-                                'Add Photo ( if necessary )',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                    ),
-                              ),
-                            ],
-                          ),
+                          maxLines: null,
+                          validator: _model.textControllerValidator
+                              .asValidator(context),
                         ),
                       ),
-                    ),
-                    Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
-                      child: Padding(
+                      Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            15.0, 15.0, 15.0, 0.0),
+                            15.0, 25.0, 15.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            await Navigator.push(
-                              context,
-                              PageTransition(
-                                type: PageTransitionType.fade,
-                                child: FlutterFlowExpandedImageView(
-                                  image: Image.network(
-                                    _model.uploadedFileUrl,
-                                    fit: BoxFit.contain,
-                                  ),
-                                  allowRotation: false,
-                                  tag: _model.uploadedFileUrl,
-                                  useHeroAnimation: true,
-                                ),
-                              ),
+                            HapticFeedback.selectionClick();
+                            final selectedMedia = await selectMedia(
+                              maxWidth: 500.00,
+                              maxHeight: 500.00,
+                              imageQuality: 80,
+                              multiImage: false,
                             );
+                            if (selectedMedia != null &&
+                                selectedMedia.every((m) => validateFileFormat(
+                                    m.storagePath, context))) {
+                              setState(() => _model.isDataUploading = true);
+                              var selectedUploadedFiles = <FFUploadedFile>[];
+
+                              var downloadUrls = <String>[];
+                              try {
+                                selectedUploadedFiles = selectedMedia
+                                    .map((m) => FFUploadedFile(
+                                          name: m.storagePath.split('/').last,
+                                          bytes: m.bytes,
+                                          height: m.dimensions?.height,
+                                          width: m.dimensions?.width,
+                                          blurHash: m.blurHash,
+                                        ))
+                                    .toList();
+
+                                downloadUrls = (await Future.wait(
+                                  selectedMedia.map(
+                                    (m) async => await uploadData(
+                                        m.storagePath, m.bytes),
+                                  ),
+                                ))
+                                    .where((u) => u != null)
+                                    .map((u) => u!)
+                                    .toList();
+                              } finally {
+                                _model.isDataUploading = false;
+                              }
+                              if (selectedUploadedFiles.length ==
+                                      selectedMedia.length &&
+                                  downloadUrls.length == selectedMedia.length) {
+                                setState(() {
+                                  _model.uploadedLocalFile =
+                                      selectedUploadedFiles.first;
+                                  _model.uploadedFileUrl = downloadUrls.first;
+                                });
+                              } else {
+                                setState(() {});
+                                return;
+                              }
+                            }
                           },
-                          child: Hero(
-                            tag: _model.uploadedFileUrl,
-                            transitionOnUserGestures: true,
+                          child: Container(
+                            width: double.infinity,
+                            height: 40.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              borderRadius: BorderRadius.circular(24.0),
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context).alternate,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 5.0, 0.0),
+                                  child: Icon(
+                                    Icons.add_a_photo_outlined,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 22.0,
+                                  ),
+                                ),
+                                Text(
+                                  'Add Photo ( if necessary )',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                      ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      if (_model.uploadedFileUrl != '')
+                        Align(
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                15.0, 15.0, 15.0, 10.0),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(12.0),
+                              borderRadius: BorderRadius.circular(8.0),
                               child: Image.network(
                                 _model.uploadedFileUrl,
                                 width: 100.0,
@@ -633,55 +613,52 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                  ].addToEnd(const SizedBox(height: 60.0)),
+                    ],
+                  ),
                 ),
               ),
-              Flexible(
-                child: Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
-                  child: Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 10.0),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        HapticFeedback.selectionClick();
+              Align(
+                alignment: const AlignmentDirectional(0.0, 1.0),
+                child: Padding(
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 10.0),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      HapticFeedback.selectionClick();
 
-                        await FeedbackRecord.collection
-                            .doc()
-                            .set(createFeedbackRecordData(
-                              email: currentUserEmail,
-                              mealname: 'test',
-                              foodRating: _model.ratingBarValue1,
-                              serviceRating: _model.ratingBarValue2,
-                              hygieneRating: _model.ratingBarValue3,
-                              description: _model.textController.text,
-                              image: _model.uploadedFileUrl,
-                            ));
-                      },
-                      text: 'Submit',
-                      options: FFButtonOptions(
-                        width: double.infinity,
-                        height: 50.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                        elevation: 0.0,
-                        borderSide: const BorderSide(
-                          color: Colors.transparent,
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(24.0),
+                      await FeedbackRecord.collection
+                          .doc()
+                          .set(createFeedbackRecordData(
+                            email: currentUserEmail,
+                            mealname: 'test',
+                            foodRating: _model.ratingBarValue1,
+                            serviceRating: _model.ratingBarValue2,
+                            hygieneRating: _model.ratingBarValue3,
+                            description: _model.textController.text,
+                            image: _model.uploadedFileUrl,
+                          ));
+                    },
+                    text: 'Submit',
+                    options: FFButtonOptions(
+                      width: double.infinity,
+                      height: 50.0,
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                      iconPadding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: FlutterFlowTheme.of(context).primary,
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Poppins',
+                                color: Colors.white,
+                                fontWeight: FontWeight.normal,
+                              ),
+                      elevation: 0.0,
+                      borderSide: const BorderSide(
+                        color: Colors.transparent,
+                        width: 1.0,
                       ),
+                      borderRadius: BorderRadius.circular(24.0),
                     ),
                   ),
                 ),
