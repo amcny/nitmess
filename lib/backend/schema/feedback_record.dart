@@ -51,6 +51,11 @@ class FeedbackRecord extends FirestoreRecord {
   String get image => _image ?? '';
   bool hasImage() => _image != null;
 
+  // "timestamp" field.
+  DateTime? _timestamp;
+  DateTime? get timestamp => _timestamp;
+  bool hasTimestamp() => _timestamp != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _mealname = snapshotData['mealname'] as String?;
@@ -59,6 +64,7 @@ class FeedbackRecord extends FirestoreRecord {
     _hygieneRating = castToType<double>(snapshotData['hygiene_rating']);
     _description = snapshotData['description'] as String?;
     _image = snapshotData['image'] as String?;
+    _timestamp = snapshotData['timestamp'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -103,6 +109,7 @@ Map<String, dynamic> createFeedbackRecordData({
   double? hygieneRating,
   String? description,
   String? image,
+  DateTime? timestamp,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -113,6 +120,7 @@ Map<String, dynamic> createFeedbackRecordData({
       'hygiene_rating': hygieneRating,
       'description': description,
       'image': image,
+      'timestamp': timestamp,
     }.withoutNulls,
   );
 
@@ -130,7 +138,8 @@ class FeedbackRecordDocumentEquality implements Equality<FeedbackRecord> {
         e1?.serviceRating == e2?.serviceRating &&
         e1?.hygieneRating == e2?.hygieneRating &&
         e1?.description == e2?.description &&
-        e1?.image == e2?.image;
+        e1?.image == e2?.image &&
+        e1?.timestamp == e2?.timestamp;
   }
 
   @override
@@ -141,7 +150,8 @@ class FeedbackRecordDocumentEquality implements Equality<FeedbackRecord> {
         e?.serviceRating,
         e?.hygieneRating,
         e?.description,
-        e?.image
+        e?.image,
+        e?.timestamp
       ]);
 
   @override

@@ -636,6 +636,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                             hygieneRating: _model.ratingBarValue3,
                             description: _model.textController.text,
                             image: _model.uploadedFileUrl,
+                            timestamp: getCurrentTimestamp,
                           ));
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
