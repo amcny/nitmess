@@ -86,7 +86,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/homepage',
           builder: (context, params) => params.isEmpty
               ? const NavBarPage(initialPage: 'homepage')
-              : const HomepageWidget(),
+              : HomepageWidget(
+                  mealname: params.getParam('mealname', ParamType.String),
+                ),
         ),
         FFRoute(
           name: 'menu',
@@ -155,7 +157,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'feedback',
           path: '/feedback',
-          builder: (context, params) => const FeedbackWidget(),
+          builder: (context, params) => FeedbackWidget(
+            mealname: params.getParam('mealname', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

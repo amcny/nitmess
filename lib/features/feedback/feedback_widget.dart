@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -17,7 +18,12 @@ import 'feedback_model.dart';
 export 'feedback_model.dart';
 
 class FeedbackWidget extends StatefulWidget {
-  const FeedbackWidget({super.key});
+  const FeedbackWidget({
+    super.key,
+    this.mealname,
+  });
+
+  final String? mealname;
 
   @override
   State<FeedbackWidget> createState() => _FeedbackWidgetState();
@@ -215,7 +221,17 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                                       ),
                                 ),
                                 TextSpan(
-                                  text: 'Meal Name',
+                                  text: () {
+                                    if (widget.mealname == '0') {
+                                      return 'Breakfast';
+                                    } else if (widget.mealname == '1') {
+                                      return 'Lunch';
+                                    } else if (widget.mealname == '2') {
+                                      return 'Snacks';
+                                    } else {
+                                      return 'Dinner';
+                                    }
+                                  }(),
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -602,13 +618,40 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 15.0, 15.0, 15.0, 10.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: Image.network(
-                                _model.uploadedFileUrl,
-                                width: 100.0,
-                                height: 100.0,
-                                fit: BoxFit.cover,
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  PageTransition(
+                                    type: PageTransitionType.fade,
+                                    child: FlutterFlowExpandedImageView(
+                                      image: Image.network(
+                                        _model.uploadedFileUrl,
+                                        fit: BoxFit.contain,
+                                      ),
+                                      allowRotation: false,
+                                      tag: _model.uploadedFileUrl,
+                                      useHeroAnimation: true,
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: Hero(
+                                tag: _model.uploadedFileUrl,
+                                transitionOnUserGestures: true,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.network(
+                                    _model.uploadedFileUrl,
+                                    width: 100.0,
+                                    height: 100.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
                             ),
                           ),
@@ -630,7 +673,17 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                           .doc()
                           .set(createFeedbackRecordData(
                             email: currentUserEmail,
-                            mealname: 'test',
+                            mealname: () {
+                              if (widget.mealname == '0') {
+                                return 'Breakfast';
+                              } else if (widget.mealname == '1') {
+                                return 'Lunch';
+                              } else if (widget.mealname == '2') {
+                                return 'Snacks';
+                              } else {
+                                return 'Dinner';
+                              }
+                            }(),
                             foodRating: _model.ratingBarValue1,
                             serviceRating: _model.ratingBarValue2,
                             hygieneRating: _model.ratingBarValue3,

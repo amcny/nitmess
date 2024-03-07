@@ -14,7 +14,12 @@ import 'homepage_model.dart';
 export 'homepage_model.dart';
 
 class HomepageWidget extends StatefulWidget {
-  const HomepageWidget({super.key});
+  const HomepageWidget({
+    super.key,
+    this.mealname,
+  });
+
+  final String? mealname;
 
   @override
   State<HomepageWidget> createState() => _HomepageWidgetState();
@@ -232,7 +237,15 @@ class _HomepageWidgetState extends State<HomepageWidget>
                 hoverColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onTap: () async {
-                  context.goNamed('feedback');
+                  context.goNamed(
+                    'feedback',
+                    queryParameters: {
+                      'mealname': serializeParam(
+                        _model.tabBarCurrentIndex.toString(),
+                        ParamType.String,
+                      ),
+                    }.withoutNulls,
+                  );
                 },
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
