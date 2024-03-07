@@ -13,7 +13,6 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:provider/provider.dart';
 import 'feedback_model.dart';
 export 'feedback_model.dart';
 
@@ -106,8 +105,6 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -160,8 +157,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               15.0, 15.0, 0.0, 15.0),
                           child: RichText(
-                            textScaleFactor:
-                                MediaQuery.of(context).textScaleFactor,
+                            textScaler: MediaQuery.of(context).textScaler,
                             text: TextSpan(
                               children: [
                                 TextSpan(
@@ -204,8 +200,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               15.0, 0.0, 0.0, 15.0),
                           child: RichText(
-                            textScaleFactor:
-                                MediaQuery.of(context).textScaleFactor,
+                            textScaler: MediaQuery.of(context).textScaler,
                             text: TextSpan(
                               children: [
                                 TextSpan(
@@ -528,7 +523,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                             final selectedMedia = await selectMedia(
                               maxWidth: 500.00,
                               maxHeight: 500.00,
-                              imageQuality: 80,
+                              imageQuality: 90,
                               multiImage: false,
                             );
                             if (selectedMedia != null &&

@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 import 'menu_model.dart';
 export 'menu_model.dart';
 
@@ -48,8 +47,6 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<MessRecord>(
       stream: FFAppState().menupage(
         uniqueQueryKey: valueOrDefault<String>(
@@ -180,7 +177,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                   Text(
-                                    '"Eat Better\n          Not Less"',
+                                    '\"Eat Better\n          Not Less\"',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -250,7 +247,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                   Text(
-                                    '"Eat Better\n          Not Less"',
+                                    '\"Eat Better\n          Not Less\"',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -320,7 +317,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                   Text(
-                                    '"Eat Better\n          Not Less"',
+                                    '\"Eat Better\n          Not Less\"',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -390,7 +387,7 @@ class _MenuWidgetState extends State<MenuWidget> with TickerProviderStateMixin {
                                     ),
                                   ),
                                   Text(
-                                    '"Eat Better\n          Not Less"',
+                                    '\"Eat Better\n          Not Less\"',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(

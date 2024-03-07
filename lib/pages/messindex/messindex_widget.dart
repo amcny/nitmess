@@ -82,7 +82,7 @@ class _MessindexWidgetState extends State<MessindexWidget> {
             Align(
               alignment: const AlignmentDirectional(0.0, 0.0),
               child: RichText(
-                textScaleFactor: MediaQuery.of(context).textScaleFactor,
+                textScaler: MediaQuery.of(context).textScaler,
                 text: TextSpan(
                   children: [
                     TextSpan(

@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'alert_verification_model.dart';
 export 'alert_verification_model.dart';
 
@@ -41,8 +40,6 @@ class _AlertVerificationWidgetState extends State<AlertVerificationWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       width: 320.0,
       height: 230.0,
