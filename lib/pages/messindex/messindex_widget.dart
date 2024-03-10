@@ -2,7 +2,6 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
@@ -95,10 +94,7 @@ class _MessindexWidgetState extends State<MessindexWidget> {
                           ),
                     ),
                     TextSpan(
-                      text: valueOrDefault<String>(
-                        functions.day(),
-                        'Display Day',
-                      ),
+                      text: dateTimeFormat('EEEE', getCurrentTimestamp),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
                             color: FlutterFlowTheme.of(context).primary,

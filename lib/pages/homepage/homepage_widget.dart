@@ -239,10 +239,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                 child: Align(
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
-                    valueOrDefault<String>(
-                      functions.day(),
-                      'Display Day',
-                    ),
+                    dateTimeFormat('EEEE', getCurrentTimestamp),
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).titleLarge.override(
                           fontFamily: 'Poppins',
@@ -259,7 +256,8 @@ class _HomepageWidgetState extends State<HomepageWidget>
                     queryBuilder: (messRecord) => messRecord
                         .where(
                           'day',
-                          isEqualTo: functions.day(),
+                          isEqualTo:
+                              dateTimeFormat('EEEE', getCurrentTimestamp),
                         )
                         .where(
                           'messname',
@@ -371,7 +369,9 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                       ),
                                     ),
                                   ),
-                                  if (functions.getTime() == 'BreakFast')
+                                  if (functions
+                                          .timebreakfast(getCurrentTimestamp) ==
+                                      true)
                                     FFButtonWidget(
                                       onPressed: () async {
                                         context.goNamed(
@@ -450,7 +450,9 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                       ),
                                     ),
                                   ),
-                                  if (functions.getTime() == 'Lunch')
+                                  if (functions
+                                          .timelunch(getCurrentTimestamp) ==
+                                      true)
                                     FFButtonWidget(
                                       onPressed: () async {
                                         context.goNamed(
@@ -529,7 +531,9 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                       ),
                                     ),
                                   ),
-                                  if (functions.getTime() == 'Snacks')
+                                  if (functions
+                                          .timesnacks(getCurrentTimestamp) ==
+                                      true)
                                     FFButtonWidget(
                                       onPressed: () async {
                                         context.goNamed(
@@ -608,7 +612,9 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                       ),
                                     ),
                                   ),
-                                  if (functions.getTime() == 'Dinner')
+                                  if (functions
+                                          .timedinner(getCurrentTimestamp) ==
+                                      true)
                                     FFButtonWidget(
                                       onPressed: () async {
                                         context.goNamed(

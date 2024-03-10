@@ -12,15 +12,6 @@ import '/backend/backend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '/auth/firebase_auth/auth_util.dart';
 
-String? day() {
-  // write code that displays day
-  String? day;
-  final now = DateTime.now();
-  final formatter = DateFormat('EEEE');
-  day = formatter.format(now);
-  return day;
-}
-
 String? wishes() {
   // create me a code that shows good morning, good afternoon, good evening according to the time
   var now = new DateTime.now();

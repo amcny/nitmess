@@ -173,7 +173,10 @@ class _FeedbackpageWidgetState extends State<FeedbackpageWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 3.0, 10.0, 3.0),
                                   child: Text(
-                                    listViewFeedbackRecord.status,
+                                    valueOrDefault<String>(
+                                      listViewFeedbackRecord.status,
+                                      'Pending',
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
