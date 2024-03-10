@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -14,12 +15,7 @@ import 'homepage_model.dart';
 export 'homepage_model.dart';
 
 class HomepageWidget extends StatefulWidget {
-  const HomepageWidget({
-    super.key,
-    this.mealname,
-  });
-
-  final String? mealname;
+  const HomepageWidget({super.key});
 
   @override
   State<HomepageWidget> createState() => _HomepageWidgetState();
@@ -40,6 +36,8 @@ class _HomepageWidgetState extends State<HomepageWidget>
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().messname == '') {
         context.pushNamed('choosemess');
+
+        return;
       } else {
         return;
       }
@@ -231,42 +229,25 @@ class _HomepageWidgetState extends State<HomepageWidget>
               ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(15.0, 5.0, 15.0, 0.0),
-              child: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.goNamed(
-                    'feedback',
-                    queryParameters: {
-                      'mealname': serializeParam(
-                        _model.tabBarCurrentIndex.toString(),
-                        ParamType.String,
-                      ),
-                    }.withoutNulls,
-                  );
-                },
-                child: Container(
-                  width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: 60.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).primary,
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  child: Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: Text(
-                      valueOrDefault<String>(
-                        functions.day(),
-                        'Display Day',
-                      ),
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Poppins',
-                            color: Colors.white,
-                          ),
+              child: Container(
+                width: MediaQuery.sizeOf(context).width * 1.0,
+                height: 60.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).primary,
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+                child: Align(
+                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  child: Text(
+                    valueOrDefault<String>(
+                      functions.day(),
+                      'Display Day',
                     ),
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).titleLarge.override(
+                          fontFamily: 'Poppins',
+                          color: Colors.white,
+                        ),
                   ),
                 ),
               ),
@@ -390,6 +371,45 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                       ),
                                     ),
                                   ),
+                                  if (functions.getTime() == 'BreakFast')
+                                    FFButtonWidget(
+                                      onPressed: () async {
+                                        context.goNamed(
+                                          'feedback',
+                                          queryParameters: {
+                                            'mealname': serializeParam(
+                                              _model.tabBarCurrentIndex
+                                                  .toString(),
+                                              ParamType.String,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+                                      },
+                                      text: 'Give Feedback',
+                                      options: FFButtonOptions(
+                                        height: 40.0,
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Open Sans',
+                                              color: Colors.white,
+                                            ),
+                                        elevation: 3.0,
+                                        borderSide: const BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),
@@ -430,6 +450,45 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                       ),
                                     ),
                                   ),
+                                  if (functions.getTime() == 'Lunch')
+                                    FFButtonWidget(
+                                      onPressed: () async {
+                                        context.goNamed(
+                                          'feedback',
+                                          queryParameters: {
+                                            'mealname': serializeParam(
+                                              _model.tabBarCurrentIndex
+                                                  .toString(),
+                                              ParamType.String,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+                                      },
+                                      text: 'Give Feedback',
+                                      options: FFButtonOptions(
+                                        height: 40.0,
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Open Sans',
+                                              color: Colors.white,
+                                            ),
+                                        elevation: 3.0,
+                                        borderSide: const BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),
@@ -470,6 +529,45 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                       ),
                                     ),
                                   ),
+                                  if (functions.getTime() == 'Snacks')
+                                    FFButtonWidget(
+                                      onPressed: () async {
+                                        context.goNamed(
+                                          'feedback',
+                                          queryParameters: {
+                                            'mealname': serializeParam(
+                                              _model.tabBarCurrentIndex
+                                                  .toString(),
+                                              ParamType.String,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+                                      },
+                                      text: 'Give Feedback',
+                                      options: FFButtonOptions(
+                                        height: 40.0,
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Open Sans',
+                                              color: Colors.white,
+                                            ),
+                                        elevation: 3.0,
+                                        borderSide: const BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),
@@ -510,6 +608,45 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                       ),
                                     ),
                                   ),
+                                  if (functions.getTime() == 'Dinner')
+                                    FFButtonWidget(
+                                      onPressed: () async {
+                                        context.goNamed(
+                                          'feedback',
+                                          queryParameters: {
+                                            'mealname': serializeParam(
+                                              _model.tabBarCurrentIndex
+                                                  .toString(),
+                                              ParamType.String,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+                                      },
+                                      text: 'Give Feedback',
+                                      options: FFButtonOptions(
+                                        height: 40.0,
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Open Sans',
+                                              color: Colors.white,
+                                            ),
+                                        elevation: 3.0,
+                                        borderSide: const BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),

@@ -2,7 +2,6 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -126,7 +125,7 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
               size: 30.0,
             ),
             onPressed: () async {
-              context.goNamed('homepage');
+              context.safePop();
             },
           ),
           title: Text(
@@ -523,17 +522,21 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                             final selectedMedia = await selectMedia(
                               maxWidth: 500.00,
                               maxHeight: 500.00,
-                              imageQuality: 90,
+                              imageQuality: 85,
                               multiImage: false,
                             );
                             if (selectedMedia != null &&
                                 selectedMedia.every((m) => validateFileFormat(
                                     m.storagePath, context))) {
-                              setState(() => _model.isDataUploading = true);
+                              setState(() => _model.isDataUploading1 = true);
                               var selectedUploadedFiles = <FFUploadedFile>[];
 
-                              var downloadUrls = <String>[];
                               try {
+                                showUploadMessage(
+                                  context,
+                                  'Uploading file...',
+                                  showLoading: true,
+                                );
                                 selectedUploadedFiles = selectedMedia
                                     .map((m) => FFUploadedFile(
                                           name: m.storagePath.split('/').last,
@@ -543,29 +546,22 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                                           blurHash: m.blurHash,
                                         ))
                                     .toList();
-
-                                downloadUrls = (await Future.wait(
-                                  selectedMedia.map(
-                                    (m) async => await uploadData(
-                                        m.storagePath, m.bytes),
-                                  ),
-                                ))
-                                    .where((u) => u != null)
-                                    .map((u) => u!)
-                                    .toList();
                               } finally {
-                                _model.isDataUploading = false;
+                                ScaffoldMessenger.of(context)
+                                    .hideCurrentSnackBar();
+                                _model.isDataUploading1 = false;
                               }
                               if (selectedUploadedFiles.length ==
-                                      selectedMedia.length &&
-                                  downloadUrls.length == selectedMedia.length) {
+                                  selectedMedia.length) {
                                 setState(() {
-                                  _model.uploadedLocalFile =
+                                  _model.uploadedLocalFile1 =
                                       selectedUploadedFiles.first;
-                                  _model.uploadedFileUrl = downloadUrls.first;
                                 });
+                                showUploadMessage(context, 'Success!');
                               } else {
                                 setState(() {});
+                                showUploadMessage(
+                                    context, 'Failed to upload data');
                                 return;
                               }
                             }
@@ -607,50 +603,23 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                           ),
                         ),
                       ),
-                      if (_model.uploadedFileUrl != '')
-                        Align(
-                          alignment: const AlignmentDirectional(-1.0, 0.0),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                15.0, 15.0, 15.0, 10.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                await Navigator.push(
-                                  context,
-                                  PageTransition(
-                                    type: PageTransitionType.fade,
-                                    child: FlutterFlowExpandedImageView(
-                                      image: Image.network(
-                                        _model.uploadedFileUrl,
-                                        fit: BoxFit.contain,
-                                      ),
-                                      allowRotation: false,
-                                      tag: _model.uploadedFileUrl,
-                                      useHeroAnimation: true,
-                                    ),
-                                  ),
-                                );
-                              },
-                              child: Hero(
-                                tag: _model.uploadedFileUrl,
-                                transitionOnUserGestures: true,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    _model.uploadedFileUrl,
-                                    width: 100.0,
-                                    height: 100.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
+                      Align(
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              15.0, 10.0, 0.0, 0.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.memory(
+                              _model.uploadedLocalFile1.bytes ??
+                                  Uint8List.fromList([]),
+                              width: 100.0,
+                              height: 100.0,
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
+                      ),
                     ],
                   ),
                 ),
@@ -663,6 +632,44 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                   child: FFButtonWidget(
                     onPressed: () async {
                       HapticFeedback.selectionClick();
+                      {
+                        setState(() => _model.isDataUploading2 = true);
+                        var selectedUploadedFiles = <FFUploadedFile>[];
+                        var selectedMedia = <SelectedFile>[];
+                        var downloadUrls = <String>[];
+                        try {
+                          selectedUploadedFiles =
+                              _model.uploadedLocalFile1.bytes!.isNotEmpty
+                                  ? [_model.uploadedLocalFile1]
+                                  : <FFUploadedFile>[];
+                          selectedMedia = selectedFilesFromUploadedFiles(
+                            selectedUploadedFiles,
+                          );
+                          downloadUrls = (await Future.wait(
+                            selectedMedia.map(
+                              (m) async =>
+                                  await uploadData(m.storagePath, m.bytes),
+                            ),
+                          ))
+                              .where((u) => u != null)
+                              .map((u) => u!)
+                              .toList();
+                        } finally {
+                          _model.isDataUploading2 = false;
+                        }
+                        if (selectedUploadedFiles.length ==
+                                selectedMedia.length &&
+                            downloadUrls.length == selectedMedia.length) {
+                          setState(() {
+                            _model.uploadedLocalFile2 =
+                                selectedUploadedFiles.first;
+                            _model.uploadedFileUrl2 = downloadUrls.first;
+                          });
+                        } else {
+                          setState(() {});
+                          return;
+                        }
+                      }
 
                       await FeedbackRecord.collection
                           .doc()
@@ -683,8 +690,20 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                             serviceRating: _model.ratingBarValue2,
                             hygieneRating: _model.ratingBarValue3,
                             description: _model.textController.text,
-                            image: _model.uploadedFileUrl,
                             timestamp: getCurrentTimestamp,
+                            images: _model.uploadedFileUrl2,
+                            uid: currentUserUid,
+                            session: () {
+                              if (widget.mealname == '0') {
+                                return 'Breakfast';
+                              } else if (widget.mealname == '1') {
+                                return 'Lunch';
+                              } else if (widget.mealname == '2') {
+                                return 'Snacks';
+                              } else {
+                                return 'Dinner';
+                              }
+                            }(),
                           ));
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
@@ -701,6 +720,11 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                           backgroundColor: FlutterFlowTheme.of(context).primary,
                         ),
                       );
+                      setState(() {
+                        _model.isDataUploading1 = false;
+                        _model.uploadedLocalFile1 =
+                            FFUploadedFile(bytes: Uint8List.fromList([]));
+                      });
 
                       context.goNamed('homepage');
                     },

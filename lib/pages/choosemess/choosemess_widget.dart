@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'choosemess_model.dart';
 export 'choosemess_model.dart';
@@ -123,6 +124,19 @@ class _ChoosemessWidgetState extends State<ChoosemessWidget> {
                     return;
                   }
                   if (_model.dropDownValue == null) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Selection of mess is required',
+                          style: GoogleFonts.getFont(
+                            'Poppins',
+                            color: FlutterFlowTheme.of(context).primaryText,
+                          ),
+                        ),
+                        duration: const Duration(milliseconds: 2000),
+                        backgroundColor: FlutterFlowTheme.of(context).primary,
+                      ),
+                    );
                     return;
                   }
                   FFAppState().update(() {

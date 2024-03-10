@@ -46,15 +46,30 @@ class FeedbackRecord extends FirestoreRecord {
   String get description => _description ?? '';
   bool hasDescription() => _description != null;
 
-  // "image" field.
-  String? _image;
-  String get image => _image ?? '';
-  bool hasImage() => _image != null;
-
   // "timestamp" field.
   DateTime? _timestamp;
   DateTime? get timestamp => _timestamp;
   bool hasTimestamp() => _timestamp != null;
+
+  // "images" field.
+  String? _images;
+  String get images => _images ?? '';
+  bool hasImages() => _images != null;
+
+  // "uid" field.
+  String? _uid;
+  String get uid => _uid ?? '';
+  bool hasUid() => _uid != null;
+
+  // "session" field.
+  String? _session;
+  String get session => _session ?? '';
+  bool hasSession() => _session != null;
+
+  // "status" field.
+  String? _status;
+  String get status => _status ?? '';
+  bool hasStatus() => _status != null;
 
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
@@ -63,8 +78,11 @@ class FeedbackRecord extends FirestoreRecord {
     _serviceRating = castToType<double>(snapshotData['service_rating']);
     _hygieneRating = castToType<double>(snapshotData['hygiene_rating']);
     _description = snapshotData['description'] as String?;
-    _image = snapshotData['image'] as String?;
     _timestamp = snapshotData['timestamp'] as DateTime?;
+    _images = snapshotData['images'] as String?;
+    _uid = snapshotData['uid'] as String?;
+    _session = snapshotData['session'] as String?;
+    _status = snapshotData['status'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -108,8 +126,11 @@ Map<String, dynamic> createFeedbackRecordData({
   double? serviceRating,
   double? hygieneRating,
   String? description,
-  String? image,
   DateTime? timestamp,
+  String? images,
+  String? uid,
+  String? session,
+  String? status,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -119,8 +140,11 @@ Map<String, dynamic> createFeedbackRecordData({
       'service_rating': serviceRating,
       'hygiene_rating': hygieneRating,
       'description': description,
-      'image': image,
       'timestamp': timestamp,
+      'images': images,
+      'uid': uid,
+      'session': session,
+      'status': status,
     }.withoutNulls,
   );
 
@@ -138,8 +162,11 @@ class FeedbackRecordDocumentEquality implements Equality<FeedbackRecord> {
         e1?.serviceRating == e2?.serviceRating &&
         e1?.hygieneRating == e2?.hygieneRating &&
         e1?.description == e2?.description &&
-        e1?.image == e2?.image &&
-        e1?.timestamp == e2?.timestamp;
+        e1?.timestamp == e2?.timestamp &&
+        e1?.images == e2?.images &&
+        e1?.uid == e2?.uid &&
+        e1?.session == e2?.session &&
+        e1?.status == e2?.status;
   }
 
   @override
@@ -150,8 +177,11 @@ class FeedbackRecordDocumentEquality implements Equality<FeedbackRecord> {
         e?.serviceRating,
         e?.hygieneRating,
         e?.description,
-        e?.image,
-        e?.timestamp
+        e?.timestamp,
+        e?.images,
+        e?.uid,
+        e?.session,
+        e?.status
       ]);
 
   @override

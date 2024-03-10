@@ -91,3 +91,18 @@ bool? emailvalid(String? email) {
   }
   return email.endsWith('@student.nitandhra.ac.in');
 }
+
+String? getTime() {
+  final now = DateTime.now();
+  if (now.hour > 7 && now.hour <= 12) {
+    return 'BreakFast';
+  } else if (now.hour > 12 && now.hour <= 15) {
+    return 'Lunch';
+  } else if (now.hour > 15 && now.hour <= 18) {
+    return 'Snacks';
+  } else if (now.hour > 18 && now.hour < 24) {
+    return 'Dinner';
+  } else {
+    return 'null';
+  }
+}

@@ -12,3 +12,4 @@ export '/pages/canteen/canteen_widget.dart' show CanteenWidget;
 export '/pages/login/login_widget.dart' show LoginWidget;
 export '/pages/signup/signup_widget.dart' show SignupWidget;
 export '/features/feedback/feedback_widget.dart' show FeedbackWidget;
+export '/pages/feedbackpage/feedbackpage_widget.dart' show FeedbackpageWidget;
