@@ -139,8 +139,8 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'homepage': const HomepageWidget(),
       'messindex': const MessindexWidget(),
-      'canteen': const CanteenWidget(),
       'feedbackpage': const FeedbackpageWidget(),
+      'canteen': const CanteenWidget(),
       'settings': const SettingsWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -186,6 +186,14 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
+              Icons.feed_outlined,
+              size: 24.0,
+            ),
+            label: 'Feedback',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
               FFIcons.kcanteenOutline,
               size: 25.0,
             ),
@@ -194,14 +202,6 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 25.0,
             ),
             label: 'Canteen',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.feed_outlined,
-              size: 24.0,
-            ),
-            label: 'Feedback',
             tooltip: '',
           ),
           BottomNavigationBarItem(

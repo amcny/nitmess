@@ -110,26 +110,46 @@ class _FeedbackpageWidgetState extends State<FeedbackpageWidget> {
                           width: 0.8,
                         ),
                       ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                15.0, 15.0, 15.0, 0.0),
-                            child: Row(
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
-                                  child: Text(
-                                    listViewFeedbackRecord.session
-                                        .maybeHandleOverflow(
-                                      maxChars: 30,
-                                      replacement: '…',
+                                  alignment: const AlignmentDirectional(-1.0, -1.0),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: const Color(0x4C1A73E8),
+                                      borderRadius: BorderRadius.circular(14.0),
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                      ),
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 3.0, 10.0, 3.0),
+                                      child: Text(
+                                        valueOrDefault<String>(
+                                          listViewFeedbackRecord.fbDoc.radio,
+                                          'Pending',
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Open Sans',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              fontSize: 14.0,
+                                            ),
+                                      ),
+                                    ),
                                   ),
                                 ),
                                 Align(
@@ -141,64 +161,78 @@ class _FeedbackpageWidgetState extends State<FeedbackpageWidget> {
                                       maxChars: 30,
                                       replacement: '…',
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                        ),
                                   ),
                                 ),
                               ],
                             ),
-                          ),
-                          Align(
-                            alignment: const AlignmentDirectional(-1.0, 0.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  15.0, 15.0, 0.0, 0.0),
-                              child: Text(
-                                listViewFeedbackRecord.description
-                                    .maybeHandleOverflow(
-                                  maxChars: 30,
-                                  replacement: '…',
-                                ),
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ),
-                          ),
-                          Align(
-                            alignment: const AlignmentDirectional(1.0, 1.0),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 15.0, 15.0),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: const Color(0x4C1A73E8),
-                                  borderRadius: BorderRadius.circular(14.0),
-                                  border: Border.all(
-                                    color: FlutterFlowTheme.of(context).primary,
+                            Align(
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 15.0, 0.0, 0.0),
+                                child: Text(
+                                  listViewFeedbackRecord.session
+                                      .maybeHandleOverflow(
+                                    maxChars: 30,
+                                    replacement: '…',
                                   ),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 3.0, 10.0, 3.0),
-                                  child: Text(
-                                    valueOrDefault<String>(
-                                      listViewFeedbackRecord.status,
-                                      'Pending',
-                                    ),
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 13.0,
-                                        ),
-                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                      ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                            Align(
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 15.0, 0.0, 0.0),
+                                child: Text(
+                                  listViewFeedbackRecord.description
+                                      .maybeHandleOverflow(
+                                    maxChars: 50,
+                                    replacement: '…',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                      ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 15.0, 0.0, 0.0),
+                                child: Text(
+                                  'Management: ${listViewFeedbackRecord.fbDoc.mgmt}'
+                                      .maybeHandleOverflow(
+                                    maxChars: 50,
+                                    replacement: '…',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                      ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   );

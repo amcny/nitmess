@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -66,10 +65,10 @@ class FeedbackRecord extends FirestoreRecord {
   String get session => _session ?? '';
   bool hasSession() => _session != null;
 
-  // "status" field.
-  String? _status;
-  String get status => _status ?? '';
-  bool hasStatus() => _status != null;
+  // "fb_doc" field.
+  FbStatusStruct? _fbDoc;
+  FbStatusStruct get fbDoc => _fbDoc ?? FbStatusStruct();
+  bool hasFbDoc() => _fbDoc != null;
 
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
@@ -82,7 +81,7 @@ class FeedbackRecord extends FirestoreRecord {
     _images = snapshotData['images'] as String?;
     _uid = snapshotData['uid'] as String?;
     _session = snapshotData['session'] as String?;
-    _status = snapshotData['status'] as String?;
+    _fbDoc = FbStatusStruct.maybeFromMap(snapshotData['fb_doc']);
   }
 
   static CollectionReference get collection =>
@@ -130,7 +129,7 @@ Map<String, dynamic> createFeedbackRecordData({
   String? images,
   String? uid,
   String? session,
-  String? status,
+  FbStatusStruct? fbDoc,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -144,9 +143,12 @@ Map<String, dynamic> createFeedbackRecordData({
       'images': images,
       'uid': uid,
       'session': session,
-      'status': status,
+      'fb_doc': FbStatusStruct().toMap(),
     }.withoutNulls,
   );
+
+  // Handle nested data for "fb_doc" field.
+  addFbStatusStructData(firestoreData, fbDoc, 'fb_doc');
 
   return firestoreData;
 }
@@ -166,7 +168,7 @@ class FeedbackRecordDocumentEquality implements Equality<FeedbackRecord> {
         e1?.images == e2?.images &&
         e1?.uid == e2?.uid &&
         e1?.session == e2?.session &&
-        e1?.status == e2?.status;
+        e1?.fbDoc == e2?.fbDoc;
   }
 
   @override
@@ -181,7 +183,7 @@ class FeedbackRecordDocumentEquality implements Equality<FeedbackRecord> {
         e?.images,
         e?.uid,
         e?.session,
-        e?.status
+        e?.fbDoc
       ]);
 
   @override
