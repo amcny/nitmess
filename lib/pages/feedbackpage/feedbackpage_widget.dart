@@ -170,6 +170,7 @@ class _FeedbackpageWidgetState extends State<FeedbackpageWidget> {
                                   0.0, 0.0, 15.0, 15.0),
                               child: Container(
                                 decoration: BoxDecoration(
+                                  color: const Color(0x4C1A73E8),
                                   borderRadius: BorderRadius.circular(14.0),
                                   border: Border.all(
                                     color: FlutterFlowTheme.of(context).primary,
@@ -187,10 +188,10 @@ class _FeedbackpageWidgetState extends State<FeedbackpageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          fontFamily: 'Open Sans',
+                                          fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          fontSize: 12.0,
+                                              .primaryText,
+                                          fontSize: 13.0,
                                         ),
                                   ),
                                 ),
