@@ -632,101 +632,167 @@ class _FeedbackWidgetState extends State<FeedbackWidget>
                   child: FFButtonWidget(
                     onPressed: () async {
                       HapticFeedback.selectionClick();
-                      {
-                        setState(() => _model.isDataUploading2 = true);
-                        var selectedUploadedFiles = <FFUploadedFile>[];
-                        var selectedMedia = <SelectedFile>[];
-                        var downloadUrls = <String>[];
-                        try {
-                          selectedUploadedFiles =
-                              _model.uploadedLocalFile1.bytes!.isNotEmpty
-                                  ? [_model.uploadedLocalFile1]
-                                  : <FFUploadedFile>[];
-                          selectedMedia = selectedFilesFromUploadedFiles(
-                            selectedUploadedFiles,
-                          );
-                          downloadUrls = (await Future.wait(
-                            selectedMedia.map(
-                              (m) async =>
-                                  await uploadData(m.storagePath, m.bytes),
+                      if ((_model.uploadedLocalFile1.bytes?.isNotEmpty ??
+                              false)) {
+                        {
+                          setState(() => _model.isDataUploading2 = true);
+                          var selectedUploadedFiles = <FFUploadedFile>[];
+                          var selectedMedia = <SelectedFile>[];
+                          var downloadUrls = <String>[];
+                          try {
+                            selectedUploadedFiles =
+                                _model.uploadedLocalFile1.bytes!.isNotEmpty
+                                    ? [_model.uploadedLocalFile1]
+                                    : <FFUploadedFile>[];
+                            selectedMedia = selectedFilesFromUploadedFiles(
+                              selectedUploadedFiles,
+                            );
+                            downloadUrls = (await Future.wait(
+                              selectedMedia.map(
+                                (m) async =>
+                                    await uploadData(m.storagePath, m.bytes),
+                              ),
+                            ))
+                                .where((u) => u != null)
+                                .map((u) => u!)
+                                .toList();
+                          } finally {
+                            _model.isDataUploading2 = false;
+                          }
+                          if (selectedUploadedFiles.length ==
+                                  selectedMedia.length &&
+                              downloadUrls.length == selectedMedia.length) {
+                            setState(() {
+                              _model.uploadedLocalFile2 =
+                                  selectedUploadedFiles.first;
+                              _model.uploadedFileUrl2 = downloadUrls.first;
+                            });
+                          } else {
+                            setState(() {});
+                            return;
+                          }
+                        }
+
+                        await FeedbackRecord.collection
+                            .doc()
+                            .set(createFeedbackRecordData(
+                              email: currentUserEmail,
+                              mealname: () {
+                                if (widget.mealname == '0') {
+                                  return 'Breakfast';
+                                } else if (widget.mealname == '1') {
+                                  return 'Lunch';
+                                } else if (widget.mealname == '2') {
+                                  return 'Snacks';
+                                } else {
+                                  return 'Dinner';
+                                }
+                              }(),
+                              foodRating: _model.ratingBarValue1,
+                              serviceRating: _model.ratingBarValue2,
+                              hygieneRating: _model.ratingBarValue3,
+                              description: _model.textController.text,
+                              timestamp: getCurrentTimestamp,
+                              images: _model.uploadedFileUrl2,
+                              uid: currentUserUid,
+                              session: () {
+                                if (widget.mealname == '0') {
+                                  return 'Breakfast';
+                                } else if (widget.mealname == '1') {
+                                  return 'Lunch';
+                                } else if (widget.mealname == '2') {
+                                  return 'Snacks';
+                                } else {
+                                  return 'Dinner';
+                                }
+                              }(),
+                            ));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Feedback submitted successfully',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
                             ),
-                          ))
-                              .where((u) => u != null)
-                              .map((u) => u!)
-                              .toList();
-                        } finally {
-                          _model.isDataUploading2 = false;
-                        }
-                        if (selectedUploadedFiles.length ==
-                                selectedMedia.length &&
-                            downloadUrls.length == selectedMedia.length) {
-                          setState(() {
-                            _model.uploadedLocalFile2 =
-                                selectedUploadedFiles.first;
-                            _model.uploadedFileUrl2 = downloadUrls.first;
-                          });
-                        } else {
-                          setState(() {});
-                          return;
-                        }
-                      }
-
-                      await FeedbackRecord.collection
-                          .doc()
-                          .set(createFeedbackRecordData(
-                            email: currentUserEmail,
-                            mealname: () {
-                              if (widget.mealname == '0') {
-                                return 'Breakfast';
-                              } else if (widget.mealname == '1') {
-                                return 'Lunch';
-                              } else if (widget.mealname == '2') {
-                                return 'Snacks';
-                              } else {
-                                return 'Dinner';
-                              }
-                            }(),
-                            foodRating: _model.ratingBarValue1,
-                            serviceRating: _model.ratingBarValue2,
-                            hygieneRating: _model.ratingBarValue3,
-                            description: _model.textController.text,
-                            timestamp: getCurrentTimestamp,
-                            images: _model.uploadedFileUrl2,
-                            uid: currentUserUid,
-                            session: () {
-                              if (widget.mealname == '0') {
-                                return 'Breakfast';
-                              } else if (widget.mealname == '1') {
-                                return 'Lunch';
-                              } else if (widget.mealname == '2') {
-                                return 'Snacks';
-                              } else {
-                                return 'Dinner';
-                              }
-                            }(),
-                          ));
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            'Feedback submitted successfully',
-                            style: FlutterFlowTheme.of(context)
-                                .labelMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.white,
-                                ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).primary,
                           ),
-                          duration: const Duration(milliseconds: 4000),
-                          backgroundColor: FlutterFlowTheme.of(context).primary,
-                        ),
-                      );
-                      setState(() {
-                        _model.isDataUploading1 = false;
-                        _model.uploadedLocalFile1 =
-                            FFUploadedFile(bytes: Uint8List.fromList([]));
-                      });
+                        );
+                        setState(() {
+                          _model.isDataUploading1 = false;
+                          _model.uploadedLocalFile1 =
+                              FFUploadedFile(bytes: Uint8List.fromList([]));
+                        });
 
-                      context.goNamed('homepage');
+                        context.goNamed('homepage');
+
+                        return;
+                      } else {
+                        await FeedbackRecord.collection
+                            .doc()
+                            .set(createFeedbackRecordData(
+                              email: currentUserEmail,
+                              mealname: () {
+                                if (widget.mealname == '0') {
+                                  return 'Breakfast';
+                                } else if (widget.mealname == '1') {
+                                  return 'Lunch';
+                                } else if (widget.mealname == '2') {
+                                  return 'Snacks';
+                                } else {
+                                  return 'Dinner';
+                                }
+                              }(),
+                              foodRating: _model.ratingBarValue1,
+                              serviceRating: _model.ratingBarValue2,
+                              hygieneRating: _model.ratingBarValue3,
+                              description: _model.textController.text,
+                              timestamp: getCurrentTimestamp,
+                              images: _model.uploadedFileUrl2,
+                              uid: currentUserUid,
+                              session: () {
+                                if (widget.mealname == '0') {
+                                  return 'Breakfast';
+                                } else if (widget.mealname == '1') {
+                                  return 'Lunch';
+                                } else if (widget.mealname == '2') {
+                                  return 'Snacks';
+                                } else {
+                                  return 'Dinner';
+                                }
+                              }(),
+                            ));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Feedback submitted successfully',
+                              style: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).primary,
+                          ),
+                        );
+                        setState(() {
+                          _model.isDataUploading1 = false;
+                          _model.uploadedLocalFile1 =
+                              FFUploadedFile(bytes: Uint8List.fromList([]));
+                        });
+
+                        context.goNamed('homepage');
+
+                        return;
+                      }
                     },
                     text: 'Submit',
                     options: FFButtonOptions(
