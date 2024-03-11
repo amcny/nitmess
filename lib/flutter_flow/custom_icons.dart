@@ -4,6 +4,7 @@ class FFIcons {
   FFIcons._();
 
   static const String _iconpack1Family = 'Iconpack1';
+  static const String _feedbackFamily = 'Feedback';
 
   // Iconpack1
   static const IconData khomeOutline =
@@ -22,4 +23,10 @@ class FFIcons {
       IconData(0xe806, fontFamily: _iconpack1Family);
   static const IconData ksettingsFilled =
       IconData(0xe807, fontFamily: _iconpack1Family);
+
+  // Feedback
+  static const IconData kfeedbackFilled =
+      IconData(0xe800, fontFamily: _feedbackFamily);
+  static const IconData kfeedbackOutline =
+      IconData(0xe801, fontFamily: _feedbackFamily);
 }

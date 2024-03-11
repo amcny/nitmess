@@ -186,7 +186,11 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.feed_outlined,
+              FFIcons.kfeedbackOutline,
+              size: 24.0,
+            ),
+            activeIcon: Icon(
+              FFIcons.kfeedbackFilled,
               size: 24.0,
             ),
             label: 'Feedback',
