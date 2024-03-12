@@ -48,7 +48,7 @@ class _FeedbackpageWidgetState extends State<FeedbackpageWidget> {
           backgroundColor: FlutterFlowTheme.of(context).whiteBg,
           automaticallyImplyLeading: false,
           title: Text(
-            'Feedbacks',
+            'Feedback',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Poppins',
                   color: FlutterFlowTheme.of(context).primaryText,
@@ -286,7 +286,7 @@ class _FeedbackpageWidgetState extends State<FeedbackpageWidget> {
                                       TextSpan(
                                         text: valueOrDefault<String>(
                                           listViewFeedbackRecord.fbDoc.mgmt,
-                                          'Response from the management side is pending',
+                                          'The management has not yet responded.',
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
