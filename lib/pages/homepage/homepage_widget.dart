@@ -9,7 +9,6 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'homepage_model.dart';
 export 'homepage_model.dart';
@@ -190,7 +189,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 0.0, 5.0),
                 child: Row(
-                  mainAxisSize: MainAxisSize.min,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
                     Text(
                       'Hope you are having Great Day',
@@ -201,17 +200,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                             fontSize: 15.0,
                             fontWeight: FontWeight.normal,
                           ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
-                      child: Lottie.asset(
-                        'assets/lottie_animations/star-struck_lottie.json',
-                        width: 1.0,
-                        height: 25.0,
-                        fit: BoxFit.cover,
-                        animate: true,
-                      ),
                     ),
                   ],
                 ),
