@@ -22,7 +22,6 @@ void main() async {
   // Start initial custom actions code
   await actions.inAppUpdate();
   await actions.lockOrientation();
-  await actions.screenshotsOff();
   // End initial custom actions code
 
   await FlutterFlowTheme.initialize();
